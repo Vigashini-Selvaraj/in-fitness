@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>FAQ | IN+ FITNESS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+  /* =====================================================
+     IN+ FITNESS — FAQ
+     DARK BLUE THEME
+     ===================================================== */
+
+  :root {
+    --bg: #07131F;
+    --bg-deep: #050E18;
+
+    --surface: #0D1D2B;
+    --surface-light: #12283A;
+    --surface-blue: #15344B;
+
+    --border: #21394C;
+    --border-light: #2A465B;
+
+    --blue: #4DA6FF;
+    --blue-light: #70B8FF;
+    --cyan: #38BDF8;
+    --blue-hover: #70B8FF;
+
+    --white: #FFFFFF;
+    --text: #D9E5EE;
+    --muted: #91A4B3;
+
+    --heading-font: "Space Grotesk", sans-serif;
+    --body-font: "Inter", sans-serif;
+  }
+
+
+  /* =====================================================
+     RESET
+     ===================================================== */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+
+  /* =====================================================
+     HERO
+     ===================================================== */
+
+  .faq-hero {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 140px 24px 100px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+      linear-gradient(
+        120deg,
+        #06111C 0%,
+        #0A1B2B 55%,
+        #0D2940 100%
+      );
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(77, 166, 255, 0.12);
+
+    top: -300px;
+    right: -250px;
+
+    pointer-events: none;
+  }
+
+  .faq-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(56, 189, 248, 0.09);
+
+    bottom: -300px;
+    left: -200px;
+
+    pointer-events: none;
+  }
+
+  .faq-hero-content {
+    max-width: 900px;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  .faq-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+  }
+
+  .faq-label::before {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    background: var(--cyan);
+  }
+
+  .faq-hero h1 {
+    font-family: var(--heading-font);
+
+    font-size: clamp(48px, 8vw, 100px);
+
+    line-height: 0.95;
+
+    font-weight: 600;
+
+    letter-spacing: -4px;
+
+    color: var(--white);
+
+    margin-bottom: 30px;
+  }
+
+  .faq-hero h1 span {
+    color: var(--blue);
+  }
+
+  .faq-hero p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #AFC0CC;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+
+  /* =====================================================
+     FAQ SECTION
+     ===================================================== */
+
+  .faq-section {
+    padding: 110px 24px;
+
+    background: var(--bg);
+  }
+
+  .faq-layout {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 90px;
+
+    align-items: start;
+  }
+
+
+  /* =====================================================
+     SIDEBAR
+     ===================================================== */
+
+  .faq-sidebar {
+    position: sticky;
+    top: 120px;
+  }
+
+  .faq-sidebar h2 {
+    font-family: var(--heading-font);
+
+    font-size: 26px;
+    font-weight: 600;
+
+    color: var(--white);
+
+    margin-bottom: 15px;
+  }
+
+  .faq-sidebar p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+  }
+
+  .faq-count {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+  }
+
+  .faq-count span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--blue);
+
+    font-family: var(--heading-font);
+
+    font-size: 14px;
+  }
+
+
+  /* =====================================================
+     FAQ LIST
+     ===================================================== */
+
+  .faq-list {
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-question {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 28px 0;
+
+    background: transparent;
+
+    border: 0;
+
+    color: var(--white);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: var(--heading-font);
+
+    font-size: 18px;
+    font-weight: 500;
+
+    transition: color 0.25s ease;
+  }
+
+  .faq-question:hover {
+    color: var(--blue-light);
+  }
+
+  .faq-icon {
+    min-width: 38px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--cyan);
+
+    transition:
+      transform 0.3s ease,
+      background 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .faq-icon svg {
+    width: 18px;
+    height: 18px;
+
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    color: #07131F;
+  }
+
+  .faq-item.active .faq-icon svg {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 70px 28px 0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
+
+  /* =====================================================
+     CTA
+     ===================================================== */
+
+  .faq-cta {
+    max-width: 1200px;
+
+    margin: 100px auto 0;
+
+    padding: 60px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+  }
+
+  .faq-cta-content {
+    max-width: 650px;
+  }
+
+  .faq-cta h2 {
+    font-family: var(--heading-font);
+
+    font-size: clamp(28px, 4vw, 44px);
+
+    line-height: 1.1;
+
+    font-weight: 600;
+
+    color: var(--white);
+
+    margin-bottom: 15px;
+  }
+
+  .faq-cta p {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .faq-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 26px;
+
+    background: var(--blue);
+
+    color: #07131F;
+
+    border: 1px solid var(--blue);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .faq-button:hover {
+    background: var(--blue-light);
+
+    border-color: var(--blue-light);
+
+    color: #07131F;
+
+    transform: translateY(-2px);
+  }
+
+  .faq-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+
+  /* =====================================================
+     RESPONSIVE
+     ===================================================== */
+
+  @media (max-width: 900px) {
+
+    .faq-layout {
+      grid-template-columns: 1fr;
+
+      gap: 50px;
+    }
+
+    .faq-sidebar {
+      position: static;
+    }
+
+    .faq-sidebar p {
+      max-width: 600px;
+    }
+
+    .faq-cta {
+      flex-direction: column;
+
+      align-items: flex-start;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+
+    .faq-hero {
+      min-height: 60vh;
+
+      padding: 120px 20px 80px;
+    }
+
+    .faq-hero h1 {
+      font-size: 52px;
+
+      letter-spacing: -2px;
+    }
+
+    .faq-hero p {
+      font-size: 15px;
+    }
+
+    .faq-section {
+      padding: 80px 20px;
+    }
+
+    .faq-question {
+      padding: 22px 0;
+
+      font-size: 16px;
+    }
+
+    .faq-icon {
+      min-width: 34px;
+
+      width: 34px;
+      height: 34px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 50px 24px 0;
+
+      font-size: 14px;
+    }
+
+    .faq-cta {
+      margin-top: 70px;
+
+      padding: 35px 25px;
+    }
+
+    .faq-cta h2 {
+      font-size: 30px;
+    }
+
+    .faq-button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+
+
+  <!-- ================================
+       FAQ HERO
+       ================================ -->
+
+  <section class="faq-hero">
+
+    <div class="faq-hero-content">
+
+      <div class="faq-label">
+        Frequently Asked Questions
+      </div>
+
+      <h1>
+        YOUR QUESTIONS.<br>
+        <span>ANSWERED.</span>
+      </h1>
+
+      <p>
+        Everything you need to know about IN+ FITNESS,
+        our training programs, memberships, classes,
+        and getting started.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================================
+       FAQ SECTION
+       ================================ -->
+
+  <section class="faq-section">
+
+    <div class="faq-layout">
+
+      <!-- SIDEBAR -->
+
+      <aside class="faq-sidebar">
+
+        <h2>Need to know?</h2>
+
+        <p>
+          Find answers to the most common questions
+          about our training, memberships, facilities,
+          and fitness programs.
+        </p>
+
+        <div class="faq-count">
+          <span>12</span>
+          Questions
+        </div>
+
+      </aside>
+
+
+      <!-- FAQ LIST -->
+
+      <div class="faq-list">
+
+        <!-- FAQ 01 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              What is IN+ FITNESS?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              IN+ FITNESS is a modern fitness center focused
+              on strength, conditioning, mobility, personal
+              training, and sustainable fitness habits.
+              Our goal is to help every member train smarter,
+              move better, and become stronger.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 02 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Do I need previous gym experience?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Not at all. Our programs are designed for
+              different experience levels, from complete
+              beginners to experienced athletes. Our trainers
+              can help you understand the movements and
+              gradually build your strength and confidence.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 03 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              What types of training do you offer?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              We offer strength training, personal training,
+              agility training, group fitness, functional
+              training, and mobility & recovery sessions.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 04 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Do you offer personal training?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Yes. Personal training sessions are customized
+              around your fitness level, goals, schedule,
+              and training requirements.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 05 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Can beginners join group fitness classes?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Yes. Our group sessions can be adapted for
+              different fitness levels. Trainers will provide
+              suitable variations so beginners can participate
+              comfortably while progressing at their own pace.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 06 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              How do I book a fitness class?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Members can view available classes through
+              their dashboard and reserve a session based
+              on the available schedule.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 07 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Can I track my attendance?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Yes. Your member dashboard allows you to view
+              your attendance history and keep track of your
+              training activity.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 08 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Can I view my workout plan?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Yes. If your trainer has assigned a workout
+              plan, you can view your exercises and training
+              instructions through your member dashboard.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 09 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              How can I renew my membership?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Your membership renewal date is displayed
+              in your member dashboard. You can contact
+              the IN+ FITNESS team for membership renewal
+              assistance.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 10 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              What should I bring to my first session?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Wear comfortable workout clothing and bring
+              a water bottle. Most importantly, come ready
+              to learn, move, and train.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 11 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              Can I cancel or reschedule a class?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Class cancellation and rescheduling depend
+              on the session schedule and applicable gym
+              policies. Please contact our team if you need
+              assistance with a reservation.
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ 12 -->
+
+        <div class="faq-item">
+
+          <button class="faq-question" type="button">
+
+            <span>
+              How do I get started?
+            </span>
+
+            <span class="faq-icon">
+              <i data-lucide="plus"></i>
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <div class="faq-answer-inner">
+              Getting started is simple. Explore our training
+              programs, choose the option that fits your goals,
+              and contact the IN+ FITNESS team to begin your
+              fitness journey.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================
+         CTA
+         ================================ -->
+
+    <div class="faq-cta">
+
+      <div class="faq-cta-content">
+
+        <h2>
+          Still have questions?
+        </h2>
+
+        <p>
+          Our team is here to help. Get in touch with us
+          and we'll help you find the right training option
+          for your goals.
+        </p>
+
+      </div>
+
+      <a href="contact.html" class="faq-button">
+
+        Contact Us
+
+        <i data-lucide="arrow-up-right"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+
+  <!-- ================================
+       COMPONENTS
+       ================================ -->
+
+  <script src="components.js"></script>
+  <script src="animations.js"></script>
+
+
+  <!-- ================================
+       FAQ ACCORDION
+       ================================ -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach(function (item) {
+
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        question.addEventListener("click", function () {
+
+          const isActive = item.classList.contains("active");
+
+          /* Close all other FAQ items */
+
+          faqItems.forEach(function (otherItem) {
+
+            if (otherItem !== item) {
+
+              otherItem.classList.remove("active");
+
+              const otherAnswer =
+                otherItem.querySelector(".faq-answer");
+
+              otherAnswer.style.maxHeight = null;
+
+            }
+
+          });
+
+
+          /* Toggle current FAQ */
+
+          if (!isActive) {
+
+            item.classList.add("active");
+
+            answer.style.maxHeight =
+              answer.scrollHeight + "px";
+
+          } else {
+
+            item.classList.remove("active");
+
+            answer.style.maxHeight = null;
+
+          }
+
+        });
+
+      });
+
+
+      /* Initialize Lucide icons */
+
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Measurement Guide | IN+ FITNESS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #07131F;
+      --bg-deep: #050E18;
+      --surface: #0D1D2B;
+      --surface-2: #102538;
+      --surface-3: #15344B;
+
+      --border: #21394C;
+      --border-light: #2A465B;
+
+      --blue: #4DA6FF;
+      --blue-light: #70B8FF;
+      --cyan: #38BDF8;
+
+      --white: #FFFFFF;
+      --text: #D9E5EE;
+      --muted: #91A4B3;
+      --muted-dark: #6F8494;
+
+      --heading: "Space Grotesk", sans-serif;
+      --body: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .measurement-hero {
+      min-height: 68vh;
+      display: flex;
+      align-items: flex-end;
+
+      position: relative;
+      overflow: hidden;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .measurement-hero::before {
+      content: "";
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      right: -280px;
+      top: -330px;
+
+      border: 1px solid rgba(77, 166, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .measurement-hero::after {
+      content: "";
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      left: -300px;
+      bottom: -350px;
+
+      border: 1px solid rgba(56, 189, 248, 0.06);
+      border-radius: 50%;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1280px;
+
+      margin: 0 auto;
+      padding: 165px 40px 85px;
+
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1fr 330px;
+      gap: 80px;
+    }
+
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: var(--cyan);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-label span {
+      width: 38px;
+      height: 1px;
+      background: var(--cyan);
+    }
+
+    .measurement-hero h1 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: clamp(62px, 9vw, 120px);
+      line-height: 0.88;
+
+      letter-spacing: -6px;
+      font-weight: 600;
+
+      max-width: 900px;
+    }
+
+    .measurement-hero h1 em {
+      color: var(--blue);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin-top: 32px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .hero-side {
+      align-self: end;
+
+      border-left: 1px solid var(--border-light);
+      padding-left: 25px;
+    }
+
+    .side-label {
+      color: var(--muted-dark);
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .side-value {
+      color: var(--white);
+
+      font-family: var(--heading);
+      font-size: 18px;
+
+      margin-bottom: 28px;
+    }
+
+    /* =========================================
+       INTRO
+    ========================================= */
+
+    .intro-section {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      padding: 65px 40px 0;
+    }
+
+    .intro-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .intro-main {
+      padding: 38px;
+      border-right: 1px solid var(--border);
+    }
+
+    .intro-main h2 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: 30px;
+      line-height: 1.2;
+
+      margin-bottom: 14px;
+    }
+
+    .intro-main h2 span {
+      color: var(--blue);
+    }
+
+    .intro-main p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .intro-note {
+      padding: 38px;
+
+      background: var(--surface-2);
+    }
+
+    .note-icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border-light);
+
+      color: var(--cyan);
+
+      margin-bottom: 22px;
+    }
+
+    .note-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .intro-note h3 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+    .intro-note p {
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    /* =========================================
+       MEASUREMENT SECTION
+    ========================================= */
+
+    .measurements-section {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      padding: 110px 40px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--cyan);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 17px;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 30px;
+      height: 1px;
+
+      background: var(--cyan);
+    }
+
+    .section-heading h2 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.05;
+
+      font-weight: 600;
+
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 span {
+      color: var(--blue);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       MEASUREMENT GRID
+    ========================================= */
+
+    .measurement-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .measurement-card {
+      min-height: 280px;
+
+      padding: 30px;
+
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      background: var(--bg);
+
+      transition: 0.25s ease;
+    }
+
+    .measurement-card:hover {
+      background: var(--surface);
+    }
+
+    .measurement-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 30px;
+    }
+
+    .measurement-number {
+      font-family: var(--heading);
+
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 1px;
+    }
+
+    .measurement-icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+
+      color: var(--cyan);
+    }
+
+    .measurement-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .measurement-card h3 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: 23px;
+      font-weight: 600;
+
+      margin-bottom: 12px;
+    }
+
+    .measurement-card p {
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .measurement-location {
+      margin-top: 22px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--blue-light);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.5px;
+    }
+
+    /* =========================================
+       CHECKLIST
+    ========================================= */
+
+    .checklist-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .checklist-container {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      padding: 100px 40px;
+
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+
+      gap: 90px;
+    }
+
+    .checklist-heading h2 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: clamp(35px, 5vw, 52px);
+      line-height: 1.05;
+
+      margin-bottom: 18px;
+    }
+
+    .checklist-heading h2 span {
+      color: var(--blue);
+    }
+
+    .checklist-heading p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .check-item {
+      padding: 25px;
+
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .check-item-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 8px;
+    }
+
+    .check-item svg {
+      width: 18px;
+      height: 18px;
+
+      color: var(--cyan);
+    }
+
+    .check-item strong {
+      color: var(--white);
+
+      font-family: var(--heading);
+
+      font-size: 14px;
+    }
+
+    .check-item p {
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       TIPS
+    ========================================= */
+
+    .tips-section {
+      max-width: 1280px;
+      margin: 0 auto;
+
+      padding: 110px 40px;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+
+      margin-top: 55px;
+    }
+
+    .tip {
+      padding: 32px;
+
+      border: 1px solid var(--border);
+
+      background: var(--surface);
+    }
+
+    .tip-number {
+      color: var(--blue);
+
+      font-family: var(--heading);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      margin-bottom: 25px;
+    }
+
+    .tip h3 {
+      color: var(--white);
+
+      font-family: var(--heading);
+
+      font-size: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .tip p {
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .guide-cta {
+      max-width: 1280px;
+
+      margin: 0 auto 110px;
+
+      padding: 60px;
+
+      background: var(--surface-2);
+
+      border: 1px solid var(--border);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 40px;
+    }
+
+    .cta-label {
+      color: var(--cyan);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .guide-cta h2 {
+      font-family: var(--heading);
+
+      color: var(--white);
+
+      font-size: clamp(30px, 4vw, 48px);
+
+      line-height: 1.1;
+
+      margin-bottom: 12px;
+    }
+
+    .guide-cta p {
+      color: var(--muted);
+
+      max-width: 600px;
+
+      font-size: 14px;
+    }
+
+    .cta-button {
+      flex-shrink: 0;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 16px 24px;
+
+      background: var(--blue);
+      border: 1px solid var(--blue);
+
+      color: var(--bg);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--blue-light);
+      border-color: var(--blue-light);
+    }
+
+    .cta-button svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 950px) {
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-side {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding: 25px 0 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+      }
+
+      .side-value {
+        margin-bottom: 0;
+      }
+
+      .intro-card {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-main {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .checklist-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .measurement-hero {
+        min-height: 62vh;
+      }
+
+      .hero-container {
+        padding: 135px 20px 65px;
+      }
+
+      .measurement-hero h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-side {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-section {
+        padding: 35px 20px 0;
+      }
+
+      .intro-main,
+      .intro-note {
+        padding: 28px 25px;
+      }
+
+      .measurements-section,
+      .tips-section {
+        padding: 80px 20px;
+      }
+
+      .measurement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist-container {
+        padding: 80px 20px;
+      }
+
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-cta {
+        margin: 0 20px 80px;
+        padding: 35px 25px;
+      }
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar"></div>
+
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <header class="measurement-hero">
+
+    <div class="hero-container">
+
+      <div>
+
+        <div class="hero-label">
+          <span></span>
+          Fitness Tracking
+        </div>
+
+        <h1>
+          MEASURE<br>
+          <em>WITH PURPOSE.</em>
+        </h1>
+
+        <p class="hero-description">
+          Learn how to take consistent body measurements and
+          track changes over time. Simple measurements can help
+          you understand your progress beyond the scale.
+        </p>
+
+      </div>
+
+      <div class="hero-side">
+
+        <div>
+          <div class="side-label">Guide</div>
+          <div class="side-value">01 / 07</div>
+        </div>
+
+        <div>
+          <div class="side-label">Best Practice</div>
+          <div class="side-value">Stay Consistent</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       INTRO
+  ========================================== -->
+
+  <section class="intro-section">
+
+    <div class="intro-card">
+
+      <div class="intro-main">
+
+        <div class="eyebrow">
+          Before You Begin
+        </div>
+
+        <h2>
+          Consistency makes your
+          <span>measurements useful.</span>
+        </h2>
+
+        <p>
+          Use a flexible measuring tape and record your measurements
+          under similar conditions each time. Focus on long-term
+          changes rather than a single measurement.
+        </p>
+
+      </div>
+
+      <div class="intro-note">
+
+        <div class="note-icon">
+          <i data-lucide="ruler"></i>
+        </div>
+
+        <h3>What you need</h3>
+
+        <p>
+          A flexible measuring tape, a notebook or digital tracker,
+          and a few minutes in a comfortable space. Keep the tape
+          flat against the body without pulling it tightly.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MEASUREMENTS
+  ========================================== -->
+
+  <section class="measurements-section">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        Measurement Guide
+      </div>
+
+      <h2>
+        Know where to
+        <span>measure.</span>
+      </h2>
+
+      <p>
+        Follow these simple steps to keep your measurements
+        consistent from one check-in to the next.
+      </p>
+
+    </div>
+
+
+    <div class="measurement-grid">
+
+
+      <!-- 01 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">01</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="scale"></i>
+          </div>
+
+        </div>
+
+        <h3>Body Weight</h3>
+
+        <p>
+          Use a reliable weighing scale and stand still while
+          taking your reading. Record the number in the same
+          unit each time.
+        </p>
+
+        <div class="measurement-location">
+          USE THE SAME SCALE WHEN POSSIBLE
+        </div>
+
+      </article>
+
+
+      <!-- 02 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">02</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="circle-dot"></i>
+          </div>
+
+        </div>
+
+        <h3>Chest</h3>
+
+        <p>
+          Place the tape around the fullest part of your chest.
+          Keep the tape level and relaxed without compressing
+          the body.
+        </p>
+
+        <div class="measurement-location">
+          KEEP THE TAPE LEVEL AROUND THE BODY
+        </div>
+
+      </article>
+
+
+      <!-- 03 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">03</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="circle"></i>
+          </div>
+
+        </div>
+
+        <h3>Waist</h3>
+
+        <p>
+          Measure around your natural waist area. Keep your
+          posture relaxed and avoid pulling the tape tightly.
+        </p>
+
+        <div class="measurement-location">
+          MEASURE AT THE NATURAL WAISTLINE
+        </div>
+
+      </article>
+
+
+      <!-- 04 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">04</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="move-horizontal"></i>
+          </div>
+
+        </div>
+
+        <h3>Hips</h3>
+
+        <p>
+          Place the measuring tape around the widest part of
+          your hips and seat. Make sure the tape remains level.
+        </p>
+
+        <div class="measurement-location">
+          MEASURE AROUND THE WIDEST POINT
+        </div>
+
+      </article>
+
+
+      <!-- 05 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">05</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="circle-dot-dashed"></i>
+          </div>
+
+        </div>
+
+        <h3>Upper Arm</h3>
+
+        <p>
+          Measure around the fullest part of the upper arm.
+          Keep your arm relaxed and use the same arm for
+          future measurements.
+        </p>
+
+        <div class="measurement-location">
+          KEEP THE ARM RELAXED
+        </div>
+
+      </article>
+
+
+      <!-- 06 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">06</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="scan-line"></i>
+          </div>
+
+        </div>
+
+        <h3>Thigh</h3>
+
+        <p>
+          Measure around the fullest part of your upper thigh.
+          Keep the tape horizontal and comfortably fitted.
+        </p>
+
+        <div class="measurement-location">
+          USE THE SAME MEASUREMENT POINT EACH TIME
+        </div>
+
+      </article>
+
+
+      <!-- 07 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">07</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="activity"></i>
+          </div>
+
+        </div>
+
+        <h3>Calf</h3>
+
+        <p>
+          Measure around the widest part of your calf while
+          standing naturally and keeping the tape level.
+        </p>
+
+        <div class="measurement-location">
+          MEASURE AT THE WIDEST POINT
+        </div>
+
+      </article>
+
+
+      <!-- 08 -->
+
+      <article class="measurement-card">
+
+        <div class="measurement-top">
+
+          <span class="measurement-number">08</span>
+
+          <div class="measurement-icon">
+            <i data-lucide="clipboard-check"></i>
+          </div>
+
+        </div>
+
+        <h3>Record Everything</h3>
+
+        <p>
+          Write down each measurement immediately. Recording
+          the date along with your numbers makes future
+          comparisons easier.
+        </p>
+
+        <div class="measurement-location">
+          DATE + MEASUREMENT = BETTER TRACKING
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CHECKLIST
+  ========================================== -->
+
+  <section class="checklist-section">
+
+    <div class="checklist-container">
+
+      <div class="checklist-heading">
+
+        <div class="eyebrow">
+          Measurement Checklist
+        </div>
+
+        <h2>
+          Before you
+          <span>measure.</span>
+        </h2>
+
+        <p>
+          A consistent routine helps make your measurements
+          easier to compare over time.
+        </p>
+
+      </div>
+
+
+      <div class="checklist">
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Use a flexible tape</strong>
+          </div>
+
+          <p>
+            Choose a tape that can comfortably follow body contours.
+          </p>
+
+        </div>
+
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Keep it level</strong>
+          </div>
+
+          <p>
+            Make sure the tape does not angle upward or downward.
+          </p>
+
+        </div>
+
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Do not pull tightly</strong>
+          </div>
+
+          <p>
+            The tape should sit against the body without squeezing.
+          </p>
+
+        </div>
+
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Stay relaxed</strong>
+          </div>
+
+          <p>
+            Keep your normal posture and avoid holding your breath.
+          </p>
+
+        </div>
+
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Record the date</strong>
+          </div>
+
+          <p>
+            Always save the date alongside your measurements.
+          </p>
+
+        </div>
+
+
+        <div class="check-item">
+
+          <div class="check-item-top">
+            <i data-lucide="check"></i>
+            <strong>Use the same method</strong>
+          </div>
+
+          <p>
+            Follow the same measurement points every time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       TRACKING TIPS
+  ========================================== -->
+
+  <section class="tips-section">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">
+        Tracking Progress
+      </div>
+
+      <h2>
+        Measure less.
+        <span>Understand more.</span>
+      </h2>
+
+      <p>
+        Measurements are most useful when viewed as part of
+        your overall fitness journey.
+      </p>
+
+    </div>
+
+
+    <div class="tips-grid">
+
+      <article class="tip">
+
+        <div class="tip-number">01</div>
+
+        <h3>Keep it consistent</h3>
+
+        <p>
+          Try to measure under similar conditions and at
+          similar intervals so your records are easier to compare.
+        </p>
+
+      </article>
+
+
+      <article class="tip">
+
+        <div class="tip-number">02</div>
+
+        <h3>Look at trends</h3>
+
+        <p>
+          A single number does not tell the whole story.
+          Look at changes across several check-ins.
+        </p>
+
+      </article>
+
+
+      <article class="tip">
+
+        <div class="tip-number">03</div>
+
+        <h3>Track your journey</h3>
+
+        <p>
+          Combine measurements with attendance, training,
+          strength, and how you feel during your workouts.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       CTA
+  ========================================== -->
+
+  <section class="guide-cta">
+
+    <div>
+
+      <div class="cta-label">
+        Keep Progress Moving
+      </div>
+
+      <h2>Ready to track your journey?</h2>
+
+      <p>
+        Keep your measurements organized and stay connected
+        with your training progress through IN+ FITNESS.
+      </p>
+
+    </div>
+
+    <a href="contact.html" class="cta-button">
+      Get Started
+      <i data-lucide="arrow-up-right"></i>
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="components.js"></script>
+  <script src="animations.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+
+    });
+  </script>
+
+</body>
+</html>

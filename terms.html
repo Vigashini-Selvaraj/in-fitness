@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Terms & Conditions | IN+ FITNESS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* =====================================================
+       IN+ FITNESS — TERMS & CONDITIONS
+       DARK BLUE EDITORIAL THEME
+       ===================================================== */
+
+    :root {
+      --bg: #07131F;
+      --bg-deep: #050E18;
+
+      --surface: #0D1D2B;
+      --surface-light: #12283A;
+      --surface-blue: #15344B;
+
+      --blue: #4DA6FF;
+      --blue-light: #70B8FF;
+      --cyan: #38BDF8;
+      --blue-dark: #1D6FAE;
+
+      --white: #FFFFFF;
+      --text: #D9E5EE;
+      --muted: #91A4B3;
+
+      --border: #21394C;
+      --border-light: #2A465B;
+
+      --heading-font: "Space Grotesk", sans-serif;
+      --body-font: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .terms-hero {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          120deg,
+          #06111C 0%,
+          #0A1B2B 55%,
+          #0D2940 100%
+        );
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terms-hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      top: -180px;
+
+      border: 1px solid rgba(77, 166, 255, 0.18);
+      border-radius: 50%;
+    }
+
+    .terms-hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -60px;
+      bottom: -180px;
+
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      border-radius: 50%;
+    }
+
+    .terms-hero-content {
+      width: min(1180px, 90%);
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      padding: 90px 0;
+    }
+
+    .terms-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--blue-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+    }
+
+    .terms-label::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--blue);
+    }
+
+    .terms-hero h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      color: var(--white);
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .terms-hero h1 span {
+      color: var(--blue);
+    }
+
+    .terms-hero p {
+      max-width: 650px;
+      color: #AFC0CC;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      margin-top: 25px;
+
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    /* =====================================================
+       MAIN LAYOUT
+       ===================================================== */
+
+    .terms-section {
+      padding: 90px 0 110px;
+      background: var(--bg);
+    }
+
+    .terms-container {
+      width: min(1180px, 90%);
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 70px;
+      align-items: start;
+    }
+
+    /* =====================================================
+       SIDEBAR
+       ===================================================== */
+
+    .terms-sidebar {
+      position: sticky;
+      top: 100px;
+
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .terms-sidebar-title {
+      font-family: var(--heading-font);
+      color: var(--white);
+
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .terms-nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .terms-nav a {
+      position: relative;
+
+      padding: 9px 0;
+
+      color: var(--muted);
+      font-size: 13px;
+
+      transition:
+        color 0.25s ease,
+        padding-left 0.25s ease;
+    }
+
+    .terms-nav a:hover {
+      color: var(--blue-light);
+      padding-left: 8px;
+    }
+
+    /* =====================================================
+       CONTENT CARD
+       ===================================================== */
+
+    .terms-content {
+      background: var(--surface);
+
+      border: 1px solid var(--border);
+
+      padding: clamp(30px, 5vw, 58px);
+    }
+
+    .terms-intro {
+      padding-bottom: 40px;
+      margin-bottom: 45px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terms-intro p {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    /* =====================================================
+       CONTENT SECTIONS
+       ===================================================== */
+
+    .terms-block {
+      position: relative;
+
+      padding-bottom: 42px;
+      margin-bottom: 42px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terms-block:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .section-number {
+      display: block;
+
+      color: var(--blue);
+      font-family: var(--heading-font);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+    }
+
+    .terms-block h2 {
+      font-family: var(--heading-font);
+
+      color: var(--white);
+
+      font-size: clamp(23px, 3vw, 31px);
+      line-height: 1.2;
+
+      margin-bottom: 18px;
+    }
+
+    .terms-block p {
+      color: var(--text);
+
+      font-size: 15px;
+      line-height: 1.9;
+
+      margin-bottom: 15px;
+    }
+
+    .terms-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .terms-block ul {
+      margin: 15px 0 0 20px;
+    }
+
+    .terms-block li {
+      color: var(--text);
+
+      font-size: 15px;
+      line-height: 1.9;
+
+      padding-left: 6px;
+      margin-bottom: 8px;
+    }
+
+    .terms-block li::marker {
+      color: var(--blue);
+    }
+
+    /* =====================================================
+       NOTE
+       ===================================================== */
+
+    .terms-note {
+      margin-top: 25px;
+
+      padding: 22px 24px;
+
+      background: var(--surface-blue);
+
+      border-left: 3px solid var(--blue);
+    }
+
+    .terms-note p {
+      color: #C9E5F7;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       CONTACT BOX
+       ===================================================== */
+
+    .terms-contact {
+      margin-top: 45px;
+
+      padding: 30px;
+
+      background: #0A2234;
+
+      border: 1px solid var(--border-light);
+    }
+
+    .terms-contact h3 {
+      font-family: var(--heading-font);
+
+      color: var(--white);
+
+      font-size: 22px;
+
+      margin-bottom: 10px;
+    }
+
+    .terms-contact p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.8;
+
+      margin-bottom: 14px;
+    }
+
+    .terms-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: var(--blue-light);
+
+      font-size: 14px;
+      font-weight: 600;
+
+      transition: color 0.25s ease;
+    }
+
+    .terms-contact-link:hover {
+      color: var(--cyan);
+    }
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+    }
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .terms-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .terms-sidebar {
+        position: static;
+        padding: 20px 0;
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .terms-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px 20px;
+      }
+
+      .terms-nav a:hover {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .terms-hero {
+        min-height: 380px;
+      }
+
+      .terms-hero-content {
+        padding: 70px 0;
+      }
+
+      .terms-hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .terms-hero p {
+        font-size: 15px;
+      }
+
+      .terms-section {
+        padding: 60px 0 80px;
+      }
+
+      .terms-container {
+        width: 92%;
+      }
+
+      .terms-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .terms-content {
+        padding: 28px 22px;
+      }
+
+      .terms-block h2 {
+        font-size: 24px;
+      }
+
+      .terms-block p,
+      .terms-block li {
+        font-size: 14px;
+      }
+
+      .terms-contact {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+
+  <div id="navbar"></div>
+
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <header class="terms-hero">
+
+    <div class="terms-hero-content">
+
+      <div class="terms-label">
+        Legal Information
+      </div>
+
+      <h1>
+        TERMS &<br>
+        <span>CONDITIONS.</span>
+      </h1>
+
+      <p>
+        Please read these terms carefully before using
+        IN+ FITNESS services, facilities, memberships,
+        classes, and digital platforms.
+      </p>
+
+      <div class="last-updated">
+        Last updated: September 2026
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       TERMS CONTENT
+       ===================================================== -->
+
+  <main class="terms-section">
+
+    <div class="terms-container">
+
+
+      <!-- SIDEBAR -->
+
+      <aside class="terms-sidebar">
+
+        <div class="terms-sidebar-title">
+          On this page
+        </div>
+
+        <nav class="terms-nav">
+
+          <a href="#acceptance">
+            Acceptance
+          </a>
+
+          <a href="#membership">
+            Membership
+          </a>
+
+          <a href="#payments">
+            Payments
+          </a>
+
+          <a href="#rules">
+            Gym Rules
+          </a>
+
+          <a href="#safety">
+            Health & Safety
+          </a>
+
+          <a href="#classes">
+            Classes & Booking
+          </a>
+
+          <a href="#accounts">
+            Member Accounts
+          </a>
+
+          <a href="#cancellation">
+            Cancellation
+          </a>
+
+          <a href="#liability">
+            Liability
+          </a>
+
+          <a href="#privacy">
+            Privacy
+          </a>
+
+          <a href="#changes">
+            Changes
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </nav>
+
+      </aside>
+
+
+      <!-- CONTENT -->
+
+      <article class="terms-content">
+
+
+        <!-- INTRO -->
+
+        <div class="terms-intro">
+
+          <p>
+            These Terms & Conditions govern your use of
+            IN+ FITNESS facilities, services, classes,
+            memberships, website, and member dashboard.
+            By accessing our services or becoming a member,
+            you agree to follow these terms.
+          </p>
+
+        </div>
+
+
+        <!-- 01 -->
+
+        <section class="terms-block" id="acceptance">
+
+          <span class="section-number">01</span>
+
+          <h2>
+            Acceptance of Terms
+          </h2>
+
+          <p>
+            By accessing the IN+ FITNESS website, visiting
+            our facilities, registering for an account, or
+            purchasing a membership, you confirm that you
+            have read and agreed to these Terms & Conditions.
+          </p>
+
+          <p>
+            If you do not agree with these terms, please do
+            not use our services or facilities.
+          </p>
+
+        </section>
+
+
+        <!-- 02 -->
+
+        <section class="terms-block" id="membership">
+
+          <span class="section-number">02</span>
+
+          <h2>
+            Membership
+          </h2>
+
+          <p>
+            Memberships provide access to the facilities,
+            services, and programs included in the selected
+            membership plan.
+          </p>
+
+          <ul>
+
+            <li>
+              Memberships are personal and cannot be transferred
+              without written approval.
+            </li>
+
+            <li>
+              Members must provide accurate registration
+              information.
+            </li>
+
+            <li>
+              Membership access is subject to the selected
+              plan and its validity period.
+            </li>
+
+            <li>
+              IN+ FITNESS may suspend access if membership
+              requirements are violated.
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!-- 03 -->
+
+        <section class="terms-block" id="payments">
+
+          <span class="section-number">03</span>
+
+          <h2>
+            Payments & Pricing
+          </h2>
+
+          <p>
+            Membership fees, personal training fees,
+            class fees, and other service charges must
+            be paid according to the applicable pricing
+            plan.
+          </p>
+
+          <p>
+            Prices may change from time to time. Any
+            applicable changes will be communicated to
+            members through appropriate channels.
+          </p>
+
+          <div class="terms-note">
+
+            <p>
+              Membership fees are generally non-refundable
+              unless otherwise stated by IN+ FITNESS or
+              required by applicable law.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- 04 -->
+
+        <section class="terms-block" id="rules">
+
+          <span class="section-number">04</span>
+
+          <h2>
+            Gym Rules & Conduct
+          </h2>
+
+          <p>
+            Members are expected to maintain respectful,
+            responsible, and safe behavior while using
+            IN+ FITNESS facilities.
+          </p>
+
+          <ul>
+
+            <li>
+              Follow instructions provided by trainers
+              and staff.
+            </li>
+
+            <li>
+              Use gym equipment responsibly.
+            </li>
+
+            <li>
+              Return equipment after use.
+            </li>
+
+            <li>
+              Respect other members and staff.
+            </li>
+
+            <li>
+              Do not intentionally damage gym property.
+            </li>
+
+            <li>
+              Maintain appropriate gym attire and hygiene.
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!-- 05 -->
+
+        <section class="terms-block" id="safety">
+
+          <span class="section-number">05</span>
+
+          <h2>
+            Health & Safety
+          </h2>
+
+          <p>
+            Members are responsible for determining whether
+            they are physically capable of participating in
+            exercise and fitness activities.
+          </p>
+
+          <p>
+            If you have a medical condition, injury, or
+            other health concern, you should consult a
+            qualified healthcare professional before
+            participating in physical activity.
+          </p>
+
+          <p>
+            Members must immediately inform gym staff or
+            trainers about any injury or medical issue that
+            occurs during a session.
+          </p>
+
+        </section>
+
+
+        <!-- 06 -->
+
+        <section class="terms-block" id="classes">
+
+          <span class="section-number">06</span>
+
+          <h2>
+            Classes & Booking
+          </h2>
+
+          <p>
+            Certain fitness classes and training sessions
+            may require advance booking through the member
+            dashboard or other available booking channels.
+          </p>
+
+          <ul>
+
+            <li>
+              Class availability is subject to capacity.
+            </li>
+
+            <li>
+              Members should arrive on time for scheduled
+              sessions.
+            </li>
+
+            <li>
+              Repeated no-shows may affect future bookings.
+            </li>
+
+            <li>
+              IN+ FITNESS may modify class schedules when
+              necessary.
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!-- 07 -->
+
+        <section class="terms-block" id="accounts">
+
+          <span class="section-number">07</span>
+
+          <h2>
+            Member Accounts
+          </h2>
+
+          <p>
+            Members are responsible for keeping their
+            account information accurate and maintaining
+            the confidentiality of their login credentials.
+          </p>
+
+          <p>
+            You should notify IN+ FITNESS if you believe
+            your account has been accessed without your
+            authorization.
+          </p>
+
+        </section>
+
+
+        <!-- 08 -->
+
+        <section class="terms-block" id="cancellation">
+
+          <span class="section-number">08</span>
+
+          <h2>
+            Cancellation & Suspension
+          </h2>
+
+          <p>
+            Membership cancellation requests must follow
+            the cancellation procedure applicable to the
+            selected membership plan.
+          </p>
+
+          <p>
+            IN+ FITNESS reserves the right to suspend or
+            terminate membership access where there is
+            serious misconduct, misuse of facilities,
+            non-payment, or violation of these terms.
+          </p>
+
+        </section>
+
+
+        <!-- 09 -->
+
+        <section class="terms-block" id="liability">
+
+          <span class="section-number">09</span>
+
+          <h2>
+            Liability
+          </h2>
+
+          <p>
+            Fitness activities involve inherent risks,
+            including physical strain, injury, or other
+            health-related risks.
+          </p>
+
+          <p>
+            Members should use equipment responsibly and
+            follow trainer instructions. Nothing in these
+            terms is intended to exclude liability that
+            cannot legally be excluded under applicable law.
+          </p>
+
+        </section>
+
+
+        <!-- 10 -->
+
+        <section class="terms-block" id="privacy">
+
+          <span class="section-number">10</span>
+
+          <h2>
+            Privacy
+          </h2>
+
+          <p>
+            Personal information collected through our
+            website, registration process, membership
+            services, and member dashboard will be handled
+            according to our Privacy Policy.
+          </p>
+
+          <p>
+            We encourage members to review the Privacy Policy
+            to understand how their information may be
+            collected, used, and protected.
+          </p>
+
+        </section>
+
+
+        <!-- 11 -->
+
+        <section class="terms-block" id="changes">
+
+          <span class="section-number">11</span>
+
+          <h2>
+            Changes to These Terms
+          </h2>
+
+          <p>
+            IN+ FITNESS may update these Terms & Conditions
+            when necessary to reflect changes to our
+            services, operations, policies, or applicable
+            requirements.
+          </p>
+
+          <p>
+            Updated terms will be published on this page
+            with the revised effective or updated date.
+          </p>
+
+        </section>
+
+
+        <!-- 12 -->
+
+        <section class="terms-block" id="contact">
+
+          <span class="section-number">12</span>
+
+          <h2>
+            Contact Us
+          </h2>
+
+          <p>
+            If you have questions about these Terms &
+            Conditions, please contact the IN+ FITNESS team.
+          </p>
+
+        </section>
+
+
+        <!-- CONTACT BOX -->
+
+        <div class="terms-contact">
+
+          <h3>
+            Questions about our terms?
+          </h3>
+
+          <p>
+            Our team is available to help you understand
+            membership policies, bookings, and other
+            service-related information.
+          </p>
+
+          <a
+            href="contact.html"
+            class="terms-contact-link"
+          >
+            Contact IN+ FITNESS
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+
+        </div>
+
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer id="footer"></footer>
+
+
+  <!-- =====================================================
+       COMPONENTS
+       ===================================================== -->
+
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+
+    });
+  </script>
+
+</body>
+</html>

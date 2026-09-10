@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Membership | IN+ FITNESS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #07131F;
+      --bg-soft: #0B1A28;
+      --surface: #0E2030;
+      --surface-light: #132A3D;
+      --border: #20384B;
+
+      --blue: #4DA6FF;
+      --cyan: #38BDF8;
+      --blue-hover: #70B8FF;
+
+      --white: #F5FAFF;
+      --text: #C5D1DB;
+      --muted: #91A1AF;
+
+      --heading-font: "Space Grotesk", sans-serif;
+      --body-font: "Inter", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .membership-hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 150px 24px 100px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .membership-hero::before,
+    .membership-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .membership-hero::before {
+      width: 620px;
+      height: 620px;
+      top: -400px;
+      right: -180px;
+      background: rgba(56, 189, 248, 0.06);
+    }
+
+    .membership-hero::after {
+      width: 500px;
+      height: 500px;
+      bottom: -350px;
+      left: -200px;
+      background: rgba(77, 166, 255, 0.05);
+    }
+
+    .membership-hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--cyan);
+    }
+
+    .membership-hero h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(52px, 8vw, 100px);
+      line-height: 0.94;
+      letter-spacing: -4px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .membership-hero h1 span {
+      color: var(--blue);
+    }
+
+    .membership-hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* ================================
+       MEMBERSHIP PLANS
+    ================================= */
+
+    .plans-section {
+      padding: 110px 24px;
+    }
+
+    .section-heading {
+      max-width: 1200px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .plans-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 38px 32px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-card.featured {
+      background: var(--surface-light);
+      border-color: var(--blue);
+    }
+
+    .plan-tag {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      transform: translateY(-50%);
+      background: var(--blue);
+      color: var(--bg);
+      padding: 7px 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .plan-name {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .plan-card h3 {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .plan-description {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 68px;
+      margin-bottom: 28px;
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .price strong {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: 42px;
+      font-weight: 600;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 35px;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .plan-features svg {
+      width: 17px;
+      min-width: 17px;
+      height: 17px;
+      color: var(--cyan);
+      margin-top: 2px;
+    }
+
+    .plan-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 15px 20px;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .plan-button:hover {
+      background: var(--blue);
+      color: var(--bg);
+    }
+
+    .featured .plan-button {
+      background: var(--blue);
+      color: var(--bg);
+    }
+
+    .featured .plan-button:hover {
+      background: var(--blue-hover);
+      border-color: var(--blue-hover);
+    }
+
+    /* ================================
+       BENEFITS
+    ================================= */
+
+    .benefits-section {
+      padding: 110px 24px;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .benefits-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benefits-header {
+      max-width: 620px;
+      margin-bottom: 55px;
+    }
+
+    .benefits-header h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.1;
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .benefits-header h2 span {
+      color: var(--blue);
+    }
+
+    .benefits-header p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .benefit {
+      padding: 30px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      min-height: 220px;
+    }
+
+    .benefit-icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      margin-bottom: 28px;
+    }
+
+    .benefit-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .benefit h3 {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* ================================
+       MEMBERSHIP PROCESS
+    ================================= */
+
+    .process-section {
+      padding: 110px 24px;
+    }
+
+    .process-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      margin-top: 55px;
+    }
+
+    .process-step {
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .process-number {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .process-step h3 {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ================================
+       CTA
+    ================================= */
+
+    .membership-cta {
+      max-width: 1200px;
+      margin: 0 auto 110px;
+      padding: 65px 60px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .membership-cta h2 {
+      font-family: var(--heading-font);
+      color: var(--white);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .membership-cta p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 600px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 26px;
+      background: var(--blue);
+      color: var(--bg);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--blue-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 950px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .membership-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .membership-hero {
+        min-height: 62vh;
+        padding: 125px 20px 80px;
+      }
+
+      .membership-hero h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+      }
+
+      .plans-section,
+      .benefits-section,
+      .process-section {
+        padding: 80px 20px;
+      }
+
+      .benefits-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        gap: 35px;
+      }
+
+      .membership-cta {
+        margin: 0 20px 80px;
+        padding: 40px 25px;
+      }
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+
+  <section class="membership-hero">
+    <div class="membership-hero-content">
+      <div class="eyebrow">Train With Purpose</div>
+
+```
+  <h1>
+    YOUR FITNESS.<br>
+    <span>YOUR MEMBERSHIP.</span>
+  </h1>
+
+  <p>
+    Choose a membership that fits your training goals,
+    schedule, and lifestyle. Train consistently, progress
+    with confidence, and become stronger.
+  </p>
+</div>
+```
+
+  </section>
+
+  <!-- PLANS -->
+
+  <section class="plans-section">
+
+```
+<div class="section-heading">
+  <div class="eyebrow">Membership Plans</div>
+
+  <h2>Find the right way to train.</h2>
+
+  <p>
+    Flexible membership options designed around different
+    training needs and fitness goals.
+  </p>
+</div>
+
+<div class="plans-grid">
+
+  <!-- START -->
+  <article class="plan-card">
+    <div class="plan-name">Essential</div>
+
+    <h3>Start Strong</h3>
+
+    <p class="plan-description">
+      A simple and flexible option for building a
+      consistent fitness routine.
+    </p>
+
+    <div class="price">
+      <strong>₹999</strong>
+      <span>/ month</span>
+    </div>
+
+    <ul class="plan-features">
+      <li><i data-lucide="check"></i> Gym floor access</li>
+      <li><i data-lucide="check"></i> Basic fitness support</li>
+      <li><i data-lucide="check"></i> Flexible monthly plan</li>
+      <li><i data-lucide="check"></i> Member dashboard access</li>
+    </ul>
+
+    <a href="contact.html" class="plan-button">
+      Get Started
+      <i data-lucide="arrow-up-right"></i>
+    </a>
+  </article>
+
+  <!-- FEATURED -->
+  <article class="plan-card featured">
+    <div class="plan-tag">Most Popular</div>
+
+    <div class="plan-name">Performance</div>
+
+    <h3>Train Better</h3>
+
+    <p class="plan-description">
+      More support, more variety, and everything you need
+      for consistent progress.
+    </p>
+
+    <div class="price">
+      <strong>₹1,499</strong>
+      <span>/ month</span>
+    </div>
+
+    <ul class="plan-features">
+      <li><i data-lucide="check"></i> Full gym access</li>
+      <li><i data-lucide="check"></i> Group fitness classes</li>
+      <li><i data-lucide="check"></i> Progress tracking</li>
+      <li><i data-lucide="check"></i> Workout plan access</li>
+      <li><i data-lucide="check"></i> Member dashboard access</li>
+    </ul>
+
+    <a href="contact.html" class="plan-button">
+      Choose Performance
+      <i data-lucide="arrow-up-right"></i>
+    </a>
+  </article>
+
+  <!-- ELITE -->
+  <article class="plan-card">
+    <div class="plan-name">Elite</div>
+
+    <h3>Go Further</h3>
+
+    <p class="plan-description">
+      Personalized support for members who want focused
+      training and structured guidance.
+    </p>
+
+    <div class="price">
+      <strong>₹2,499</strong>
+      <span>/ month</span>
+    </div>
+
+    <ul class="plan-features">
+      <li><i data-lucide="check"></i> Everything in Performance</li>
+      <li><i data-lucide="check"></i> Personal training support</li>
+      <li><i data-lucide="check"></i> Customized workout plans</li>
+      <li><i data-lucide="check"></i> Priority class booking</li>
+      <li><i data-lucide="check"></i> Advanced progress guidance</li>
+    </ul>
+
+    <a href="contact.html" class="plan-button">
+      Explore Elite
+      <i data-lucide="arrow-up-right"></i>
+    </a>
+  </article>
+
+</div>
+```
+
+  </section>
+
+  <!-- BENEFITS -->
+
+  <section class="benefits-section">
+    <div class="benefits-container">
+
+```
+  <div class="benefits-header">
+    <div class="eyebrow">More Than Access</div>
+
+    <h2>
+      Everything you need to
+      <span>keep moving forward.</span>
+    </h2>
+
+    <p>
+      Your membership is designed to support a stronger,
+      more consistent approach to fitness.
+    </p>
+  </div>
+
+  <div class="benefits-grid">
+
+    <article class="benefit">
+      <div class="benefit-icon">
+        <i data-lucide="dumbbell"></i>
+      </div>
+      <h3>Modern Training</h3>
+      <p>
+        Train using quality equipment and a well-designed
+        environment built for focused workouts.
+      </p>
+    </article>
+
+    <article class="benefit">
+      <div class="benefit-icon">
+        <i data-lucide="users"></i>
+      </div>
+      <h3>Expert Guidance</h3>
+      <p>
+        Get support from trainers who help you understand,
+        improve, and progress with confidence.
+      </p>
+    </article>
+
+    <article class="benefit">
+      <div class="benefit-icon">
+        <i data-lucide="calendar-check"></i>
+      </div>
+      <h3>Easy Booking</h3>
+      <p>
+        View available sessions and manage your training
+        schedule through your member dashboard.
+      </p>
+    </article>
+
+    <article class="benefit">
+      <div class="benefit-icon">
+        <i data-lucide="chart-no-axes-combined"></i>
+      </div>
+      <h3>Track Progress</h3>
+      <p>
+        Stay connected with your attendance, workout plans,
+        upcoming sessions, and fitness journey.
+      </p>
+    </article>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="process-section">
+    <div class="process-container">
+
+```
+  <div class="section-heading">
+    <div class="eyebrow">Getting Started</div>
+    <h2>Three steps. One stronger you.</h2>
+  </div>
+
+  <div class="process-grid">
+
+    <article class="process-step">
+      <div class="process-number">01</div>
+      <h3>Choose Your Plan</h3>
+      <p>
+        Explore our membership options and choose the plan
+        that best matches your fitness goals and routine.
+      </p>
+    </article>
+
+    <article class="process-step">
+      <div class="process-number">02</div>
+      <h3>Connect With Us</h3>
+      <p>
+        Contact the IN+ FITNESS team to learn more about
+        membership availability and getting started.
+      </p>
+    </article>
+
+    <article class="process-step">
+      <div class="process-number">03</div>
+      <h3>Start Training</h3>
+      <p>
+        Begin your fitness journey, build consistency, and
+        keep progressing toward your goals.
+      </p>
+    </article>
+
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="membership-cta">
+
+```
+<div>
+  <h2>Ready to train with IN+ FITNESS?</h2>
+  <p>
+    Get in touch with our team and find the membership
+    option that works best for you.
+  </p>
+</div>
+
+<a href="contact.html" class="cta-button">
+  Contact Us
+  <i data-lucide="arrow-up-right"></i>
+</a>
+```
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <div id="footer"></div>
+
+  <script src="components.js"></script>
+
+  <script src="animations.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    });
+  </script>
+
+</body>
+</html>
