@@ -1155,6 +1155,10 @@ ul {
     transition: all 0.3s ease;
 }
 
+.footer-socials i {
+    font-size: 18px;
+}
+
 .footer-socials a:hover {
     border-color: var(--color-text);
 }

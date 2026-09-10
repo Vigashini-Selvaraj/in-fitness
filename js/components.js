@@ -85,12 +85,29 @@ function renderFooter() {
                         </a>
                         <h4 style="color: var(--color-accent); margin-top: 0.5rem; margin-bottom: 0;">Train. Move. Progress.</h4>
                         <p>A premium fitness experience dedicated to strength, performance, and building a supportive community.</p>
-                        <div class="footer-socials">
-                            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-                            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-                            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-                            <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
-                        </div>
+                        
+                            <div class="footer-socials">
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+</div>
+   
+
+
+
+                        
                     </div>
                     
                     <div>
@@ -107,12 +124,14 @@ function renderFooter() {
                     <div>
                         <h4>Support</h4>
                         <div class="footer-links">
-                            <a href="#">FAQ</a>
-                            <a href="#">Measurement Guide</a>
-                            <a href="#">Membership</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Terms & Conditions</a>
-                            <a href="contact.html">Contact Us</a>
+                           <div class="footer-links">
+    <a href="faq.html">FAQ</a>
+    <a href="measurement-guide.html">Measurement Guide</a>
+    <a href="membership.html">Membership</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="contact.html">Contact Us</a>
+</div>
                         </div>
                     </div>
 
