@@ -300,7 +300,6 @@ body.dashboard-body {
 .dash-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
 }
 
 .dash-table th,
@@ -494,7 +493,7 @@ body.dashboard-body {
 
     .grid-4,
     .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
@@ -503,7 +502,7 @@ body.dashboard-body {
     .grid-2,
     .grid-4,
     .grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 
     .dashboard-content {
@@ -586,3 +585,1214 @@ body.dashboard-body {
         margin-right: 0;
     }
 }
+/* =========================
+   MY SESSIONS - MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* Next Session */
+    #tab-sessions .dash-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Upcoming session cards */
+    #tab-sessions .dash-card > div {
+        flex-direction: column !important;
+    }
+
+    /* Session image */
+    #tab-sessions .dash-card > div > div:first-child {
+        flex: none !important;
+        width: 100% !important;
+        min-height: 220px !important;
+        height: 220px !important;
+        position: relative;
+    }
+
+    #tab-sessions .dash-card > div > div:first-child img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        position: absolute !important;
+        inset: 0 !important;
+    }
+
+    /* Session content */
+    #tab-sessions .dash-card > div > div:nth-child(2) {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1.25rem !important;
+    }
+
+    /* Session title + status */
+    #tab-sessions .dash-card h4 {
+        font-size: 1.25rem !important;
+    }
+
+    /* Date / time / coach / location */
+    #tab-sessions .dash-card > div > div:nth-child(2) > div {
+        flex-wrap: wrap !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Action buttons */
+    #tab-sessions .dash-card button,
+    #tab-sessions .dash-card .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Buttons container */
+    #tab-sessions .dash-card > div > div:nth-child(2) > div:last-child {
+        flex-direction: column !important;
+        width: 100%;
+        gap: 0.75rem !important;
+    }
+}/* =========================================
+   WORKOUT PLANS
+   ========================================= */
+
+.workout-header {
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.section-eyebrow {
+    display: block;
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.workout-main-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.workout-subtitle {
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.workout-header-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.workout-header-icon svg {
+    width: 22px;
+}
+
+
+/* ACTIVE PLAN */
+
+.workout-plan-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.active-plan {
+    border-top: 3px solid var(--color-accent);
+}
+
+.workout-plan-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.workout-plan-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+
+.active-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.workout-plan-info h3 {
+    font-size: 2rem;
+    margin: 0 0 0.75rem;
+}
+
+.workout-plan-description {
+    color: var(--color-text-secondary);
+    max-width: 620px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.workout-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.workout-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+}
+
+.workout-meta svg {
+    width: 16px;
+    color: var(--color-accent);
+}
+
+
+/* PROGRESS */
+
+.workout-progress {
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 5px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-right-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle span {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.progress-label {
+    margin-top: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: var(--color-text-secondary);
+}
+
+
+/* WEEKLY SCHEDULE */
+
+.workout-week {
+    border-top: 1px solid var(--color-border);
+    padding: 1.75rem 2rem;
+}
+
+.workout-week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.workout-week-header h4 {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.week-count {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 1px;
+}
+
+.workout-days {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.workout-day {
+    min-height: 90px;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.workout-day .day-number {
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 1px;
+}
+
+.day-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.day-content strong {
+    font-size: 0.85rem;
+}
+
+.day-content span {
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+}
+
+.workout-day > svg {
+    display: none;
+}
+
+.workout-day.completed {
+    border-color: rgba(77, 166, 255, 0.35);
+}
+
+.workout-day.completed > svg {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 16px;
+    color: var(--color-accent);
+}
+
+.workout-day.active {
+    border-color: var(--color-accent);
+    background: rgba(77, 166, 255, 0.06);
+}
+
+.workout-day.active > svg {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 16px;
+    color: var(--color-accent);
+}
+
+
+/* PLAN FOOTER */
+
+.workout-plan-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.trainer-note {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.trainer-note > svg {
+    width: 20px;
+    color: var(--color-accent);
+}
+
+.trainer-note span {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: var(--color-text-secondary);
+}
+
+.trainer-note p {
+    margin: 0.2rem 0 0;
+    font-size: 0.8rem;
+}
+
+.workout-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.workout-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.workout-actions svg {
+    width: 16px;
+}
+
+
+/* UPCOMING */
+
+.workout-upcoming {
+    margin-top: 1rem;
+}
+
+.upcoming-heading {
+    margin-bottom: 1rem;
+}
+
+.upcoming-heading h3 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.upcoming-plan-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    padding: 1.5rem;
+}
+
+.upcoming-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+}
+
+.upcoming-icon svg {
+    width: 22px;
+}
+
+.upcoming-info {
+    flex: 1;
+}
+
+.upcoming-title-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.upcoming-title-row h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.upcoming-info p {
+    margin: 0 0 0.75rem;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.upcoming-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.upcoming-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+}
+
+.upcoming-meta svg {
+    width: 14px;
+}
+
+.upcoming-badge {
+    color: var(--color-text-secondary);
+    border-color: var(--color-border);
+    background: transparent;
+}
+
+.upcoming-action .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.upcoming-action svg {
+    width: 15px;
+}/* =========================================
+   ATTENDANCE
+   ========================================= */
+
+.attendance-header {
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.attendance-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.attendance-subtitle {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.attendance-header-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.attendance-header-icon svg {
+    width: 21px;
+}
+
+
+/* OVERVIEW */
+
+.attendance-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.attendance-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.attendance-stat.primary-stat {
+    border-top: 2px solid var(--color-accent);
+}
+
+.attendance-stat-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.attendance-stat-icon svg {
+    width: 19px;
+}
+
+.attendance-stat span {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 1.3px;
+    margin-bottom: 0.2rem;
+}
+
+.attendance-stat strong {
+    display: block;
+    font-size: 1.7rem;
+    line-height: 1.2;
+}
+
+.attendance-stat small {
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+}
+
+
+/* MAIN LAYOUT */
+
+.attendance-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 1.5rem;
+}
+
+
+/* HISTORY */
+
+.attendance-history-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.attendance-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.attendance-card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.attendance-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.attendance-filter svg {
+    width: 14px;
+}
+
+
+/* LIST */
+
+.attendance-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.attendance-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.2s ease;
+}
+
+.attendance-item:hover {
+    background: rgba(77, 166, 255, 0.03);
+}
+
+
+/* DATE */
+
+.attendance-date {
+    width: 52px;
+    min-width: 52px;
+    height: 58px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance-date span {
+    color: var(--color-text-secondary);
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+}
+
+.attendance-date strong {
+    font-size: 1.25rem;
+    line-height: 1.1;
+}
+
+.attendance-date.today {
+    border-color: var(--color-accent);
+}
+
+.attendance-date.today span {
+    color: var(--color-accent);
+}
+
+
+/* INFO */
+
+.attendance-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.attendance-item-info h4 {
+    margin: 0 0 0.45rem;
+    font-size: 0.95rem;
+}
+
+.attendance-item-info > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.attendance-item-info span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-text-secondary);
+    font-size: 0.72rem;
+}
+
+.attendance-item-info svg {
+    width: 13px;
+}
+
+
+/* STATUS */
+
+.attendance-status {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.attendance-status svg {
+    width: 15px;
+}
+
+
+/* LOAD MORE */
+
+.attendance-load-more {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.attendance-load-more svg {
+    width: 15px;
+}
+
+
+/* CONSISTENCY */
+
+.consistency-card {
+    padding: 1.5rem;
+}
+
+.consistency-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.consistency-card > p {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.consistency-score {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.consistency-score strong {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.consistency-score span {
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    margin-top: 0.4rem;
+    letter-spacing: 1px;
+}
+
+.consistency-bar {
+    width: 100%;
+    height: 5px;
+    background: var(--color-border);
+    margin-bottom: 0.75rem;
+}
+
+.consistency-fill {
+    width: 92%;
+    height: 100%;
+    background: var(--color-accent);
+}
+
+.consistency-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+}
+
+
+/* STREAK */
+
+.attendance-streak {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.streak-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.streak-icon svg {
+    width: 18px;
+}
+
+.attendance-streak strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.attendance-streak span {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 0.7rem;
+    margin-top: 0.2rem;
+}
+/* =========================
+   WORKOUT PLANS - MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+    .workout-plan-top {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .workout-progress {
+        align-items: flex-start;
+    }
+
+    .workout-week {
+        padding: 1.5rem;
+    }
+
+    .workout-days {
+        grid-template-columns: 1fr;
+    }
+
+    .workout-plan-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .workout-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .workout-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .upcoming-plan-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .upcoming-action {
+        width: 100%;
+    }
+
+    .upcoming-action .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================
+   ATTENDANCE - MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+    .attendance-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .attendance-item-info {
+        width: 100%;
+    }
+
+    .attendance-item-info > div {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* =========================
+   MY SESSIONS REDESIGN
+   ========================= */
+
+.sessions-hero-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    border: 1px solid var(--color-border);
+}
+
+.sessions-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.sessions-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+    z-index: 2;
+}
+
+.sessions-hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.sessions-hero-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    background: rgba(204,255,0,0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(204,255,0,0.2);
+}
+
+.sessions-hero-content h3 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.sessions-hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.sessions-hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.sessions-hero-meta svg {
+    color: var(--color-accent);
+    width: 18px;
+}
+
+.sessions-countdown {
+    text-align: right;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.sessions-countdown span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.sessions-countdown strong {
+    font-size: 2rem;
+    color: var(--color-accent);
+    font-family: 'Sora', sans-serif;
+    line-height: 1;
+}
+
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.session-premium-card {
+    display: flex;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.session-premium-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.session-premium-img {
+    width: 280px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.session-premium-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.session-premium-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.session-premium-details {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.session-premium-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.session-premium-header h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.session-premium-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.session-premium-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.session-premium-meta svg {
+    width: 16px;
+}
+
+.session-premium-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    gap: 1rem;
+    transition: background 0.2s ease;
+}
+
+.history-card:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.history-card-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.history-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-icon.completed {
+    background: rgba(0,255,100,0.05);
+    color: var(--color-accent);
+}
+
+.history-icon.cancelled {
+    background: rgba(255,50,50,0.05);
+    color: #ff3232;
+}
+
+.history-details h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.15rem;
+}
+
+.history-details.cancelled h4 {
+    color: var(--color-text-secondary);
+}
+
+.history-meta {
+    display: flex;
+    gap: 1.25rem;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+}
+
+.history-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.history-card-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* My Sessions - Mobile Override */
+@media (max-width: 768px) {
+    .sessions-hero-card {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .sessions-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .sessions-countdown {
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .session-premium-card {
+        flex-direction: column;
+    }
+
+    .session-premium-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .session-premium-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .session-premium-actions {
+        flex-direction: column;
+    }
+
+    .session-premium-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .history-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .history-card-right {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+}
+
+

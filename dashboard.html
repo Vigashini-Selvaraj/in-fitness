@@ -153,9 +153,9 @@
                                                 data-lucide="map-pin" style="width:16px;"></i> Main Studio</span>
                                     </div>
                                 </div>
-                                <div style="display:flex; gap:1rem;">
-                                    <button class="btn btn-outline" style="padding:0.75rem 1rem;">Reschedule</button>
-                                    <button class="btn btn-primary" style="padding:0.75rem 1rem;"
+                                <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                                    <button class="btn btn-outline" style="padding:0.75rem 1rem; flex:1;">Reschedule</button>
+                                    <button class="btn btn-primary" style="padding:0.75rem 1rem; flex:1;"
                                         onclick="document.querySelector('[data-tab=tab-sessions]').click()">View
                                         Session</button>
                                 </div>
@@ -165,7 +165,7 @@
                         <!-- 6. Weekly Training Activity -->
                         <div class="dash-card">
                             <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Weekly Training Activity</h3>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:2rem;">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
                                 <div><strong style="display:block; font-size:1.25rem;">3</strong><span
                                         style="color:var(--color-text-secondary); font-size:0.875rem;">Days
                                         trained</span></div>
@@ -276,7 +276,7 @@
                         <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Recent Activity</h3>
                         <div style="display:flex; flex-direction:column; gap:1rem;">
                             <div
-                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border); flex-wrap:wrap; gap:0.5rem;">
                                 <div style="display:flex; align-items:center; gap:1rem;">
                                     <div
                                         style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
@@ -290,7 +290,7 @@
                                 <span style="font-size:0.875rem; color:var(--color-text-secondary);">2h ago</span>
                             </div>
                             <div
-                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border); flex-wrap:wrap; gap:0.5rem;">
                                 <div style="display:flex; align-items:center; gap:1rem;">
                                     <div
                                         style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
@@ -304,7 +304,7 @@
                                 <span style="font-size:0.875rem; color:var(--color-text-secondary);">1d ago</span>
                             </div>
                             <div
-                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+                                style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border); flex-wrap:wrap; gap:0.5rem;">
                                 <div style="display:flex; align-items:center; gap:1rem;">
                                     <div
                                         style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
@@ -317,7 +317,7 @@
                                 </div>
                                 <span style="font-size:0.875rem; color:var(--color-text-secondary);">3d ago</span>
                             </div>
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
                                 <div style="display:flex; align-items:center; gap:1rem;">
                                     <div
                                         style="width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
@@ -405,150 +405,99 @@
                 <!-- 3. Upcoming Sessions Pane -->
                 <div id="sessions-upcoming" class="dash-sub-pane active">
 
-                    <!-- 4. Next Session Highlight -->
-                    <h3
-                        style="font-size:1rem; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;">
-                        NEXT SESSION</h3>
-                    <div class="dash-card"
-                        style="border-left: 4px solid var(--color-accent); margin-bottom: 3rem; background:linear-gradient(145deg, var(--color-surface) 0%, rgba(204, 255, 0, 0.05) 100%);">
-                        <div
-                            style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+                    <div class="sessions-hero-card">
+                        <img src="assets/images/services_hero.jpg" alt="Gym" class="sessions-hero-bg">
+                        <div class="sessions-hero-overlay"></div>
+                        <div class="sessions-hero-content">
                             <div>
-                                <h4 style="font-size:1.75rem; margin:0 0 0.5rem 0;">Strength Foundations</h4>
-                                <div
-                                    style="display:flex; gap:1.5rem; color:var(--color-text-secondary); font-size:1rem; flex-wrap:wrap;">
-                                    <span
-                                        style="display:flex; align-items:center; gap:0.5rem; color:var(--color-text); font-weight:600;"><i
-                                            data-lucide="calendar" style="width:18px;"></i> Today</span>
-                                    <span
-                                        style="display:flex; align-items:center; gap:0.5rem; color:var(--color-text); font-weight:600;"><i
-                                            data-lucide="clock" style="width:18px;"></i> 06:30 PM (60m)</span>
-                                    <span style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="user"
-                                            style="width:18px;"></i> Coach Alex</span>
-                                    <span style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="map-pin"
-                                            style="width:18px;"></i> Main Studio</span>
+                                <span class="sessions-hero-label">NEXT SESSION</span>
+                                <h3>Strength Foundations</h3>
+                                <div class="sessions-hero-meta">
+                                    <span><i data-lucide="calendar"></i> Today</span>
+                                    <span><i data-lucide="clock"></i> 06:30 PM (60m)</span>
+                                    <span><i data-lucide="user"></i> Coach Alex</span>
+                                    <span><i data-lucide="map-pin"></i> Main Studio</span>
                                 </div>
                             </div>
-                            <div style="display:flex; gap:1rem; align-items:center;">
-                                <div style="text-align:right; margin-right:1rem;">
-                                    <span
-                                        style="display:block; font-size:0.875rem; color:var(--color-text-secondary); text-transform:uppercase;">Starts
-                                        in</span>
-                                    <strong
-                                        style="font-size:1.5rem; color:var(--color-accent); font-family:'Sora', sans-serif;">04:15:22</strong>
-                                </div>
-                                <button class="btn btn-primary" style="padding:1rem 1.5rem;">View Session</button>
+                            <div class="sessions-countdown">
+                                <span>STARTS IN</span>
+                                <strong>04:15:22</strong>
                             </div>
                         </div>
                     </div>
 
-                    <h3
-                        style="font-size:1rem; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;">
-                        UPCOMING</h3>
-                    <div style="display:flex; flex-direction:column; gap:1.5rem;">
-
+                    <h3 style="font-size:1rem; color:var(--color-text-secondary); text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;">UPCOMING</h3>
+                    <div class="sessions-list">
                         <!-- Premium Session Card -->
-                        <div class="dash-card" style="padding:0; overflow:hidden; display:flex; flex-direction:column;">
-                            <div style="display:flex; flex-wrap:wrap;">
-                                <div style="flex:0 0 250px; min-height:200px; position:relative;">
-                                    <img src="assets/images/team_rahul.jpg" alt="Agility"
-                                        style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
-                                    <div style="position:absolute; top:1rem; left:1rem;"><span class="status-badge"
-                                            style="background:rgba(0,0,0,0.8); color:white; border:1px solid rgba(255,255,255,0.2);">Performance</span>
+                        <div class="session-premium-card">
+                            <div class="session-premium-img">
+                                <img src="assets/images/team_rahul.jpg" alt="Agility">
+                                <span class="session-premium-badge">Performance</span>
+                            </div>
+                            <div class="session-premium-details">
+                                <div>
+                                    <div class="session-premium-header">
+                                        <h4>Agility & Performance</h4>
+                                        <span class="status-badge status-upcoming">Confirmed</span>
+                                    </div>
+                                    <div class="session-premium-meta">
+                                        <span><i data-lucide="calendar"></i> Nov 12, 2026</span>
+                                        <span><i data-lucide="clock"></i> 06:00 AM (60m)</span>
+                                        <span><i data-lucide="user"></i> Coach Rahul</span>
+                                        <span><i data-lucide="map-pin"></i> Turf Area</span>
                                     </div>
                                 </div>
-                                <div
-                                    style="flex:1; padding:2rem; display:flex; flex-direction:column; justify-content:space-between;">
-                                    <div>
-                                        <div
-                                            style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
-                                            <h4 style="font-size:1.5rem; margin:0;">Agility & Performance</h4>
-                                            <span class="status-badge status-upcoming">Confirmed</span>
-                                        </div>
-                                        <div
-                                            style="display:flex; gap:1.5rem; color:var(--color-text-secondary); font-size:0.875rem; flex-wrap:wrap; margin-bottom:1.5rem;">
-                                            <span style="display:flex; align-items:center; gap:0.25rem;"><i
-                                                    data-lucide="calendar" style="width:16px;"></i> Nov 12, 2026</span>
-                                            <span style="display:flex; align-items:center; gap:0.25rem;"><i
-                                                    data-lucide="clock" style="width:16px;"></i> 06:00 AM (60m)</span>
-                                            <span style="display:flex; align-items:center; gap:0.25rem;"><i
-                                                    data-lucide="user" style="width:16px;"></i> Coach Rahul</span>
-                                            <span style="display:flex; align-items:center; gap:0.25rem;"><i
-                                                    data-lucide="map-pin" style="width:16px;"></i> Turf Area</span>
-                                        </div>
-                                    </div>
-                                    <div style="display:flex; gap:1rem; justify-content:flex-end;">
-                                        <button class="btn btn-outline"
-                                            style="border-color:rgba(255,50,50,0.3); color:#ff3232; padding:0.5rem 1rem;">Cancel</button>
-                                        <button class="btn btn-outline" style="padding:0.5rem 1rem;">Reschedule</button>
-                                        <button class="btn btn-outline"
-                                            style="border-color:var(--color-border); color:var(--color-text); padding:0.5rem 1rem;">View
-                                            Details</button>
-                                    </div>
+                                <div class="session-premium-actions">
+                                    <button class="btn btn-outline" style="border-color:rgba(255,50,50,0.3); color:#ff3232;">Cancel</button>
+                                    <button class="btn btn-outline">Reschedule</button>
+                                    <button class="btn btn-outline" style="border-color:var(--color-border); color:var(--color-text);">View Details</button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- 5. Completed Sessions Pane -->
                 <div id="sessions-completed" class="dash-sub-pane">
-                    <div style="display:flex; flex-direction:column; gap:1rem;">
-
-                        <div class="dash-card"
-                            style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-                            <div style="display:flex; gap:1.5rem; align-items:center;">
-                                <div
-                                    style="width:48px; height:48px; border-radius:8px; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
-                                    <i data-lucide="check-circle" style="color:var(--color-accent); width:24px;"></i>
+                    <div class="sessions-list">
+                        
+                        <div class="history-card">
+                            <div class="history-card-left">
+                                <div class="history-icon completed">
+                                    <i data-lucide="check-circle"></i>
                                 </div>
-                                <div>
-                                    <h4 style="margin:0 0 0.25rem 0; font-size:1.1rem;">Mobility & Recovery</h4>
-                                    <div
-                                        style="display:flex; gap:1rem; color:var(--color-text-secondary); font-size:0.875rem;">
-                                        <span><i data-lucide="calendar" style="width:14px; vertical-align:middle;"></i>
-                                            Nov 08, 2026</span>
-                                        <span><i data-lucide="user" style="width:14px; vertical-align:middle;"></i>
-                                            Coach Priya</span>
+                                <div class="history-details">
+                                    <h4>Mobility & Recovery</h4>
+                                    <div class="history-meta">
+                                        <span><i data-lucide="calendar"></i> Nov 08, 2026</span>
+                                        <span><i data-lucide="user"></i> Coach Priya</span>
                                         <span>45m</span>
                                     </div>
                                 </div>
                             </div>
-                            <div style="display:flex; align-items:center; gap:1.5rem;">
-                                <span class="status-badge"
-                                    style="background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);">Completed</span>
-                                <a href="#"
-                                    style="color:var(--color-accent); font-weight:600; font-size:0.875rem; text-decoration:none;">View
-                                    Details</a>
+                            <div class="history-card-right">
+                                <span class="status-badge" style="background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);">Completed</span>
+                                <a href="#" style="color:var(--color-accent); font-weight:600; font-size:0.875rem; text-decoration:none;">View Details</a>
                             </div>
                         </div>
 
-                        <div class="dash-card"
-                            style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-                            <div style="display:flex; gap:1.5rem; align-items:center;">
-                                <div
-                                    style="width:48px; height:48px; border-radius:8px; background:rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center;">
-                                    <i data-lucide="check-circle" style="color:var(--color-accent); width:24px;"></i>
+                        <div class="history-card">
+                            <div class="history-card-left">
+                                <div class="history-icon completed">
+                                    <i data-lucide="check-circle"></i>
                                 </div>
-                                <div>
-                                    <h4 style="margin:0 0 0.25rem 0; font-size:1.1rem;">Strength Foundations</h4>
-                                    <div
-                                        style="display:flex; gap:1rem; color:var(--color-text-secondary); font-size:0.875rem;">
-                                        <span><i data-lucide="calendar" style="width:14px; vertical-align:middle;"></i>
-                                            Nov 01, 2026</span>
-                                        <span><i data-lucide="user" style="width:14px; vertical-align:middle;"></i>
-                                            Coach Alex</span>
+                                <div class="history-details">
+                                    <h4>Strength Foundations</h4>
+                                    <div class="history-meta">
+                                        <span><i data-lucide="calendar"></i> Nov 01, 2026</span>
+                                        <span><i data-lucide="user"></i> Coach Alex</span>
                                         <span>60m</span>
                                     </div>
                                 </div>
                             </div>
-                            <div style="display:flex; align-items:center; gap:1.5rem;">
-                                <span class="status-badge"
-                                    style="background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);">Completed</span>
-                                <a href="#"
-                                    style="color:var(--color-accent); font-weight:600; font-size:0.875rem; text-decoration:none;">View
-                                    Details</a>
+                            <div class="history-card-right">
+                                <span class="status-badge" style="background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);">Completed</span>
+                                <a href="#" style="color:var(--color-accent); font-weight:600; font-size:0.875rem; text-decoration:none;">View Details</a>
                             </div>
                         </div>
 
@@ -557,46 +506,28 @@
 
                 <!-- 6. Cancelled Sessions Pane -->
                 <div id="sessions-cancelled" class="dash-sub-pane">
-                    <div style="display:flex; flex-direction:column; gap:1rem;">
-
-                        <div class="dash-card"
-                            style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; opacity:0.8;">
-                            <div style="display:flex; gap:1.5rem; align-items:center;">
-                                <div
-                                    style="width:48px; height:48px; border-radius:8px; background:rgba(255,50,50,0.05); display:flex; align-items:center; justify-content:center;">
-                                    <i data-lucide="x-circle" style="color:#ff3232; width:24px;"></i></div>
-                                <div>
-                                    <h4
-                                        style="margin:0 0 0.25rem 0; font-size:1.1rem; color:var(--color-text-secondary);">
-                                        Group Fitness</h4>
-                                    <div
-                                        style="display:flex; gap:1rem; color:var(--color-text-secondary); font-size:0.875rem;">
-                                        <span style="text-decoration:line-through;"><i data-lucide="calendar"
-                                                style="width:14px; vertical-align:middle;"></i> Nov 05, 2026</span>
-                                        <span><i data-lucide="user" style="width:14px; vertical-align:middle;"></i>
-                                            Coach Ananya</span>
+                    <div class="sessions-list">
+                        
+                        <div class="history-card" style="opacity: 0.8;">
+                            <div class="history-card-left">
+                                <div class="history-icon cancelled">
+                                    <i data-lucide="x-circle"></i>
+                                </div>
+                                <div class="history-details cancelled">
+                                    <h4>Group Fitness</h4>
+                                    <div class="history-meta">
+                                        <span style="text-decoration:line-through;"><i data-lucide="calendar"></i> Nov 05, 2026</span>
+                                        <span><i data-lucide="user"></i> Coach Ananya</span>
                                     </div>
                                 </div>
                             </div>
-                            <div style="display:flex; align-items:center; gap:1.5rem;">
+                            <div class="history-card-right">
                                 <span class="status-badge status-cancelled">Cancelled</span>
-                                <button class="btn btn-outline"
-                                    style="padding:0.5rem 1rem; border-color:var(--color-border); color:var(--color-text);"
-                                    onclick="document.querySelector('[data-tab=tab-book]').click()">Book Again</button>
+                                <button class="btn btn-outline" style="border-color:var(--color-border); color:var(--color-text);" onclick="document.querySelector('[data-tab=tab-book]').click()">Book Again</button>
                             </div>
                         </div>
 
                     </div>
-
-                    <!-- 7. Empty State Example (Hidden normally) -->
-                    <!-- 
-                    <div style="text-align:center; padding:4rem 2rem; border:1px dashed var(--color-border); border-radius:12px; margin-top:2rem;">
-                        <i data-lucide="calendar-x" style="width:48px; height:48px; color:var(--color-text-secondary); margin-bottom:1rem;"></i>
-                        <h4 style="font-size:1.25rem; margin-bottom:0.5rem;">NO CANCELLED SESSIONS</h4>
-                        <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">You don't have any cancelled sessions yet.</p>
-                        <button class="btn btn-primary" onclick="document.querySelector('[data-tab=tab-book]').click()">Book a Session</button>
-                    </div>
-                    -->
                 </div>
 
             </div>
@@ -610,31 +541,17 @@
                         schedule your next training session.</p>
 
                     <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
-                        <div style="flex:1; min-width:250px; position:relative;">
+                        <div style="flex:1; width:100%; position:relative;">
                             <i data-lucide="search"
                                 style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--color-text-secondary); width:20px;"></i>
                             <input type="text" placeholder="Search sessions, trainers, or keywords..."
                                 style="width:100%; padding:1rem 1rem 1rem 3rem; background:rgba(255,255,255,0.02); border:1px solid var(--color-border); border-radius:8px; color:var(--color-text); font-family:inherit;">
                         </div>
-                        <div style="display:flex; gap:0.5rem; overflow-x:auto; padding-bottom:0.5rem;">
-                            <button class="btn btn-primary"
-                                style="padding:0.75rem 1.5rem; border-radius:20px; white-space:nowrap;">All
-                                Sessions</button>
-                            <button class="btn btn-outline"
-                                style="padding:0.75rem 1.5rem; border-radius:20px; white-space:nowrap; border-color:var(--color-border); color:var(--color-text-secondary);">Strength</button>
-                            <button class="btn btn-outline"
-                                style="padding:0.75rem 1.5rem; border-radius:20px; white-space:nowrap; border-color:var(--color-border); color:var(--color-text-secondary);">Recovery</button>
-                            <button class="btn btn-outline"
-                                style="padding:0.75rem 1.5rem; border-radius:20px; white-space:nowrap; border-color:var(--color-border); color:var(--color-text-secondary);">Group</button>
-                            <button class="btn btn-outline"
-                                style="padding:0.75rem 1.5rem; border-radius:20px; white-space:nowrap; border-color:var(--color-border); color:var(--color-text-secondary);">Personal
-                                Training</button>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Interactive Booking Cards -->
-                <div class="grid-2">
+                <div class="grid-3">
 
                     <!-- Booking Card 1 -->
                     <div class="dash-card dash-booking-card"
@@ -837,7 +754,7 @@
                         style="border: 2px solid var(--color-accent); background: linear-gradient(145deg, var(--color-surface) 0%, rgba(204, 255, 0, 0.05) 100%); display:flex; flex-direction:column; justify-content:space-between;">
                         <div>
                             <div
-                                style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2rem;">
+                                style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;">
                                 <div>
                                     <span class="status-badge"
                                         style="background:var(--color-accent); color:#000; margin-bottom:0.5rem;">ACTIVE
@@ -870,7 +787,7 @@
                         </div>
 
                         <div
-                            style="border-top:1px solid var(--color-border); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                            style="border-top:1px solid var(--color-border); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
                             <div>
                                 <p style="margin:0 0 0.5rem 0; font-size:0.875rem; color:var(--color-text-secondary);">
                                     Next billing date: <strong style="color:var(--color-text);">Nov 24, 2026</strong>
@@ -997,77 +914,83 @@
                 </div>
 
                 <div class="grid-2">
-                    <div class="dash-card">
-                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Metrics Breakdown</h3>
+                    <div class="dash-card" style="background: linear-gradient(145deg, var(--color-surface) 0%, rgba(204, 255, 0, 0.05) 100%); border: 1px solid rgba(204, 255, 0, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <h3 class="dash-card-title" style="margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="bar-chart-2" style="color:var(--color-accent);"></i> Metrics Breakdown</h3>
 
-                        <div style="margin-bottom:1.5rem;">
+                        <div style="margin-bottom:1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
                             <div
-                                style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
-                                <span>Strength</span>
-                                <span style="color:var(--color-accent);">Advanced</span>
+                                style="display:flex; justify-content:space-between; margin-bottom:0.75rem; font-size:0.875rem;">
+                                <span style="font-weight: 600;">Strength</span>
+                                <span style="color:var(--color-accent); font-weight: 700;">Advanced</span>
                             </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar-fill" style="width:85%;"></div>
+                            <div class="progress-bar-container" style="background: rgba(255,255,255,0.1); height: 8px;">
+                                <div class="progress-bar-fill" style="width:85%; background: linear-gradient(90deg, #ccff00, #aadd00); box-shadow: 0 0 10px rgba(204,255,0,0.5);"></div>
                             </div>
                         </div>
-                        <div style="margin-bottom:1.5rem;">
+                        <div style="margin-bottom:1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
                             <div
-                                style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
-                                <span>Mobility</span>
-                                <span style="color:var(--color-text-secondary);">Intermediate</span>
+                                style="display:flex; justify-content:space-between; margin-bottom:0.75rem; font-size:0.875rem;">
+                                <span style="font-weight: 600;">Mobility</span>
+                                <span style="color:#0096ff; font-weight: 700;">Intermediate</span>
                             </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar-fill" style="width:60%; background:#0096ff;"></div>
+                            <div class="progress-bar-container" style="background: rgba(255,255,255,0.1); height: 8px;">
+                                <div class="progress-bar-fill" style="width:60%; background: linear-gradient(90deg, #0096ff, #0077cc); box-shadow: 0 0 10px rgba(0,150,255,0.5);"></div>
                             </div>
                         </div>
-                        <div style="margin-bottom:1.5rem;">
+                        <div style="margin-bottom:1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
                             <div
-                                style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
-                                <span>Conditioning</span>
-                                <span style="color:var(--color-accent);">Advanced</span>
+                                style="display:flex; justify-content:space-between; margin-bottom:0.75rem; font-size:0.875rem;">
+                                <span style="font-weight: 600;">Conditioning</span>
+                                <span style="color:var(--color-accent); font-weight: 700;">Advanced</span>
                             </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar-fill" style="width:90%;"></div>
+                            <div class="progress-bar-container" style="background: rgba(255,255,255,0.1); height: 8px;">
+                                <div class="progress-bar-fill" style="width:90%; background: linear-gradient(90deg, #ccff00, #aadd00); box-shadow: 0 0 10px rgba(204,255,0,0.5);"></div>
                             </div>
                         </div>
-                        <div style="margin-bottom:1.5rem;">
+                        <div style="margin-bottom:1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
                             <div
-                                style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
-                                <span>Power</span>
-                                <span style="color:var(--color-text-secondary);">Intermediate</span>
+                                style="display:flex; justify-content:space-between; margin-bottom:0.75rem; font-size:0.875rem;">
+                                <span style="font-weight: 600;">Power</span>
+                                <span style="color:#ff9900; font-weight: 700;">Intermediate</span>
                             </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar-fill" style="width:50%; background:#ff9900;"></div>
+                            <div class="progress-bar-container" style="background: rgba(255,255,255,0.1); height: 8px;">
+                                <div class="progress-bar-fill" style="width:50%; background: linear-gradient(90deg, #ff9900, #cc7a00); box-shadow: 0 0 10px rgba(255,153,0,0.5);"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dash-card">
-                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Recent Achievements</h3>
-                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                    <div class="dash-card" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1);">
+                        <h3 class="dash-card-title" style="margin-bottom:2rem; display:flex; align-items:center; gap:0.5rem;"><i data-lucide="star" style="color:#ff9900;"></i> Recent Achievements</h3>
+                        <div style="display:flex; flex-direction:column; gap:1.5rem;">
                             <div
-                                style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,255,255,0.02); border-radius:8px; border:1px solid var(--color-border);">
-                                <i data-lucide="award" style="color:var(--color-accent); width:24px; height:24px;"></i>
+                                style="display:flex; gap:1.5rem; align-items:center; padding:1.5rem; background:rgba(0,0,0,0.3); border-radius:12px; border-left: 4px solid var(--color-accent); transition: transform 0.2s;">
+                                <div style="background: rgba(204,255,0,0.1); padding: 1rem; border-radius: 50%;">
+                                    <i data-lucide="award" style="color:var(--color-accent); width:28px; height:28px;"></i>
+                                </div>
                                 <div>
-                                    <strong style="display:block;">Deadlift 100kg</strong>
+                                    <strong style="display:block; font-size: 1.1rem; margin-bottom: 0.25rem;">Deadlift 100kg</strong>
                                     <span style="font-size:0.875rem; color:var(--color-text-secondary);">Oct 28,
                                         2026</span>
                                 </div>
                             </div>
                             <div
-                                style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,255,255,0.02); border-radius:8px; border:1px solid var(--color-border);">
-                                <i data-lucide="zap" style="color:var(--color-accent); width:24px; height:24px;"></i>
+                                style="display:flex; gap:1.5rem; align-items:center; padding:1.5rem; background:rgba(0,0,0,0.3); border-radius:12px; border-left: 4px solid #0096ff; transition: transform 0.2s;">
+                                <div style="background: rgba(0,150,255,0.1); padding: 1rem; border-radius: 50%;">
+                                    <i data-lucide="zap" style="color:#0096ff; width:28px; height:28px;"></i>
+                                </div>
                                 <div>
-                                    <strong style="display:block;">30-Day Streak</strong>
+                                    <strong style="display:block; font-size: 1.1rem; margin-bottom: 0.25rem;">30-Day Streak</strong>
                                     <span style="font-size:0.875rem; color:var(--color-text-secondary);">Oct 15,
                                         2026</span>
                                 </div>
                             </div>
                             <div
-                                style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,255,255,0.02); border-radius:8px; border:1px solid var(--color-border);">
-                                <i data-lucide="award" style="color:var(--color-accent); width:24px; height:24px;"></i>
+                                style="display:flex; gap:1.5rem; align-items:center; padding:1.5rem; background:rgba(0,0,0,0.3); border-radius:12px; border-left: 4px solid #ff9900; transition: transform 0.2s;">
+                                <div style="background: rgba(255,153,0,0.1); padding: 1rem; border-radius: 50%;">
+                                    <i data-lucide="award" style="color:#ff9900; width:28px; height:28px;"></i>
+                                </div>
                                 <div>
-                                    <strong style="display:block;">First Unassisted Pull-up</strong>
+                                    <strong style="display:block; font-size: 1.1rem; margin-bottom: 0.25rem;">First Unassisted Pull-up</strong>
                                     <span style="font-size:0.875rem; color:var(--color-text-secondary);">Sep 10,
                                         2026</span>
                                 </div>
@@ -1091,7 +1014,7 @@
                         style="padding:0; overflow:hidden; border:1px solid var(--color-border); background:var(--color-surface); display:flex; flex-direction:column;">
                         <div
                             style="display:flex; padding:1.5rem; border-bottom:1px solid var(--color-border); gap:1.5rem; align-items:center;">
-                            <img src="assets/images/team_alex.jpg" alt="Alex"
+                            <img src="assets/images/team_arjun.jpg" alt="Alex"
                                 style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:3px solid var(--color-border);">
                             <div>
                                 <h3 style="margin:0 0 0.5rem 0; font-size:1.5rem;">Alex Chen</h3>
@@ -1338,74 +1261,491 @@
 
 
             <!-- 8. ATTENDANCE TAB -->
-            <div id="tab-attendance" class="tab-pane">
-                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
-                    <div>
-                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-bottom:0.5rem;">ATTENDANCE HISTORY</h2>
-                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Track your gym visits and class attendances.</p>
-                    </div>
+<div id="tab-attendance" class="tab-pane">
+
+    <!-- Header -->
+    <div class="dash-card-header attendance-header">
+        <div>
+            <span class="section-eyebrow">YOUR ACTIVITY</span>
+            <h2 class="dash-card-title attendance-title">ATTENDANCE HISTORY</h2>
+            <p class="attendance-subtitle">
+                Track your gym visits, class attendance, and training consistency.
+            </p>
+        </div>
+
+        <div class="attendance-header-icon">
+            <i data-lucide="calendar-check"></i>
+        </div>
+    </div>
+
+
+    <!-- Attendance Overview -->
+    <div class="attendance-overview">
+
+        <div class="attendance-stat primary-stat">
+            <div class="attendance-stat-icon">
+                <i data-lucide="calendar-check"></i>
+            </div>
+
+            <div>
+                <span>CLASSES ATTENDED</span>
+                <strong>12</strong>
+                <small>+3 this month</small>
+            </div>
+        </div>
+
+
+        <div class="attendance-stat">
+            <div class="attendance-stat-icon">
+                <i data-lucide="dumbbell"></i>
+            </div>
+
+            <div>
+                <span>OPEN GYM VISITS</span>
+                <strong>5</strong>
+                <small>This month</small>
+            </div>
+        </div>
+
+
+        <div class="attendance-stat">
+            <div class="attendance-stat-icon">
+                <i data-lucide="trending-up"></i>
+            </div>
+
+            <div>
+                <span>CONSISTENCY SCORE</span>
+                <strong>92%</strong>
+                <small>Excellent consistency</small>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Attendance Content -->
+    <div class="attendance-layout">
+
+        <!-- Recent Check-ins -->
+        <div class="dash-card attendance-history-card">
+
+            <div class="attendance-card-header">
+                <div>
+                    <span class="section-eyebrow">ACTIVITY LOG</span>
+                    <h3>Recent Check-ins</h3>
                 </div>
-                <div class="dash-card">
-                    <div class="dash-table-container">
-                        <table class="dash-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Check-in Time</th>
-                                    <th>Session Type</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Today</td>
-                                    <td>06:15 AM</td>
-                                    <td>Strength Foundations</td>
-                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Attended</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Nov 08, 2026</td>
-                                    <td>05:45 PM</td>
-                                    <td>Mobility & Recovery</td>
-                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Attended</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Nov 06, 2026</td>
-                                    <td>06:00 AM</td>
-                                    <td>Open Gym</td>
-                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Attended</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                <button class="attendance-filter">
+                    <i data-lucide="filter"></i>
+                    Filter
+                </button>
+            </div>
+
+
+            <div class="attendance-list">
+
+                <!-- Check-in 1 -->
+                <div class="attendance-item">
+
+                    <div class="attendance-date today">
+                        <span>TODAY</span>
+                        <strong>10</strong>
+                        <small>SEP</small>
                     </div>
+
+                    <div class="attendance-item-info">
+                        <h4>Strength Foundations</h4>
+
+                        <div>
+                            <span>
+                                <i data-lucide="clock"></i>
+                                06:15 AM
+                            </span>
+
+                            <span>
+                                <i data-lucide="check-circle"></i>
+                                Checked in
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="attendance-status">
+                        <i data-lucide="check"></i>
+                        Present
+                    </div>
+
+                </div>
+
+
+                <!-- Check-in 2 -->
+                <div class="attendance-item">
+
+                    <div class="attendance-date">
+                        <span>NOV</span>
+                        <strong>08</strong>
+                    </div>
+
+                    <div class="attendance-item-info">
+                        <h4>Mobility & Recovery</h4>
+
+                        <div>
+                            <span>
+                                <i data-lucide="clock"></i>
+                                05:45 PM
+                            </span>
+
+                            <span>
+                                <i data-lucide="check-circle"></i>
+                                Checked in
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="attendance-status">
+                        <i data-lucide="check"></i>
+                        Present
+                    </div>
+
+                </div>
+
+
+                <!-- Check-in 3 -->
+                <div class="attendance-item">
+
+                    <div class="attendance-date">
+                        <span>NOV</span>
+                        <strong>06</strong>
+                    </div>
+
+                    <div class="attendance-item-info">
+                        <h4>Open Gym</h4>
+
+                        <div>
+                            <span>
+                                <i data-lucide="clock"></i>
+                                06:00 AM
+                            </span>
+
+                            <span>
+                                <i data-lucide="check-circle"></i>
+                                Checked in
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="attendance-status">
+                        <i data-lucide="check"></i>
+                        Present
+                    </div>
+
+                </div>
+
+
+                <!-- Check-in 4 -->
+                <div class="attendance-item">
+
+                    <div class="attendance-date">
+                        <span>NOV</span>
+                        <strong>04</strong>
+                    </div>
+
+                    <div class="attendance-item-info">
+                        <h4>Functional Training</h4>
+
+                        <div>
+                            <span>
+                                <i data-lucide="clock"></i>
+                                07:00 AM
+                            </span>
+
+                            <span>
+                                <i data-lucide="check-circle"></i>
+                                Checked in
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="attendance-status">
+                        <i data-lucide="check"></i>
+                        Present
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="attendance-load-more">
+                View Full Attendance History
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Consistency -->
+        <div class="dash-card consistency-card">
+
+            <span class="section-eyebrow">CONSISTENCY</span>
+
+            <h3>Your Training Rhythm</h3>
+
+            <p>
+                You're maintaining a strong attendance routine this month.
+            </p>
+
+
+            <div class="consistency-score">
+                <strong>92%</strong>
+                <span>Consistency</span>
+            </div>
+
+
+            <div class="consistency-bar">
+                <div class="consistency-fill"></div>
+            </div>
+
+
+            <div class="consistency-meta">
+                <span>12 sessions completed</span>
+                <span>Goal: 14</span>
+            </div>
+
+
+            <div class="attendance-streak">
+                <div class="streak-icon">
+                    <i data-lucide="flame"></i>
+                </div>
+
+                <div>
+                    <strong>4 Week Streak</strong>
+                    <span>Keep your momentum going.</span>
                 </div>
             </div>
 
+        </div>
+
+    </div>
+
+</div>
+
             <!-- 9. WORKOUT PLANS TAB -->
-            <div id="tab-workout-plans" class="tab-pane">
-                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
-                    <div>
-                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-bottom:0.5rem;">MY WORKOUT PLANS</h2>
-                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">View the workout plans assigned to you by your trainers.</p>
+           <!-- 9. WORKOUT PLANS TAB -->
+<div id="tab-workout-plans" class="tab-pane">
+
+    <!-- Header -->
+    <div class="dash-card-header workout-header">
+        <div>
+            <span class="section-eyebrow">TRAINING PROGRAM</span>
+            <h2 class="dash-card-title workout-main-title">MY WORKOUT PLANS</h2>
+            <p class="workout-subtitle">
+                Follow your personalized training programs and track your progress.
+            </p>
+        </div>
+
+        <div class="workout-header-icon">
+            <i data-lucide="dumbbell"></i>
+        </div>
+    </div>
+
+    <!-- Active Plan -->
+    <div class="workout-plan-card active-plan">
+
+        <div class="workout-plan-top">
+
+            <div class="workout-plan-info">
+
+                <div class="workout-plan-label">
+                    <span class="active-dot"></span>
+                    ACTIVE PLAN
+                </div>
+
+                <h3>Strength Phase 1</h3>
+
+                <p class="workout-plan-description">
+                    Build foundational strength with a structured four-week
+                    program designed by your trainer.
+                </p>
+
+                <div class="workout-meta">
+                    <span>
+                        <i data-lucide="user"></i>
+                        Coach Alex
+                    </span>
+
+                    <span>
+                        <i data-lucide="calendar"></i>
+                        4 Weeks
+                    </span>
+
+                    <span>
+                        <i data-lucide="calendar-days"></i>
+                        4 Days / Week
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="workout-progress">
+
+                <div class="progress-circle">
+                    <span>65%</span>
+                </div>
+
+                <span class="progress-label">PLAN PROGRESS</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Weekly Schedule -->
+        <div class="workout-week">
+
+            <div class="workout-week-header">
+                <div>
+                    <span class="section-eyebrow">THIS WEEK</span>
+                    <h4>Training Schedule</h4>
+                </div>
+
+                <span class="week-count">4 SESSIONS</span>
+            </div>
+
+
+            <div class="workout-days">
+
+                <div class="workout-day completed">
+                    <div class="day-number">01</div>
+
+                    <div class="day-content">
+                        <strong>Upper Body</strong>
+                        <span>Completed</span>
+                    </div>
+
+                    <i data-lucide="check"></i>
+                </div>
+
+
+                <div class="workout-day active">
+                    <div class="day-number">02</div>
+
+                    <div class="day-content">
+                        <strong>Lower Body</strong>
+                        <span>Today's Workout</span>
+                    </div>
+
+                    <i data-lucide="arrow-right"></i>
+                </div>
+
+
+                <div class="workout-day">
+                    <div class="day-number">03</div>
+
+                    <div class="day-content">
+                        <strong>Active Recovery</strong>
+                        <span>Mobility & Recovery</span>
                     </div>
                 </div>
-                <div class="grid-2">
-                    <div class="dash-card" style="border-top: 4px solid var(--color-accent);">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-                            <h3 class="dash-card-title">Strength Phase 1</h3>
-                            <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span>
-                        </div>
-                        <p style="color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:1rem;">Assigned by Coach Alex • 4 Weeks</p>
-                        <ul style="list-style:none; padding:0; margin-bottom:1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
-                            <li style="display:flex; justify-content:space-between;"><span>Day 1: Upper Body</span> <a href="#" style="color:var(--color-accent);">View Details</a></li>
-                            <li style="display:flex; justify-content:space-between;"><span>Day 2: Lower Body</span> <a href="#" style="color:var(--color-accent);">View Details</a></li>
-                            <li style="display:flex; justify-content:space-between;"><span>Day 3: Active Recovery</span> <a href="#" style="color:var(--color-accent);">View Details</a></li>
-                            <li style="display:flex; justify-content:space-between;"><span>Day 4: Full Body</span> <a href="#" style="color:var(--color-accent);">View Details</a></li>
-                        </ul>
-                        <button class="btn btn-outline full-width">Download PDF</button>
+
+
+                <div class="workout-day">
+                    <div class="day-number">04</div>
+
+                    <div class="day-content">
+                        <strong>Full Body</strong>
+                        <span>Upcoming</span>
                     </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Plan Footer -->
+        <div class="workout-plan-footer">
+
+            <div class="trainer-note">
+                <i data-lucide="message-square"></i>
+
+                <div>
+                    <span>TRAINER NOTE</span>
+                    <p>Focus on controlled movement and progressive overload.</p>
                 </div>
             </div>
+
+            <div class="workout-actions">
+                <button class="btn btn-primary">
+                    <i data-lucide="play"></i>
+                    Start Workout
+                </button>
+
+                <button class="btn btn-outline">
+                    <i data-lucide="download"></i>
+                    Download PDF
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Upcoming Plan -->
+    <div class="workout-upcoming">
+
+        <div class="upcoming-heading">
+            <div>
+                <span class="section-eyebrow">UP NEXT</span>
+                <h3>Upcoming Program</h3>
+            </div>
+        </div>
+
+
+        <div class="upcoming-plan-card">
+
+            <div class="upcoming-icon">
+                <i data-lucide="layers"></i>
+            </div>
+
+            <div class="upcoming-info">
+
+                <div class="upcoming-title-row">
+                    <h4>Hypertrophy Block</h4>
+                    <span class="status-badge upcoming-badge">UPCOMING</span>
+                </div>
+
+                <p>
+                    Your next training phase will focus on muscle growth,
+                    volume, and progressive resistance.
+                </p>
+
+                <div class="upcoming-meta">
+                    <span>
+                        <i data-lucide="lock"></i>
+                        Unlocks after Strength Phase 1
+                    </span>
+
+                    <span>
+                        <i data-lucide="calendar"></i>
+                        6 Weeks
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="upcoming-action">
+                <button class="btn btn-outline" disabled>
+                    <i data-lucide="lock"></i>
+                    Locked
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
         </div>
     </main>
