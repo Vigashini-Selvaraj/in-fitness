@@ -1,0 +1,329 @@
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* Tablet (Max 1024px) */
+@media (max-width: 1024px) {
+    .hero-split {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .hero-left {
+        display: contents;
+    }
+
+    .hero-right {
+        order: 2;
+        max-height: 500px;
+        width: 100%;
+    }
+
+    .hero-left>span.eyebrow,
+    .hero-left>h1,
+    .hero-left>p {
+        order: 1;
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .hero-actions {
+        order: 3;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-stats {
+        order: 4;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 3rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Mobile & Tablet (Max 768px) */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    .nav-links,
+    .desktop-only {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Mobile Menu Styles */
+    #navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .navbar {
+        position: relative !important;
+    }
+
+    .nav-mobile-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: var(--navbar-bg) !important;
+        padding: 0 2rem;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, visibility 0.3s ease;
+    }
+
+    .nav-mobile-menu.active {
+        max-height: 800px;
+        padding: 2rem;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-block-end: 1rem;
+    }
+
+    .mobile-links a {
+        font-family: 'Sora', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    .mobile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-block-start: 1px solid var(--border);
+        padding-block-start: 2rem;
+    }
+
+    .mobile-toggles {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .stat-number,
+    .stat-item span:nth-child(2) {
+        font-size: 1.1rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .section {
+        padding-block: 4rem;
+    }
+
+    .schedule-table-container {
+        padding: 0;
+        border: none;
+        background: transparent;
+        overflow-x: hidden;
+    }
+
+    .schedule-table {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .schedule-table thead {
+        display: none;
+    }
+
+    .schedule-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        margin-block-end: 1rem;
+        padding: 1rem;
+    }
+
+    .schedule-table td {
+        padding: 0.5rem 0;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .schedule-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-text-secondary);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+
+    .testimonial-slide {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Mobile Small (Max 480px) */
+@media (max-width: 480px) {
+    .hero-left h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   About Us Page Responsive Styles
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+
+    .hero-split,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .mission-vision-grid,
+    .values-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-hero {
+        padding-top: 100px;
+    }
+
+    .mission-vision-grid,
+    .values-grid,
+    .team-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .timeline-marker {
+        left: -1.5rem;
+        transform: translateX(-5px);
+    }
+
+    .value-num {
+        font-size: 3rem;
+    }
+}
+
+/* ==========================================================================
+   Services Page Responsive Styles
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .how-it-works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-hero {
+        padding-top: 100px;
+    }
+
+    .services-grid,
+    .how-it-works-grid,
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}

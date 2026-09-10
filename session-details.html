@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Details | IN+ FITNESS</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main id="session-details-content">
+        <!-- HERO SECTION -->
+        <section id="details-hero-bg" class="session-details-hero section fade-in">
+            <div class="container" style="position: relative; z-index: 2; padding-block: 4rem;">
+                <span id="detail-category" class="eyebrow slide-up" style="color:var(--color-accent);">CATEGORY</span>
+                <h1 id="detail-title" class="slide-up delay-1" style="font-size: clamp(2rem, 5vw, 4rem); margin-block: 1rem 1.5rem; line-height: 1.1;">SESSION NAME</h1>
+                <p id="detail-desc" class="slide-up delay-2" style="font-size: 1.25rem; max-width: 600px; margin-bottom: 2rem;">Short introduction text goes here.</p>
+            </div>
+        </section>
+
+        <!-- CONTENT SECTION -->
+        <section class="section fade-in">
+            <div class="container details-grid">
+                <!-- Left Content -->
+                <div class="details-main slide-up">
+                    <h2 style="margin-bottom: 1rem;">ABOUT THIS SESSION</h2>
+                    <p id="detail-about" style="color: var(--color-text-secondary); margin-bottom: 3rem; line-height: 1.8;">Details about who this is for.</p>
+                    
+                    <h3 style="margin-bottom: 1.5rem;">WHAT YOU'LL WORK ON</h3>
+                    <ul id="detail-benefits" style="list-style: none; padding: 0; margin-bottom: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <!-- Benefits populated by JS -->
+                    </ul>
+                    
+                    <h3 style="margin-bottom: 1.5rem;">WHAT TO EXPECT</h3>
+                    <ul id="detail-structure" style="list-style: none; padding: 0; margin-bottom: 3rem;">
+                        <!-- Structure populated by JS -->
+                    </ul>
+                </div>
+                
+                <!-- Right Sidebar -->
+                <div class="details-sidebar slide-up delay-1">
+                    <h3 style="margin-bottom: 1.5rem;">SESSION INFO</h3>
+                    
+                    <div style="display:flex; flex-direction:column; gap:1.25rem; margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid var(--color-border);">
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <i data-lucide="clock" style="color:var(--color-accent);"></i>
+                            <div>
+                                <strong style="display:block; font-size:0.875rem;">Duration</strong>
+                                <span id="sidebar-duration" style="color:var(--color-text-secondary);">60 min</span>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <i data-lucide="bar-chart" style="color:var(--color-accent);"></i>
+                            <div>
+                                <strong style="display:block; font-size:0.875rem;">Difficulty</strong>
+                                <span id="sidebar-level" style="color:var(--color-text-secondary);">All Levels</span>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <i data-lucide="user" style="color:var(--color-accent);"></i>
+                            <div>
+                                <strong style="display:block; font-size:0.875rem;">Trainer</strong>
+                                <a href="#" id="sidebar-trainer" style="color:var(--color-text-secondary); text-decoration:underline;">Coach Name</a>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <i data-lucide="map-pin" style="color:var(--color-accent);"></i>
+                            <div>
+                                <strong style="display:block; font-size:0.875rem;">Location</strong>
+                                <span id="sidebar-location" style="color:var(--color-text-secondary);">Main Studio</span>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <i data-lucide="users" style="color:var(--color-accent);"></i>
+                            <div>
+                                <strong style="display:block; font-size:0.875rem;">Max Spots</strong>
+                                <span id="sidebar-spots" style="color:var(--color-text-secondary);">20</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 1rem;">PRICING</h3>
+                    <p id="sidebar-price" style="font-size: 2rem; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--color-accent); margin-bottom: 2rem;">₹0</p>
+                    
+                    <button id="detail-book-btn" class="btn btn-primary full-width">BOOK THIS SESSION</button>
+                    
+                    <div style="margin-top:1rem; text-align:center;">
+                        <a href="sessions.html" style="font-size:0.875rem; color:var(--color-text-secondary);"><i data-lucide="arrow-left" style="width:14px; display:inline-block; vertical-align:middle;"></i> Back to all sessions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sessions.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IN+ FITNESS | Train. Move. Progress.</title>
+    <meta name="description"
+        content="A modern fitness experience built around strength, performance, movement, and long-term results.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        /* Specific Styles for Home 2 to avoid cluttering global style.css */
+
+        /* Floating Card for Hero */
+        .floating-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .floating-card-icon {
+            color: var(--color-accent);
+            background-color: rgba(143, 185, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 4px;
+            display: flex;
+        }
+
+        .floating-card-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floating-card-text strong {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+
+        .floating-card-text span {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Problem vs Solution */
+        .problem-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .ps-column {
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-surface);
+        }
+
+        .ps-column.solution {
+            background-color: var(--color-background);
+            border-color: var(--color-accent);
+        }
+
+        .ps-column h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+        }
+
+        .ps-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .ps-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ps-num {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+
+        .ps-column.solution .ps-num {
+            color: var(--color-accent);
+            opacity: 1;
+        }
+
+        .ps-text {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.1rem;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        /* 3 Steps */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .step-num {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: var(--color-border);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .step-card h3,
+        .step-card p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        /* Metric Strip */
+        .metric-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 3rem 0;
+        }
+
+        .metric-item {
+            text-align: center;
+            border-right: 1px solid var(--color-border);
+        }
+
+        .metric-item:last-child {
+            border-right: none;
+        }
+
+        .metric-val {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 992px) {
+            .problem-solution-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-strip {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem 0;
+            }
+
+            .metric-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .metric-item:nth-child(1),
+            .metric-item:nth-child(2) {
+                margin-bottom: 2rem;
+            }
+
+            .floating-card {
+                bottom: -20px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- 04 HERO - PERFORMANCE SYSTEM -->
+        <section class="hero hero-home2 section fade-in">
+            <!-- Full bleed background -->
+            <div class="hero-bg-wrapper">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Athlete training with barbell" class="hero-bg-image">
+                <div class="hero-bg-overlay-gradient"></div>
+            </div>
+
+            <div class="container hero-content-center" style="position: relative; z-index: 10;">
+                <!-- Floating Card 1 (Top Left) -->
+                <div class="floating-glass-card card-top-left slide-up delay-3 desktop-only">
+                    <div class="glass-icon"><i data-lucide="activity"></i></div>
+                    <div class="glass-text">
+                        <strong>Data-Driven</strong>
+                        <span>Track Performance</span>
+                    </div>
+                </div>
+
+                <!-- Floating Card 2 (Bottom Right) -->
+                <div class="floating-glass-card card-bottom-right slide-up delay-4 desktop-only">
+                    <div class="glass-icon"><i data-lucide="target"></i></div>
+                    <div class="glass-text">
+                        <strong>Goal Oriented</strong>
+                        <span>Achieve Results</span>
+                    </div>
+                </div>
+
+                <!-- Main Glass Panel -->
+                <div class="hero-glass-panel slide-up delay-1">
+                    <span class="eyebrow" style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">THE IN+ PERFORMANCE SYSTEM</span>
+                    <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-top: 1rem; margin-bottom: 1.5rem; line-height: 1.1; color: #ffffff;">
+                        A Smarter Way<br>To Train. Move. Progress.
+                    </h1>
+                    <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                        IN+ FITNESS brings strength training, functional movement, conditioning, recovery, and expert coaching into one immersive, modern training experience.
+                    </p>
+                    <div class="hero-actions" style="justify-content: center; margin-bottom: 0;">
+                        <a href="login.html" class="btn btn-primary" style="background-color: var(--color-accent); color: #0B1220; border-color: var(--color-accent);">START TRAINING</a>
+                        <a href="services.html" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.3); background-color: rgba(255,255,255,0.05);">EXPLORE SERVICES</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 PERFORMANCE METRICS STRIP -->
+            <div class="container metric-container slide-up delay-2" style="position: relative; z-index: 20; margin-top: auto;">
+                <div class="metric-strip glass-metric-strip">
+                    <div class="metric-item">
+                        <div class="metric-val" style="color: #ffffff;">500+</div>
+                        <div class="metric-label" style="color: rgba(255,255,255,0.8);">Active Members</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-val" style="color: #ffffff;">25+</div>
+                        <div class="metric-label" style="color: rgba(255,255,255,0.8);">Expert Trainers</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-val" style="color: #ffffff;">40+</div>
+                        <div class="metric-label" style="color: rgba(255,255,255,0.8);">Weekly Sessions</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-val" style="color: #ffffff;">95%</div>
+                        <div class="metric-label" style="color: rgba(255,255,255,0.8);">Member Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 PROBLEM -> SOLUTION -->
+        <section class="section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Training Shouldn't Feel Complicated.</h2>
+                    <p style="max-width: 700px; margin: 0 auto;">Most people struggle with inconsistent routines,
+                        unclear goals, and training without direction. IN+ brings structure to the process so every
+                        session has a purpose.</p>
+                </div>
+
+                <div class="problem-solution-grid">
+                    <!-- Problem Side -->
+                    <div class="ps-column">
+                        <h3>Without a System</h3>
+
+                        <div class="ps-item">
+                            <div class="ps-num">01</div>
+                            <div class="ps-text">Inconsistent Training</div>
+                        </div>
+                        <div class="ps-item">
+                            <div class="ps-num">02</div>
+                            <div class="ps-text">No Clear Progress</div>
+                        </div>
+                        <div class="ps-item">
+                            <div class="ps-num">03</div>
+                            <div class="ps-text">One-Size-Fits-All Workouts</div>
+                        </div>
+                    </div>
+
+                    <!-- Solution Side -->
+                    <div class="ps-column solution">
+                        <h3>With IN+</h3>
+
+                        <div class="ps-item">
+                            <div class="ps-num">01</div>
+                            <div class="ps-text">Structured Training</div>
+                        </div>
+                        <div class="ps-item">
+                            <div class="ps-num">02</div>
+                            <div class="ps-text">Expert Guidance</div>
+                        </div>
+                        <div class="ps-item">
+                            <div class="ps-num">03</div>
+                            <div class="ps-text">Progress You Can Track</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 FEATURE HIGHLIGHTS -->
+        <section class="programs section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Everything You Need To Progress.</h2>
+                    <p>A complete training experience built around performance, consistency, and long-term results.</p>
+                </div>
+
+                <div class="programs-grid">
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="dumbbell"></i></div>
+                        <h3>Strength Training</h3>
+                        <p>Build real strength through structured resistance training designed around your goals.</p>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="user-check"></i></div>
+                        <h3>Personal Coaching</h3>
+                        <p>Train with expert guidance, personalized feedback, and a plan built around you.</p>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="move"></i></div>
+                        <h3>Functional Movement</h3>
+                        <p>Improve mobility, stability, coordination, and everyday movement quality.</p>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="timer"></i></div>
+                        <h3>Performance Training</h3>
+                        <p>Improve power, endurance, conditioning, and overall athletic performance.</p>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="heart-pulse"></i></div>
+                        <h3>Recovery & Mobility</h3>
+                        <p>Recover better with mobility-focused sessions that support sustainable training.</p>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon" style="color: var(--color-text);"><i data-lucide="trending-up"></i></div>
+                        <h3>Progress Tracking</h3>
+                        <p>Understand your progress and stay motivated with measurable training milestones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 HOW IN+ WORKS -->
+        <section class="section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Your Progress Starts With Three Steps.</h2>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <h3>Assess</h3>
+                        <p>Understand your current fitness level, goals, movement and training needs.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <h3>Train</h3>
+                        <p>Follow structured sessions with expert guidance and the right level of challenge.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <h3>Progress</h3>
+                        <p>Track improvements, build consistency and keep moving toward your next goal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 USE CASES / MEMBER GOALS -->
+        <section class="section fade-in" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Built For Different Goals.</h2>
+                </div>
+
+                <!-- Goal 1 -->
+                <div class="about-grid" style="margin-bottom: 6rem; align-items: center;">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop"
+                            alt="Build Strength" style="height: 400px; object-fit: cover; border-radius: 4px;">
+                    </div>
+                    <div class="about-text" style="display: flex; flex-direction: column; justify-content: center;">
+                        <span class="eyebrow" style="color: var(--color-text-secondary);">01</span>
+                        <h2 style="font-size: 2.5rem;">Build Strength</h2>
+                        <p>Progressive training for members who want to become stronger and more capable.</p>
+                        <a href="service-details.html?id=strength-training" class="btn btn-outline"
+                            style="align-self: flex-start; margin-top: 1.5rem;">EXPLORE STRENGTH</a>
+                    </div>
+                </div>
+
+                <!-- Goal 2 -->
+                <div class="about-grid" style="margin-bottom: 6rem; align-items: center;">
+                    <div class="about-text" style="display: flex; flex-direction: column; justify-content: center;">
+                        <span class="eyebrow" style="color: var(--color-text-secondary);">02</span>
+                        <h2 style="font-size: 2.5rem;">Improve Fitness</h2>
+                        <p>Structured conditioning and training designed to improve endurance and overall fitness.</p>
+                        <a href="service-details.html?id=group-fitness" class="btn btn-outline"
+                            style="align-self: flex-start; margin-top: 1.5rem;">EXPLORE FITNESS</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=2062&auto=format&fit=crop"
+                            alt="Improve Fitness" style="height: 400px; object-fit: cover; border-radius: 4px;">
+                    </div>
+                </div>
+
+                <!-- Goal 3 -->
+                <div class="about-grid" style="margin-bottom: 6rem; align-items: center;">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop"
+                            alt="Move Better" style="height: 400px; object-fit: cover; border-radius: 4px;">
+                    </div>
+                    <div class="about-text" style="display: flex; flex-direction: column; justify-content: center;">
+                        <span class="eyebrow" style="color: var(--color-text-secondary);">03</span>
+                        <h2 style="font-size: 2.5rem;">Move Better</h2>
+                        <p>Mobility and functional training for better movement, balance and everyday performance.</p>
+                        <a href="service-details.html?id=mobility-recovery" class="btn btn-outline"
+                            style="align-self: flex-start; margin-top: 1.5rem;">EXPLORE MOBILITY</a>
+                    </div>
+                </div>
+
+                <!-- Goal 4 -->
+                <div class="about-grid" style="align-items: center;">
+                    <div class="about-text" style="display: flex; flex-direction: column; justify-content: center;">
+                        <span class="eyebrow" style="color: var(--color-text-secondary);">04</span>
+                        <h2 style="font-size: 2.5rem;">Perform Better</h2>
+                        <p>Performance-focused training for athletes and members who want to push their capabilities
+                            further.</p>
+                        <a href="service-details.html?id=functional-training" class="btn btn-outline"
+                            style="align-self: flex-start; margin-top: 1.5rem;">EXPLORE PERFORMANCE</a>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop"
+                            alt="Perform Better" style="height: 400px; object-fit: cover; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 PRICING TEASER -->
+        <section class="pricing section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Choose How You Train.</h2>
+                    <p>Flexible membership options designed to fit different training goals and routines.</p>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Starter -->
+                    <div class="card pricing-card" style="padding: 3rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text-secondary);">STARTER
+                        </h3>
+                        <div class="price" style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 2rem;">
+                            <span>₹1,999</span> / month</div>
+                        <ul class="pricing-features" style="margin-bottom: 2.5rem;">
+                            <li><i data-lucide="check"></i> Gym access</li>
+                            <li><i data-lucide="check"></i> Group sessions</li>
+                            <li><i data-lucide="check"></i> Basic progress tracking</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-outline full-width" style="text-align: center;">VIEW
+                            PLAN</a>
+                    </div>
+
+                    <!-- Performance -->
+                    <div class="card pricing-card recommended"
+                        style="padding: 3rem; border-color: var(--color-accent); position: relative;">
+                        <div class="recommended-badge"
+                            style="background-color: var(--color-accent); color: #0B1220; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 0.25rem 1rem; font-size: 0.75rem; font-weight: 700; border-radius: 4px;">
+                            MOST POPULAR</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-accent);">PERFORMANCE
+                        </h3>
+                        <div class="price" style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 2rem;">
+                            <span>₹2,999</span> / month</div>
+                        <ul class="pricing-features" style="margin-bottom: 2.5rem;">
+                            <li><i data-lucide="check"></i> Full gym access</li>
+                            <li><i data-lucide="check"></i> Group sessions</li>
+                            <li><i data-lucide="check"></i> Performance tracking</li>
+                            <li><i data-lucide="check"></i> Expert guidance</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-primary full-width" style="text-align: center;">VIEW
+                            PLAN</a>
+                    </div>
+
+                    <!-- Elite -->
+                    <div class="card pricing-card" style="padding: 3rem;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text-secondary);">ELITE
+                        </h3>
+                        <div class="price" style="font-size: 2.5rem; color: var(--color-text); margin-bottom: 2rem;">
+                            <span>₹4,999</span> / month</div>
+                        <ul class="pricing-features" style="margin-bottom: 2.5rem;">
+                            <li><i data-lucide="check"></i> Everything in Performance</li>
+                            <li><i data-lucide="check"></i> Personal coaching</li>
+                            <li><i data-lucide="check"></i> Advanced progress planning</li>
+                            <li><i data-lucide="check"></i> Priority support</li>
+                        </ul>
+                        <a href="pricing.html" class="btn btn-outline full-width" style="text-align: center;">VIEW
+                            PLAN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11 TESTIMONIALS -->
+        <section class="testimonials section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Progress You Can Feel.</h2>
+                </div>
+
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-slider">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide active">
+                            <i data-lucide="quote" class="quote-icon"
+                                style="color: var(--color-accent); opacity: 0.3;"></i>
+                            <p class="quote-text">"IN+ completely changed the way I approach training. I finally have
+                                structure and a clear direction instead of just going through random workouts."</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop"
+                                    alt="Arjun R."
+                                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h4 style="font-family: 'Sora', sans-serif;">Arjun R.</h4>
+                                    <span
+                                        style="font-family: 'Manrope', sans-serif; color: var(--color-text-secondary);">IN+
+                                        Member</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <i data-lucide="quote" class="quote-icon"
+                                style="color: var(--color-accent); opacity: 0.3;"></i>
+                            <p class="quote-text">"The trainers actually understand what I'm trying to achieve. Every
+                                session feels purposeful and I can see the difference."</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+                                    alt="Priya M."
+                                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h4 style="font-family: 'Sora', sans-serif;">Priya M.</h4>
+                                    <span
+                                        style="font-family: 'Manrope', sans-serif; color: var(--color-text-secondary);">Performance
+                                        Member</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testimonial-slide">
+                            <i data-lucide="quote" class="quote-icon"
+                                style="color: var(--color-accent); opacity: 0.3;"></i>
+                            <p class="quote-text">"I joined to get stronger, but I ended up improving my mobility,
+                                confidence and consistency too."</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                                    alt="Rahul K."
+                                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                                <div>
+                                    <h4 style="font-family: 'Sora', sans-serif;">Rahul K.</h4>
+                                    <span
+                                        style="font-family: 'Manrope', sans-serif; color: var(--color-text-secondary);">IN+
+                                        Member</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" aria-label="Previous testimonial"><i
+                                data-lucide="chevron-left"></i></button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-btn next-btn" aria-label="Next testimonial"><i
+                                data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 FINAL CTA -->
+        <section class="cta section fade-in"
+            style="background-color: var(--color-background); border-top: 1px solid var(--color-border); padding-block: 6rem;">
+            <div class="container text-center">
+                <span class="eyebrow" style="color: var(--color-accent); display: block; margin-bottom: 1rem;">+</span>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Ready To Go Further?</h2>
+                <p
+                    style="font-size: 1.2rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto 3rem auto;">
+                    Start with a training experience built around your goals, your movement and your progress.</p>
+                <div class="cta-actions">
+                    <a href="login.html" class="btn btn-primary"
+                        style="background-color: var(--color-accent); color: #0B1220;">JOIN IN+</a>
+                    <a href="contact.html" class="btn btn-outline">BOOK A TOUR</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

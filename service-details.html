@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | IN+ FITNESS</title>
+    <meta name="description" content="Explore our premium fitness services in detail.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        /* Premium Service Details Page Styles */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Premium Service Details Hero Redesign */
+        .service-hero-premium {
+            position: relative;
+            min-height: 680px;
+            height: 80vh;
+            display: flex;
+            align-items: flex-end; /* Lower-left placement */
+            padding-bottom: 12%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center center;
+            background-color: var(--bg-primary); /* Fallback */
+            width: 100%;
+            margin: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Subtle overall dark overlay, stronger gradient at bottom for text readability */
+            background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,0.7) 60%, rgba(17,17,17,0.95) 100%);
+            z-index: 1;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content-premium {
+            max-width: 700px; /* Constrained content width */
+            color: #ffffff;
+            margin-left: 8%; /* Left positioning */
+        }
+
+        .hero-content-premium .eyebrow {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero-content-premium h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem); /* approx 64-88px */
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            color: #ffffff !important;
+            text-transform: capitalize;
+        }
+
+        .hero-content-premium p {
+            font-size: 1.125rem;
+            color: var(--color-text-light); /* Soft gray */
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-meta .divider {
+            color: var(--color-accent);
+        }
+
+        .btn-hero {
+            background-color: var(--color-accent);
+            color: #111111;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-hero:hover {
+            background-color: #ffffff;
+            color: #111111;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero-premium {
+                height: 75vh;
+                align-items: flex-end;
+                padding-bottom: 15%;
+            }
+            .hero-content-premium {
+                margin-left: 0;
+            }
+        }
+
+
+
+        /* Content Layout */
+        .premium-content-section {
+            padding: 6rem 0;
+            background: var(--bg-primary);
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-layout {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 6rem;
+            }
+        }
+
+        .text-block h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .text-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .text-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Modern Benefits Grid */
+        .modern-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card i {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            width: 32px;
+            height: 32px;
+        }
+
+        .benefit-card h4 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .benefit-card p { font-size: 0.95rem; margin: 0; line-height: 1.6; }
+
+        /* Sidebar Magic */
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .premium-card {
+            background: linear-gradient(145deg, var(--bg-secondary) 0%, rgba(30,30,30,1) 100%);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--color-accent);
+        }
+
+        .premium-card h3 { margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+        .check-list { list-style: none; padding: 0; margin: 0; }
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .check-list li:last-child { border-bottom: none; }
+        .check-list i { color: var(--color-accent); }
+
+        .trainer-widget {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .trainer-widget img {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-accent);
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .cta-box h3 { margin-bottom: 1rem; }
+        .cta-box .btn { width: 100%; margin-top: 1rem; }
+
+        /* Timeline Steps */
+        .timeline-steps {
+            position: relative;
+            margin-top: 2rem;
+            padding-left: 2rem;
+        }
+        .timeline-steps::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 2px;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+        }
+        .timeline-step {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-step:last-child { margin-bottom: 0; }
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -2rem;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            transform: translateX(-5px);
+            box-shadow: 0 0 0 4px var(--bg-primary);
+        }
+        .timeline-step h4 {
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .timeline-step span.step-num {
+            font-size: 0.85rem; color: rgba(255,255,255,0.5);
+        }
+
+        /* FAQ Accordion */
+        .faq-accordion details {
+            background: var(--bg-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-accordion details[open] {
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .faq-accordion summary {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-text);
+        }
+        .faq-accordion summary::-webkit-details-marker { display: none; }
+        .faq-accordion summary::after {
+            content: '+';
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+        .faq-accordion details[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+        .faq-accordion .faq-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="dark-theme"> <!-- Forcing dark aesthetic for premium feel -->
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- DYNAMIC HERO -->
+        <section class="service-hero-premium fade-in" id="dynamic-hero-section">
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-container">
+                <div class="hero-content-premium">
+                    <span class="eyebrow slide-up" id="dynamic-category">SESSION</span>
+                    <h1 id="dynamic-title" class="slide-up delay-1">Loading...</h1>
+                    <p id="dynamic-desc" class="slide-up delay-2">Preparing your tailored fitness experience...</p>
+                    
+                    <div class="hero-meta slide-up delay-3">
+                        <span id="dynamic-hero-duration">45 MIN</span> <span class="divider">•</span>
+                        <span>ALL LEVELS</span> <span class="divider">•</span>
+                        <span id="dynamic-hero-format">IN-PERSON</span>
+                    </div>
+
+                    <div class="hero-actions slide-up delay-4">
+                        <a href="pricing.html" class="btn btn-hero">Book a Session</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- MAIN CONTENT -->
+        <section class="premium-content-section fade-in">
+            <div class="container content-layout">
+                
+                <!-- LEFT CONTENT -->
+                <div class="main-content slide-up">
+                    <div class="text-block">
+                        <h2>About The Program</h2>
+                        <p id="dynamic-about-1">Loading content...</p>
+                        <p id="dynamic-about-2"></p>
+                    </div>
+
+                    <div class="text-block" style="margin-top: 4rem;">
+                        <h2>Core Benefits</h2>
+                        <div class="modern-benefits" id="dynamic-benefits-container">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <div class="text-block" style="margin-top: 4rem;">
+                        <h2>How It Works</h2>
+                        <div class="timeline-steps">
+                            <div class="timeline-step">
+                                <h4><span class="step-num">01</span> Assess</h4>
+                                <p>Initial evaluation of your current baseline.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h4><span class="step-num">02</span> Plan</h4>
+                                <p>Custom structured routine developed.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h4><span class="step-num">03</span> Train</h4>
+                                <p>Guided execution with focus on form.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <h4><span class="step-num">04</span> Progress</h4>
+                                <p>Track metrics and elevate intensity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="sidebar slide-up delay-1">
+                    <div class="sticky-sidebar">
+                        
+                        <div class="premium-card" style="margin-bottom: 2rem;">
+                            <h3>Session Info</h3>
+                            <ul class="check-list">
+                                <li><i data-lucide="clock"></i> <strong>Duration:</strong> <span id="dynamic-duration"></span></li>
+                                <li><i data-lucide="zap"></i> <strong>Intensity:</strong> <span id="dynamic-intensity"></span></li>
+                                <li><i data-lucide="users"></i> <strong>Format:</strong> <span id="dynamic-format"></span></li>
+                                <li><i data-lucide="target"></i> <strong>Focus:</strong> <span id="dynamic-focus"></span></li>
+                            </ul>
+                        </div>
+
+                        <div class="premium-card">
+                            <h3>What's Included</h3>
+                            <ul class="check-list" id="dynamic-included">
+                                <!-- Injected by JS -->
+                            </ul>
+                        </div>
+
+                        <div class="premium-card">
+                            <h3>Lead Expert</h3>
+                            <div class="trainer-widget">
+                                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop" alt="Trainer">
+                                <div>
+                                    <h4 id="dynamic-trainer-name">Alex Mercer</h4>
+                                    <span style="color: var(--color-accent); font-size: 0.9rem;" id="dynamic-trainer-role">Head Coach</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="premium-card cta-box">
+                            <h3>Ready to Dominate?</h3>
+                            <p style="color: #aaa; margin-bottom: 1.5rem; font-size: 0.95rem;">Secure your spot and start your transformation today.</p>
+                            <a href="pricing.html" class="btn btn-primary">Book a Session</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section section fade-in" style="background: var(--bg-secondary);">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header text-center">
+                    <span class="eyebrow">GOT QUESTIONS?</span>
+                    <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                </div>
+                <div class="faq-accordion" style="margin-top: 3rem;">
+                    <details>
+                        <summary>Is this service suitable for beginners?</summary>
+                        <div class="faq-content">Yes! All our training programs are tailored to your current fitness level. Our coaches will modify exercises to ensure you progress safely and effectively.</div>
+                    </details>
+                    <details>
+                        <summary>What should I bring to my first session?</summary>
+                        <div class="faq-content">Comfortable workout clothes, a water bottle, clean training shoes, and a positive mindset. We provide all the necessary equipment and towels.</div>
+                    </details>
+                    <details>
+                        <summary>How quickly will I see results?</summary>
+                        <div class="faq-content">While every body is different, most members start noticing improved energy and strength within the first 2-3 weeks of consistent training.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATED SERVICES SECTION -->
+        <section class="related-services section fade-in">
+            <div class="container text-center">
+                <span class="eyebrow">EXPLORE MORE</span>
+                <h2>OTHER WAYS TO TRAIN</h2>
+                
+                <div class="services-grid slide-up" style="margin-top: 3rem;">
+                    <div class="service-card">
+                        <i data-lucide="dumbbell" class="service-icon"></i>
+                        <h3>Strength Training</h3>
+                        <p>Build strength, power, and muscular endurance through structured resistance training.</p>
+                        <a href="service-details.html?id=strength" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <i data-lucide="heart-pulse" class="service-icon"></i>
+                        <h3>Mobility & Recovery</h3>
+                        <p>Improve flexibility, mobility, movement quality, and active recovery techniques.</p>
+                        <a href="service-details.html?id=mobility" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <i data-lucide="flame" class="service-icon"></i>
+                        <h3>HIIT</h3>
+                        <p>High-intensity sessions focused on cardiovascular fitness, conditioning, and performance.</p>
+                        <a href="service-details.html?id=hiit" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+        <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+      
+      // Dynamic Content Data Dictionary
+      const serviceData = {
+          "strength": {
+              title: "Strength Training",
+              desc: "Build unbreakable power and muscular endurance through structured resistance training.",
+              img: "assets/images/strength training.png",
+              duration: "60 - 75 Mins",
+              intensity: "High",
+              format: "Small Group / 1-on-1",
+              focus: "Hypertrophy & Power",
+              about1: "Our Strength Training program is engineered to build lean muscle mass, increase absolute strength, and fortify your joints and ligaments. Forget random workouts; this is structured, progressive overload designed for measurable results.",
+              about2: "Whether you're looking to hit a new PR on your compound lifts or simply build a more resilient physique, our expert coaches guide you through precise programming tailored to your lifting experience.",
+              benefits: [
+                  { icon: "dumbbell", title: "Maximal Strength", text: "Increase your 1RM safely." },
+                  { icon: "shield", title: "Injury Prevention", text: "Fortify tendons and ligaments." },
+                  { icon: "zap", title: "Metabolic Boost", text: "Increase resting metabolic rate." },
+                  { icon: "trending-up", title: "Progressive Plan", text: "Never plateau with periodization." }
+              ],
+              included: [
+                  "Custom progression tracking",
+                  "Form analysis & correction",
+                  "Periodized lifting blocks",
+                  "Nutrition guidance for recovery"
+              ],
+              trainerName: "Marcus Thorne",
+              trainerRole: "Strength & Conditioning"
+          },
+          "personal": {
+              title: "Personal Training",
+              desc: "Achieve your goals faster with tailored, one-to-one coaching designed specifically for you.",
+              img: "assets/images/personal training.png",
+              duration: "60 Mins",
+              intensity: "Adaptive",
+              format: "1-on-1",
+              focus: "Total Customization",
+              about1: "Personalized one-to-one training designed entirely around your goals, fitness level, movement quality, and long-term progress. We cut out the guesswork so you can focus entirely on executing the plan.",
+              about2: "Your coach works as your partner, adjusting workouts dynamically based on your feedback, energy levels, and ongoing adaptations. It’s the ultimate investment in your health.",
+              benefits: [
+                  { icon: "crosshair", title: "Laser Focus", text: "100% of the coach's attention on you." },
+                  { icon: "settings", title: "Adaptive Programming", text: "Workouts shift as you progress." },
+                  { icon: "activity", title: "Holistic Approach", text: "Addressing sleep, stress, and diet." },
+                  { icon: "award", title: "Accountability", text: "Guaranteed consistency & motivation." }
+              ],
+              included: [
+                  "Comprehensive fitness assessment",
+                  "Customized daily workout routine",
+                  "Real-time form adjustments",
+                  "Direct messaging with your coach"
+              ],
+              trainerName: "Alex Mercer",
+              trainerRole: "Head Personal Trainer"
+          },
+          "hiit": {
+              title: "HIIT Conditioning",
+              desc: "High-intensity sessions focused on cardiovascular fitness, conditioning, and extreme fat loss.",
+              img: "assets/images/hiit.png",
+              duration: "45 Mins",
+              intensity: "Maximum",
+              format: "Group / Small Group",
+              focus: "Cardio & Fat Burning",
+              about1: "High-Intensity Interval Training designed to push your cardiovascular system to its limits. Short bursts of maximal effort followed by brief recovery periods to ignite your metabolism and torch calories.",
+              about2: "These sessions are brutal but highly efficient. Perfect for those short on time but high on motivation, looking to maximize their conditioning in under an hour.",
+              benefits: [
+                  { icon: "flame", title: "Caloric Burn", text: "Afterburn effect lasts for hours." },
+                  { icon: "heart", title: "Heart Health", text: "Increase VO2 max rapidly." },
+                  { icon: "clock", title: "Time Efficient", text: "Maximum results in 45 minutes." },
+                  { icon: "users", title: "Group Energy", text: "Feed off the room's intensity." }
+              ],
+              included: [
+                  "Heart-rate monitored training",
+                  "Dynamic explosive movements",
+                  "Post-workout mobility",
+                  "Community leaderboards"
+              ],
+              trainerName: "Sarah Jenkins",
+              trainerRole: "Lead HIIT Instructor"
+          },
+          "group": {
+              title: "Group Fitness",
+              desc: "Instructor-led sessions combining structured workouts with high-energy community motivation.",
+              img: "assets/images/group fitness.png",
+              duration: "60 Mins",
+              intensity: "Medium - High",
+              format: "Large Group",
+              focus: "Community & Endurance",
+              about1: "Train alongside like-minded individuals in a high-energy, supportive environment. Our group classes are designed to be scalable, meaning anyone from beginners to advanced athletes can get a fantastic workout.",
+              about2: "With infectious music and coaches who know how to command a room, group fitness turns training from a chore into the highlight of your day.",
+              benefits: [
+                  { icon: "users", title: "Community", text: "Make friends who push you." },
+                  { icon: "music", title: "Atmosphere", text: "Curated playlists & high energy." },
+                  { icon: "check-square", title: "Structure", text: "Just show up and follow along." },
+                  { icon: "smile", title: "Fun Factor", text: "Enjoying the process of fitness." }
+              ],
+              included: [
+                  "Variety of class styles",
+                  "Motivating expert instructors",
+                  "Spacious studio environment",
+                  "Modifications for all levels"
+              ],
+              trainerName: "Elena Rodriguez",
+              trainerRole: "Group Fitness Director"
+          },
+          "functional": {
+              title: "Functional Training",
+              desc: "Improve everyday movement, stability, coordination, and functional strength for real life.",
+              img: "assets/images/funtional training.png",
+              duration: "60 Mins",
+              intensity: "Moderate",
+              format: "Small Group / 1-on-1",
+              focus: "Movement Mechanics",
+              about1: "Train your body for the activities performed in daily life. Functional training emphasizes core stability, balance, and compound movements using kettlebells, medicine balls, and body weight.",
+              about2: "By mimicking real-world biomechanics, we bulletproof your body against everyday injuries and improve your overall physical competence and agility.",
+              benefits: [
+                  { icon: "move", title: "Agility", text: "Move better in all planes of motion." },
+                  { icon: "anchor", title: "Core Stability", text: "A strong foundation for everything." },
+                  { icon: "shield", title: "Longevity", text: "Train for lifelong physical independence." },
+                  { icon: "activity", title: "Coordination", text: "Mind-muscle connection." }
+              ],
+              included: [
+                  "Movement screening",
+                  "Kettlebell & TRX training",
+                  "Balance & stability work",
+                  "Posture correction"
+              ],
+              trainerName: "David Chen",
+              trainerRole: "Functional Specialist"
+          },
+          "mobility": {
+              title: "Mobility & Recovery",
+              desc: "Improve flexibility, mobility, movement quality, and master active recovery techniques.",
+              img: "assets/images/mobility and recovery.png",
+              duration: "45 - 60 Mins",
+              intensity: "Low",
+              format: "Group / 1-on-1",
+              focus: "Recovery & Flexibility",
+              about1: "A crucial but often overlooked component of fitness. Our mobility sessions focus on increasing joint range of motion, alleviating muscle tightness, and down-regulating the nervous system.",
+              about2: "Using techniques like foam rolling, PNF stretching, and controlled articular rotations (CARs), you will recover faster, reduce pain, and perform better in your main training sessions.",
+              benefits: [
+                  { icon: "refresh-cw", title: "Faster Recovery", text: "Flush out toxins and lactic acid." },
+                  { icon: "maximize", title: "Range of Motion", text: "Unlock tight hips and shoulders." },
+                  { icon: "wind", title: "Stress Relief", text: "Activate parasympathetic nervous system." },
+                  { icon: "shield-check", title: "Pain Reduction", text: "Alleviate chronic aches." }
+              ],
+              included: [
+                  "Guided stretching protocols",
+                  "Myofascial release techniques",
+                  "Breathwork training",
+                  "Postural assessments"
+              ],
+              trainerName: "Maya Lin",
+              trainerRole: "Recovery Specialist"
+          }
+      };
+
+      // Extract URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceId = urlParams.get('id') || 'personal'; // Default to personal training if no id
+      
+      const data = serviceData[serviceId] || serviceData['personal'];
+
+      // Populate DOM elements
+      document.getElementById('dynamic-hero-section').style.backgroundImage = `url('${data.img}')`;
+      document.getElementById('dynamic-title').textContent = data.title;
+      document.getElementById('dynamic-desc').textContent = data.desc;
+      document.getElementById('dynamic-category').textContent = data.format;
+      
+      document.getElementById('dynamic-hero-duration').textContent = data.duration;
+      document.getElementById('dynamic-hero-format').textContent = data.format;
+      
+      document.getElementById('dynamic-duration').textContent = data.duration;
+      document.getElementById('dynamic-intensity').textContent = data.intensity;
+      document.getElementById('dynamic-format').textContent = data.format;
+      document.getElementById('dynamic-focus').textContent = data.focus;
+      
+      document.getElementById('dynamic-about-1').textContent = data.about1;
+      document.getElementById('dynamic-about-2').textContent = data.about2;
+      
+      document.getElementById('dynamic-trainer-name').textContent = data.trainerName;
+      document.getElementById('dynamic-trainer-role').textContent = data.trainerRole;
+
+      // Populate Benefits
+      const benefitsContainer = document.getElementById('dynamic-benefits-container');
+      data.benefits.forEach(benefit => {
+          const div = document.createElement('div');
+          div.className = 'benefit-card';
+          div.innerHTML = `
+              <i data-lucide="${benefit.icon}"></i>
+              <h4>${benefit.title}</h4>
+              <p>${benefit.text}</p>
+          `;
+          benefitsContainer.appendChild(div);
+      });
+
+      // Populate Included
+      const includedContainer = document.getElementById('dynamic-included');
+      data.included.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<i data-lucide="check-circle"></i> <span>${item}</span>`;
+          includedContainer.appendChild(li);
+      });
+
+      // Re-initialize lucide icons for dynamically added content
+      lucide.createIcons();
+
+    </script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | IN+ FITNESS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- PRICING HERO -->
+        <section class="pricing-hero section fade-in" style="background: var(--bg-primary); padding-top: 140px; padding-bottom: 60px;">
+            <div class="container">
+                <div style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; display: flex; flex-wrap: wrap; border: 1px solid var(--color-border); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                    
+                    <!-- Left Content -->
+                    <div style="flex: 1 1 500px; padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center;">
+                        <span class="category-badge slide-up" style="background: var(--color-accent); color: #0B1220; padding: 0.5rem 1.5rem; border-radius: 100px; font-weight: 700; font-size: 0.85rem; margin-bottom: 2rem; align-self: flex-start; display: inline-block;">INVEST IN YOURSELF</span>
+                        
+                        <h1 class="slide-up delay-1" style="font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1.2; margin-bottom: 1.5rem; color: #fff; font-family: 'Sora', sans-serif;">
+                            Choose Your Training Plan
+                        </h1>
+                        
+                        <p class="slide-up delay-2" style="font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">
+                            Flexible options for every goal. Get unlimited access to world-class coaching, premium equipment, and a supportive community.
+                        </p>
+                        
+                        <div class="hero-actions slide-up delay-3" style="display: flex; gap: 1rem;">
+                            <a href="#plans" class="btn btn-primary" style="background: var(--color-accent); color: #0b1220; padding: 1rem 2rem; font-weight: 700;">VIEW PLANS</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Image -->
+                    <div style="flex: 1 1 500px; min-height: 400px; position: relative;">
+                        <img src="assets/images/strength training.png" onerror="this.src='assets/images/about_hero.jpg'" alt="Pricing" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANS SECTION -->
+        <section id="plans" class="pricing-section section fade-in">
+            <div class="container">
+
+                <!-- Billing Toggle -->
+                <div class="billing-toggle-container slide-up">
+                    <span style="font-weight: 600; font-family: 'Sora', sans-serif;">MONTHLY</span>
+                    <label class="billing-toggle-wrapper">
+                        <input type="checkbox" id="billing-toggle" onchange="toggleBilling()">
+                        <span class="billing-slider"></span>
+                    </label>
+                    <span style="font-weight: 600; font-family: 'Sora', sans-serif;">YEARLY <span
+                            class="save-badge">SAVE UP TO 15%</span></span>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Drop-in -->
+                    <div class="pricing-card slide-up">
+                        <h3>DROP-IN</h3>
+                        <div class="price">₹500 <span
+                                style="font-size:0.9rem; font-weight:400; color:var(--color-text-secondary);">/
+                                session</span></div>
+                        <p style="margin-bottom: 2rem; color:var(--color-text-secondary); min-height: 48px;">For people
+                            who want flexible, occasional training.</p>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Single session access</li>
+                            <li><i data-lucide="check"></i> No long-term commitment</li>
+                            <li><i data-lucide="check"></i> Access to eligible sessions</li>
+                            <li><i data-lucide="check"></i> Flexible scheduling</li>
+                        </ul>
+                        <button class="btn btn-outline full-width" onclick="openBookingModal('Drop-in')">BOOK A
+                            SESSION</button>
+                    </div>
+
+                    <!-- Essential -->
+                    <div class="pricing-card slide-up delay-1">
+                        <h3>ESSENTIAL</h3>
+                        <div class="price"><span class="dynamic-price" data-monthly="4000"
+                                data-yearly="3400">₹4000</span> <span
+                                style="font-size:0.9rem; font-weight:400; color:var(--color-text-secondary);">/
+                                month</span></div>
+                        <p style="margin-bottom: 2rem; color:var(--color-text-secondary); min-height: 48px;">For people
+                            building a consistent training routine.</p>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Monthly training sessions</li>
+                            <li><i data-lucide="check"></i> Access to selected group sessions</li>
+                            <li><i data-lucide="check"></i> Progress-focused training</li>
+                            <li><i data-lucide="check"></i> Flexible scheduling</li>
+                        </ul>
+                        <button class="btn btn-outline full-width" onclick="openBookingModal('Essential')">CHOOSE
+                            ESSENTIAL</button>
+                    </div>
+
+                    <!-- Performance -->
+                    <div class="pricing-card popular slide-up delay-2" style="transform: scale(1.05);">
+                        <div
+                            style="position:absolute; top:-15px; left:50%; transform:translateX(-50%); background:var(--color-accent); color:#0B1220; padding:4px 16px; border-radius:20px; font-weight:700; font-size:0.8rem; letter-spacing:1px;">
+                            MOST POPULAR</div>
+                        <h3>PERFORMANCE</h3>
+                        <div class="price"><span class="dynamic-price" data-monthly="6500"
+                                data-yearly="5525">₹6500</span> <span
+                                style="font-size:0.9rem; font-weight:400; color:var(--color-text-secondary);">/
+                                month</span></div>
+                        <p style="margin-bottom: 2rem; color:var(--color-text-secondary); min-height: 48px;">For users
+                            who want a more structured training experience.</p>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> More monthly sessions</li>
+                            <li><i data-lucide="check"></i> Group training access</li>
+                            <li><i data-lucide="check"></i> Performance-focused sessions</li>
+                            <li><i data-lucide="check"></i> Progress tracking</li>
+                            <li><i data-lucide="check"></i> Priority scheduling</li>
+                        </ul>
+                        <button class="btn btn-primary full-width" onclick="openBookingModal('Performance')">CHOOSE
+                            PERFORMANCE</button>
+                    </div>
+
+                    <!-- Personal Training -->
+                    <div class="pricing-card slide-up delay-3">
+                        <h3>PERSONAL TRAINING</h3>
+                        <div class="price">₹1500 <span
+                                style="font-size:0.9rem; font-weight:400; color:var(--color-text-secondary);">/
+                                session</span></div>
+                        <p style="margin-bottom: 2rem; color:var(--color-text-secondary); min-height: 48px;">For
+                            one-to-one coaching and custom programming.</p>
+                        <ul class="pricing-features">
+                            <li><i data-lucide="check"></i> Dedicated trainer</li>
+                            <li><i data-lucide="check"></i> Personalized programming</li>
+                            <li><i data-lucide="check"></i> Goal-based training</li>
+                            <li><i data-lucide="check"></i> Progress monitoring</li>
+                            <li><i data-lucide="check"></i> One-to-one sessions</li>
+                        </ul>
+                        <button class="btn btn-outline full-width" onclick="openBookingModal('Personal Training')">BOOK
+                            PT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARE YOUR OPTIONS -->
+        <section class="section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>COMPARE YOUR OPTIONS</h2>
+                </div>
+
+                <div class="comparison-table-wrapper slide-up">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Drop-In</th>
+                                <th>Essential</th>
+                                <th>Performance</th>
+                                <th>Personal Training</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Session access</td>
+                                <td>Single</td>
+                                <td>8 / month</td>
+                                <td>Unlimited</td>
+                                <td>Custom</td>
+                            </tr>
+                            <tr>
+                                <td>Group fitness</td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Strength training</td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Functional training</td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Agility training</td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Mobility & recovery</td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Trainer support</td>
+                                <td>Group</td>
+                                <td>Group</td>
+                                <td>Priority Group</td>
+                                <td>Dedicated 1-on-1</td>
+                            </tr>
+                            <tr>
+                                <td>Progress tracking</td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                                <td><i data-lucide="minus" class="inactive"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                                <td><i data-lucide="check" class="active"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Booking flexibility</td>
+                                <td>Standard</td>
+                                <td>Standard</td>
+                                <td>Priority booking</td>
+                                <td>Full flexibility</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHICH PLAN IS RIGHT FOR YOU? -->
+        <section class="section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>NOT SURE WHERE TO START?</h2>
+                    <p style="color:var(--color-text-secondary); margin-top:1rem; font-size:1.1rem;">Choose the training
+                        option that matches your goals, schedule, and commitment.</p>
+                </div>
+
+                <div
+                    style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:3rem;">
+                    <div class="recommendation-card slide-up">
+                        <h3 style="margin-bottom:1rem;">I'M JUST GETTING STARTED</h3>
+                        <p style="color:var(--color-text-secondary); margin-bottom:2rem; flex-grow:1;">
+                            Recommend:<br><strong style="color:var(--color-text); font-size:1.25rem;">Drop-In /
+                                Essential</strong></p>
+                        <a href="#plans" class="btn btn-outline full-width">EXPLORE OPTIONS</a>
+                    </div>
+
+                    <div class="recommendation-card slide-up delay-1" style="border-color:var(--color-accent);">
+                        <h3 style="margin-bottom:1rem;">I WANT CONSISTENCY</h3>
+                        <p style="color:var(--color-text-secondary); margin-bottom:2rem; flex-grow:1;">
+                            Recommend:<br><strong style="color:var(--color-text); font-size:1.25rem;">Essential /
+                                Performance</strong></p>
+                        <a href="#plans" class="btn btn-primary full-width">VIEW PLANS</a>
+                    </div>
+
+                    <div class="recommendation-card slide-up delay-2">
+                        <h3 style="margin-bottom:1rem;">I WANT PERSONALIZED COACHING</h3>
+                        <p style="color:var(--color-text-secondary); margin-bottom:2rem; flex-grow:1;">
+                            Recommend:<br><strong style="color:var(--color-text); font-size:1.25rem;">Personal
+                                Training</strong></p>
+                        <button class="btn btn-outline full-width" onclick="openBookingModal('Personal Training')">BOOK
+                            PERSONAL TRAINING</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL TRAINING DEDICATED SECTION -->
+        <section class="section fade-in">
+            <div class="container">
+                <div class="pt-block slide-up">
+                    <span class="eyebrow" style="color:var(--color-accent);">ONE-TO-ONE TRAINING</span>
+                    <h2 style="margin-bottom:1.5rem; font-size: clamp(2rem, 4vw, 3rem);">YOUR GOALS. YOUR PROGRAM. YOUR
+                        COACH.</h2>
+                    <p
+                        style="color:var(--color-text-secondary); max-width:700px; margin-inline:auto; font-size:1.1rem; margin-bottom:3rem;">
+                        Personal training is entirely customized around you. Whether you are recovering from an injury,
+                        preparing for a specific event, or simply prefer undivided attention, our expert coaches will
+                        build a roadmap tailored to your body and your goals.
+                    </p>
+
+                    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-bottom:3rem;">
+                        <div
+                            style="text-align:left; background:var(--color-background); padding:1.5rem 2rem; border-radius:8px; border:1px solid var(--color-border); min-width:200px;">
+                            <strong style="display:block; margin-bottom:0.5rem; font-size:1.1rem;">Single
+                                Session</strong>
+                            <span
+                                style="color:var(--color-accent); font-family:'Sora', sans-serif; font-weight:700; font-size:1.5rem;">₹1500</span>
+                        </div>
+                        <div
+                            style="text-align:left; background:var(--color-background); padding:1.5rem 2rem; border-radius:8px; border:1px solid var(--color-border); min-width:200px;">
+                            <strong style="display:block; margin-bottom:0.5rem; font-size:1.1rem;">4-Session
+                                Package</strong>
+                            <span
+                                style="color:var(--color-accent); font-family:'Sora', sans-serif; font-weight:700; font-size:1.5rem;">₹5500</span>
+                        </div>
+                        <div
+                            style="text-align:left; background:var(--color-background); padding:1.5rem 2rem; border-radius:8px; border:1px solid var(--color-border); min-width:200px;">
+                            <strong style="display:block; margin-bottom:0.5rem; font-size:1.1rem;">8-Session
+                                Package</strong>
+                            <span
+                                style="color:var(--color-accent); font-family:'Sora', sans-serif; font-weight:700; font-size:1.5rem;">₹10000</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="openBookingModal('Personal Training')"
+                        style="padding:1rem 3rem;">BOOK PERSONAL TRAINING</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT'S INCLUDED -->
+        <section class="section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>EVERY SESSION HAS A PURPOSE.</h2>
+                </div>
+                <div class="benefits-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+                    <div class="benefit-item slide-up" style="padding:2rem;">
+                        <i data-lucide="award" class="benefit-icon"
+                            style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>EXPERT COACHING</h4>
+                        <p>Guidance throughout your training.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-1" style="padding:2rem;">
+                        <i data-lucide="layout" class="benefit-icon"
+                            style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>STRUCTURED PROGRAMMING</h4>
+                        <p>Training designed around clear goals.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-2" style="padding:2rem;">
+                        <i data-lucide="trending-up" class="benefit-icon"
+                            style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>PROGRESS TRACKING</h4>
+                        <p>Stay aware of your performance and consistency.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-3" style="padding:2rem;">
+                        <i data-lucide="calendar" class="benefit-icon"
+                            style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>FLEXIBLE OPTIONS</h4>
+                        <p>Choose sessions that fit your schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST SECTION -->
+        <section class="section fade-in" style="padding-block:4rem; border-bottom:1px solid var(--color-border);">
+            <div class="container text-center">
+                <h3 style="margin-bottom:1rem; color:var(--color-accent);">SIMPLE. CLEAR. TRANSPARENT.</h3>
+                <p style="color:var(--color-text-secondary); max-width:600px; margin-inline:auto; margin-bottom:2rem;">
+                    Know exactly what you're choosing before you start training.</p>
+                <div
+                    style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; max-width:800px; margin-inline:auto;">
+                    <span style="display:flex; align-items:center; gap:0.5rem; font-weight:600;"><i
+                            data-lucide="check-circle" style="color:var(--color-accent); width:20px;"></i> Clear
+                        pricing</span>
+                    <span style="display:flex; align-items:center; gap:0.5rem; font-weight:600;"><i
+                            data-lucide="check-circle" style="color:var(--color-accent); width:20px;"></i> No unexpected
+                        charges</span>
+                    <span style="display:flex; align-items:center; gap:0.5rem; font-weight:600;"><i
+                            data-lucide="check-circle" style="color:var(--color-accent); width:20px;"></i> Flexible
+                        session options</span>
+                    <span style="display:flex; align-items:center; gap:0.5rem; font-weight:600;"><i
+                            data-lucide="check-circle" style="color:var(--color-accent); width:20px;"></i>
+                        Straightforward booking</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>PRICING FAQ</h2>
+                </div>
+                <div class="faq-container slide-up" style="max-width:800px; margin-inline:auto;">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I book a single session without a membership?
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. The Drop-In plan allows you to book and pay for a single session without any
+                                recurring commitment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Which plan is best for beginners?
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The Essential plan is great for beginners to build consistency. Alternatively, Personal
+                                Training provides the best foundation with 1-on-1 focus.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I change my plan later?
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. You can upgrade from Essential to Performance at any time, or switch between
+                                monthly and yearly billing.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I cancel or reschedule a session?
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, sessions can be rescheduled or cancelled up to 12 hours before the start time
+                                without penalty.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are personal training sessions included in memberships?
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, Personal Training is booked separately from the group training memberships
+                                (Essential/Performance).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section fade-in" style="background:var(--color-surface); text-align:center;">
+            <div class="container">
+                <h2 style="font-size:clamp(2rem, 4vw, 3rem); margin-bottom:1rem;">READY TO INVEST IN YOUR TRAINING?</h2>
+                <p style="color:var(--color-text-secondary); font-size:1.1rem; margin-bottom:2.5rem;">Choose your plan,
+                    book your session, and start putting in the work.</p>
+                <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+                    <a href="#plans" class="btn btn-primary" style="padding:1rem 2rem;">CHOOSE YOUR PLAN</a>
+                    <a href="sessions.html" class="btn btn-outline" style="padding:1rem 2rem;">EXPLORE SESSIONS</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal" onclick="closeBookingModal()"><i
+                    data-lucide="x"></i></button>
+            <h3 style="margin-bottom: 2rem;">BOOK A SESSION</h3>
+
+            <div class="booking-progress">
+                <div class="progress-step active">1</div>
+                <div class="progress-step">2</div>
+                <div class="progress-step">3</div>
+                <div class="progress-step">4</div>
+                <div class="progress-step">5</div>
+            </div>
+
+            <!-- Step 1: Select Session -->
+            <div id="booking-step-1" class="booking-step active">
+                <h4>SELECT SESSION</h4>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Choose a training session</label>
+                    <select id="book-session-select" class="form-control"
+                        style="width:100%; padding:1rem; background:transparent; border:1px solid var(--color-border); color:var(--color-text);">
+                        <option value="">-- Select Session --</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" style="margin-top:2rem;" onclick="nextBookingStep()">NEXT</button>
+            </div>
+
+            <!-- Step 2: Select Date -->
+            <div id="booking-step-2" class="booking-step">
+                <h4>SELECT DATE</h4>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Choose an available date</label>
+                    <input type="date" id="book-date" class="form-control"
+                        style="width:100%; padding:1rem; background:transparent; border:1px solid var(--color-border); color:var(--color-text);">
+                </div>
+                <div style="margin-top:2rem; display:flex; gap:1rem;">
+                    <button class="btn btn-outline" onclick="prevBookingStep()">BACK</button>
+                    <button class="btn btn-primary" onclick="nextBookingStep()">NEXT</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Select Time -->
+            <div id="booking-step-3" class="booking-step">
+                <h4>SELECT TIME</h4>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Choose a time slot</label>
+                    <select id="book-time" class="form-control"
+                        style="width:100%; padding:1rem; background:transparent; border:1px solid var(--color-border); color:var(--color-text);">
+                        <option value="">-- Select Time --</option>
+                        <option value="06:00 AM">06:00 AM</option>
+                        <option value="07:00 AM">07:00 AM</option>
+                        <option value="05:00 PM">05:00 PM</option>
+                        <option value="06:30 PM">06:30 PM</option>
+                    </select>
+                </div>
+                <div style="margin-top:2rem; display:flex; gap:1rem;">
+                    <button class="btn btn-outline" onclick="prevBookingStep()">BACK</button>
+                    <button class="btn btn-primary" onclick="nextBookingStep()">NEXT</button>
+                </div>
+            </div>
+
+            <!-- Step 4: User Details -->
+            <div id="booking-step-4" class="booking-step">
+                <h4>YOUR DETAILS</h4>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Full Name</label>
+                    <input type="text" id="book-name" class="form-control" placeholder="John Doe"
+                        style="width:100%; padding:1rem; background:transparent; border:1px solid var(--color-border); color:var(--color-text); margin-bottom:1rem;">
+
+                    <label>Email Address</label>
+                    <input type="email" id="book-email" class="form-control" placeholder="john@example.com"
+                        style="width:100%; padding:1rem; background:transparent; border:1px solid var(--color-border); color:var(--color-text);">
+                </div>
+                <div style="margin-top:2rem; display:flex; gap:1rem;">
+                    <button class="btn btn-outline" onclick="prevBookingStep()">BACK</button>
+                    <button class="btn btn-primary" onclick="nextBookingStep()">REVIEW</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirm -->
+            <div id="booking-step-5" class="booking-step">
+                <h4>CONFIRM BOOKING</h4>
+                <div
+                    style="margin-top: 1.5rem; padding:1.5rem; background:var(--color-background); border-radius:4px; border:1px solid var(--color-border);">
+                    <p style="margin-bottom:0.5rem;"><strong>Plan:</strong> <span id="summary-plan"></span></p>
+                    <p style="margin-bottom:0.5rem;"><strong>Session:</strong> <span id="summary-session"></span></p>
+                    <p style="margin-bottom:0.5rem;"><strong>Date:</strong> <span id="summary-date"></span></p>
+                    <p style="margin-bottom:0.5rem;"><strong>Time:</strong> <span id="summary-time"></span></p>
+                    <p style="margin-bottom:0.5rem;"><strong>Price:</strong> <span id="summary-price"
+                            style="color:var(--color-accent); font-weight:700;"></span></p>
+                </div>
+                <div style="margin-top:2rem; display:flex; gap:1rem;">
+                    <button class="btn btn-outline" onclick="prevBookingStep()">BACK</button>
+                    <button class="btn btn-primary" onclick="confirmBooking()">CONFIRM SESSION</button>
+                </div>
+            </div>
+
+            <!-- Success State -->
+            <div id="booking-success" class="booking-step" style="text-align:center; padding-block:2rem;">
+                <i data-lucide="check-circle"
+                    style="width:64px; height:64px; color:var(--success); margin-bottom:1.5rem;"></i>
+                <h3 style="margin-bottom:1rem;">SESSION BOOKED</h3>
+                <p style="margin-bottom:2rem;">Your training session has been successfully scheduled.</p>
+                <div style="display:flex; justify-content:center; gap:1rem;">
+                    <a href="dashboard.html" class="btn btn-primary">VIEW MY SESSIONS</a>
+                    <button class="btn btn-outline" onclick="closeBookingModal()">BACK</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sessions.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Toggle Billing Logic
+        function toggleBilling() {
+            const isYearly = document.getElementById('billing-toggle').checked;
+            const priceElements = document.querySelectorAll('.dynamic-price');
+
+            priceElements.forEach(el => {
+                const monthly = el.getAttribute('data-monthly');
+                const yearly = el.getAttribute('data-yearly');
+                el.innerText = '₹' + (isYearly ? yearly : monthly);
+            });
+        }
+
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-question');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    const isActive = parent.classList.contains('active');
+
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = null;
+                        const icon = faq.querySelector('.faq-icon');
+                        if (icon) icon.setAttribute('data-lucide', 'plus');
+                    });
+
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        const answer = parent.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        const icon = item.querySelector('.faq-icon');
+                        if (icon) icon.setAttribute('data-lucide', 'minus');
+                    }
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

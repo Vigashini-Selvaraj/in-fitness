@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Journal | IN+ FITNESS</title>
+    <meta name="description" content="Training, wellness, and recovery insights from the IN+ FITNESS experts.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <style>
+        /* Blog Specific Styles */
+        .blog-hero {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 1rem 0 1.5rem;
+            color: var(--color-text);
+        }
+
+        .featured-article {
+            margin-top: 3rem;
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            background: var(--bg-secondary);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 992px) {
+            .featured-article {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+
+        .featured-article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .featured-img-wrap {
+            position: relative;
+            height: 100%;
+            min-height: 250px;
+        }
+
+        .featured-img-wrap img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            align-self: flex-start;
+        }
+
+        .featured-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-meta i { width: 16px; height: 16px; color: var(--color-accent); }
+
+        /* Toolbar / Categories */
+        .blog-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 4rem;
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-light);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #fff;
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--color-border);
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 100px;
+            color: var(--color-text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-box input:focus { border-color: var(--color-accent); }
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-light);
+            width: 18px; height: 18px;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .blog-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .blog-card-img {
+            height: 220px;
+            position: relative;
+        }
+
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .blog-card .read-more {
+            color: var(--color-accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+
+        .blog-card:hover .read-more { gap: 0.75rem; }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(145deg, rgba(30,30,30,1) 0%, var(--bg-secondary) 100%);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 5rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--color-border);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+        }
+        
+        .newsletter-form input:focus { border-color: var(--color-accent); }
+
+        @media (max-width: 576px) {
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- 1. EDITORIAL HERO (Featured Article) -->
+        <section class="blog-hero-editorial fade-in" style="position: relative; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding-bottom: 4rem; padding-top: 140px; overflow: hidden; background: #0b1220;">
+            <!-- Full Bleed Image Background -->
+            <div style="position: absolute; inset: 0; z-index: 0;">
+                <img src="assets/images/strength training.png" alt="Featured Article" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transform: scale(1.05); animation: slowZoom 20s infinite alternate ease-in-out;">
+                <!-- Dark Gradient Overlays for readability -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,18,32,1) 0%, rgba(11,18,32,0.8) 30%, transparent 100%);"></div>
+                <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,18,32,0.8) 0%, transparent 60%);"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="container" style="position: relative; z-index: 1; width: 100%;">
+                <div class="slide-up" style="max-width: 800px;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <span style="font-weight: 700; color: #fff; letter-spacing: 2px; text-transform: uppercase; border-right: 2px solid rgba(255,255,255,0.2); padding-right: 1rem;">IN+ JOURNAL</span>
+                        <span class="category-badge" style="background: var(--color-accent); color: #0B1220; padding: 0.4rem 1rem; border-radius: 100px; font-weight: 700; font-size: 0.85rem; margin: 0;">FEATURED</span>
+                        <span style="color: rgba(255,255,255,0.8); font-size: 0.9rem; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="clock" style="width: 14px;"></i> 6 MIN READ</span>
+                    </div>
+                    
+                    <h1 class="delay-1" style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; color: #fff; font-family: 'Sora', sans-serif;">
+                        Why Strength Training Should Be Part of Every Fitness Routine.
+                    </h1>
+                    
+                    <p class="delay-2" style="font-size: 1.125rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2.5rem; max-width: 650px;">
+                        Discover how structured resistance training not only builds muscle but improves bone density, boosts metabolism, and protects your joints for the long haul.
+                    </p>
+                    
+                    <div class="hero-actions delay-3" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <a href="blog-details.html?id=strength-benefits" class="btn btn-primary" style="background: var(--color-accent); color: #0B1220;">READ FULL ARTICLE</a>
+                        
+                        <!-- Author Info -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=150&auto=format&fit=crop" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);" alt="Alex Mercer">
+                            <div>
+                                <span style="display: block; font-weight: 700; color: #fff; font-size: 0.95rem;">Alex Mercer</span>
+                                <span style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">Oct 12, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CATEGORIES & SEARCH -->
+        <section class="section pt-0 fade-in">
+            <div class="container">
+                <div class="blog-toolbar slide-up">
+                    <div class="category-filters" id="categoryFilters">
+                        <button class="filter-btn active" data-filter="All">All</button>
+                        <button class="filter-btn" data-filter="Strength">Strength</button>
+                        <button class="filter-btn" data-filter="Training">Training</button>
+                        <button class="filter-btn" data-filter="Movement">Movement</button>
+                        <button class="filter-btn" data-filter="Recovery">Recovery</button>
+                        <button class="filter-btn" data-filter="Wellness">Wellness</button>
+                        <button class="filter-btn" data-filter="Nutrition">Nutrition</button>
+                        <button class="filter-btn" data-filter="Performance">Performance</button>
+                    </div>
+                </div>
+
+                <!-- 4. BLOG GRID -->
+                <div class="blog-grid slide-up delay-1" id="blogGrid">
+                    
+                    <div class="blog-card" data-category="Training">
+                        <div class="blog-card-img">
+                            <img src="assets/images/funtional training.png" alt="Functional Strength">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Training</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>5 Benefits of Building Functional Strength</h3>
+                            <p>Learn how training movements instead of isolated muscles translates to better performance in everyday life.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Oct 08</span>
+                                <span><i data-lucide="clock"></i> 4 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=functional-strength" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Recovery">
+                        <div class="blog-card-img">
+                            <img src="assets/images/mobility and recovery.png" alt="Recovery">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Recovery</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Why Recovery Is Part of Progress</h3>
+                            <p>Overtraining leads to burnout. Discover why your rest days are just as crucial as your heavy lifting days.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Oct 05</span>
+                                <span><i data-lucide="clock"></i> 5 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=recovery-progress" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Movement">
+                        <div class="blog-card-img">
+                            <img src="assets/images/group fitness.png" alt="Mobility">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Movement</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Simple Ways to Improve Your Mobility</h3>
+                            <p>Struggling with tight hips or stiff shoulders? Integrate these daily mobility drills to unlock your body.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Sep 29</span>
+                                <span><i data-lucide="clock"></i> 3 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=improve-mobility" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Performance">
+                        <div class="blog-card-img">
+                            <img src="assets/images/hiit.png" alt="Athletic Performance">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Performance</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>How to Train for Better Athletic Performance</h3>
+                            <p>A deep dive into periodization, explosive power development, and conditioning for athletes.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Sep 24</span>
+                                <span><i data-lucide="clock"></i> 7 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=athletic-performance" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Wellness">
+                        <div class="blog-card-img">
+                            <img src="assets/images/personal training.png" alt="Fitness Habits">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Wellness</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Building Fitness Habits That Actually Last</h3>
+                            <p>Motivation fades. Discipline is built. Here is how to create a sustainable routine you won't quit.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Sep 18</span>
+                                <span><i data-lucide="clock"></i> 5 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=fitness-habits" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Nutrition">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" alt="Nutrition">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Nutrition</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>The Role of Nutrition in Your Training Progress</h3>
+                            <p>You can't out-train a bad diet. Explore the fundamentals of fueling your body for performance and recovery.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Sep 12</span>
+                                <span><i data-lucide="clock"></i> 6 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=nutrition-training" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- 6 New Added Cards -->
+                    <div class="blog-card" data-category="Strength">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" alt="Strength">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Strength</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>The Big 3 Lifts Explained</h3>
+                            <p>Master the squat, deadlift, and bench press for foundational strength gains.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Sep 02</span>
+                                <span><i data-lucide="clock"></i> 8 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=big-3-lifts" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Nutrition">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" alt="Nutrition">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Nutrition</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Pre-Workout vs Post-Workout Meals</h3>
+                            <p>Exactly what to eat before and after you train to maximize performance and recovery.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Aug 28</span>
+                                <span><i data-lucide="clock"></i> 5 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=workout-meals" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Wellness">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2060&auto=format&fit=crop" alt="Sleep">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Wellness</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Sleep: The Ultimate Performance Enhancer</h3>
+                            <p>If you're not sleeping, you're not growing. Uncover the science of sleep and muscle recovery.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Aug 15</span>
+                                <span><i data-lucide="clock"></i> 6 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=sleep-performance" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Movement">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" alt="Yoga">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Movement</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Yoga for Weightlifters</h3>
+                            <p>How integrating dynamic flows can improve your bottom positions in heavy squats and snatches.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Aug 04</span>
+                                <span><i data-lucide="clock"></i> 4 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=yoga-weightlifters" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Strength">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" alt="Plateaus">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Strength</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Overcoming Plateaus in Strength Training</h3>
+                            <p>Stuck at the same weight? Here are 3 programming changes you need to implement today.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Jul 22</span>
+                                <span><i data-lucide="clock"></i> 7 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=overcoming-plateaus" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card" data-category="Recovery">
+                        <div class="blog-card-img">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" alt="Active Recovery">
+                            <span class="category-badge" style="position: absolute; top: 1rem; left: 1rem; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); margin:0;">Recovery</span>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Active Recovery Strategies</h3>
+                            <p>Sitting on the couch isn't always the best way to recover. Discover the benefits of light, restorative movement.</p>
+                            <div class="article-meta" style="margin-top: auto; margin-bottom: 1.5rem; gap: 1rem; font-size: 0.8rem;">
+                                <span><i data-lucide="calendar"></i> Jul 10</span>
+                                <span><i data-lucide="clock"></i> 3 min read</span>
+                            </div>
+                            <a href="blog-details.html?id=active-recovery" class="read-more">Read More <i data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. NEWSLETTER -->
+                <div class="newsletter-section slide-up">
+                    <span class="eyebrow" style="color: var(--color-accent); margin-bottom: 1rem; display: block;">KEEP MOVING FORWARD</span>
+                    <h2>Get practical training, movement, and wellness insights directly to your inbox.</h2>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ADDED SECTIONS -->
+        <section class="section pt-0 fade-in">
+            <div class="container text-center" style="max-width: 800px; margin-bottom: 5rem;">
+                <span class="eyebrow">COMMUNITY</span>
+                <h2>WHAT OUR READERS SAY</h2>
+                <div style="background: var(--bg-secondary); padding: 3rem; border-radius: 12px; border: 1px solid var(--color-border); margin-top: 2rem;">
+                    <i data-lucide="quote" style="color: var(--color-accent); width: 40px; height: 40px; margin-bottom: 1rem;"></i>
+                    <p style="font-size: 1.2rem; font-style: italic; color: var(--color-text); margin-bottom: 1.5rem;">"The IN+ Journal is the only fitness blog I actually read. It cuts through the noise and provides actionable advice I can take straight to the gym."</p>
+                    <h4 style="color: var(--color-accent); margin: 0;">Sarah Jenkins</h4>
+                    <span style="font-size: 0.9rem; color: var(--color-text-light);">Member since 2024</span>
+                </div>
+            </div>
+
+            <div class="container" style="max-width: 800px; margin-bottom: 5rem;">
+                <div class="section-header text-center">
+                    <span class="eyebrow">SUPPORT</span>
+                    <h2>BLOG FAQ</h2>
+                </div>
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <details style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); cursor: pointer;">
+                        <summary style="font-weight: 600; font-size: 1.1rem; color: var(--color-text);">How often do you post new articles?</summary>
+                        <p style="margin-top: 1rem; color: var(--color-text-light);">We publish new evidence-based fitness and wellness articles every Tuesday and Thursday.</p>
+                    </details>
+                    <details style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); cursor: pointer;">
+                        <summary style="font-weight: 600; font-size: 1.1rem; color: var(--color-text);">Can I suggest a topic?</summary>
+                        <p style="margin-top: 1rem; color: var(--color-text-light);">Absolutely! Feel free to reach out via our contact page. We love addressing questions directly from our community.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FINAL CTA -->
+        <section class="final-cta section fade-in" style="background: var(--navbar-bg); border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container text-center" style="max-width: 600px;">
+                <h2 style="color: #fff; margin-bottom: 1rem;">READY TO PUT KNOWLEDGE INTO ACTION?</h2>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Take what you've learned and apply it with expert coaching and structured programs.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="services.html" class="btn btn-primary">Explore Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+        <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.textContent.trim();
+
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (filterValue === 'All' || category === filterValue) {
+                            card.style.display = 'flex'; // Assuming flex or block
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

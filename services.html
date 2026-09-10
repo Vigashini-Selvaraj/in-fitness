@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | IN+ FITNESS</title>
+    <meta name="description" content="Explore our premium fitness services including Strength Training, Personal Training, HIIT, Group Fitness, Functional Training, and Mobility & Recovery.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- 1. OFFSET GLASS HERO -->
+        <section class="services-hero-glass section fade-in" style="position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden;">
+            <!-- Background Image & Gradient Overlay -->
+            <div style="position: absolute; inset: 0; z-index: 0;">
+                <img src="assets/images/services_hero.jpg" alt="Dynamic training" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,18,32,0.95) 0%, rgba(11,18,32,0.7) 45%, rgba(11,18,32,0.2) 100%);"></div>
+            </div>
+
+            <!-- Glassmorphism Content Container -->
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="glass-hero-content slide-up" style="max-width: 650px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.08); padding: 4rem; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+                    <span class="eyebrow" style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">OUR SERVICES</span>
+                    <h1 class="slide-up delay-1" style="font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; margin: 1.5rem 0; color: #fff;">
+                        TRAIN WITH<br>PURPOSE.
+                    </h1>
+                    <p class="slide-up delay-2" style="font-size: 1.125rem; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 2.5rem;">
+                        We provide structured training and expert guidance designed around measurable progress. Find the right path for your goals.
+                    </p>
+                    <div class="hero-actions slide-up delay-3">
+                        <a href="#services-grid" class="btn btn-primary" style="background: var(--color-accent); color: #0B1220;">EXPLORE SERVICES</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Decorative Element (Desktop Only) -->
+            <div class="slide-up delay-4 desktop-only" style="position: absolute; right: 8%; bottom: 12%; background: rgba(11, 18, 32, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 1.25rem 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 1.25rem; z-index: 1;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="activity" style="color: #0B1220; width: 24px; height: 24px;"></i>
+                </div>
+                <div>
+                    <span style="display: block; font-weight: 700; color: #fff; font-size: 1.25rem; line-height: 1.2;">Expert</span>
+                    <span style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Coaching</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SERVICES OVERVIEW -->
+        <section class="services-overview section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>CORE SERVICES</h2>
+                    <p>Comprehensive training programs led by expert coaches.</p>
+                </div>
+                
+                <div class="services-grid slide-up">
+                    <div class="service-card">
+                        <img src="assets/images/strength training.png" alt="Strength Training" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="dumbbell" class="service-icon"></i>
+                        <h3>Strength Training</h3>
+                        <p>Build strength, power, and muscular endurance through structured resistance training.</p>
+                        <a href="service-details.html?id=strength" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/images/personal training.png" alt="Personal Training" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="user" class="service-icon"></i>
+                        <h3>Personal Training</h3>
+                        <p>One-to-one coaching designed around individual goals and fitness levels.</p>
+                        <a href="service-details.html?id=personal" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/images/hiit.png" alt="HIIT" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="flame" class="service-icon"></i>
+                        <h3>HIIT</h3>
+                        <p>High-intensity sessions focused on cardiovascular fitness, conditioning, and performance.</p>
+                        <a href="service-details.html?id=hiit" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/images/group fitness.png" alt="Group Fitness" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="users" class="service-icon"></i>
+                        <h3>Group Fitness</h3>
+                        <p>Instructor-led sessions combining structured workouts with community motivation.</p>
+                        <a href="service-details.html?id=group" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/images/funtional training.png" alt="Functional Training" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="activity" class="service-icon"></i>
+                        <h3>Functional Training</h3>
+                        <p>Improve everyday movement, stability, coordination, and functional strength.</p>
+                        <a href="service-details.html?id=functional" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                    <div class="service-card">
+                        <img src="assets/images/mobility and recovery.png" alt="Mobility & Recovery" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1.5rem auto; display: block;">
+                        <i data-lucide="heart-pulse" class="service-icon"></i>
+                        <h3>Mobility & Recovery</h3>
+                        <p>Improve flexibility, mobility, movement quality, and active recovery techniques.</p>
+                        <a href="service-details.html?id=mobility" class="btn btn-outline" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WHY IN+ SERVICES -->
+        <section class="why-us section fade-in">
+            <div class="container hero-split">
+                <div class="why-us-image slide-up">
+                    <img src="assets/images/services_why.jpg" alt="Expert coaching and supportive community" style="border-radius: 8px; width: 100%; height: auto; border: 1px solid var(--color-border);">
+                </div>
+                <div class="why-us-content slide-up delay-1">
+                    <span class="eyebrow">THE IN+ DIFFERENCE</span>
+                    <h2>WHY TRAIN WITH US?</h2>
+                    
+                    <div class="why-us-grid" style="margin-top: 2.5rem;">
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Expert Coaching</h4>
+                                <p>Learn from certified professionals who prioritize form and performance.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Structured Programs</h4>
+                                <p>No random workouts; every session is designed with intent.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Goal-Based Training</h4>
+                                <p>Tailored approaches to help you achieve measurable results.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Progress Tracking</h4>
+                                <p>Understand your performance with data-driven feedback.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Modern Environment</h4>
+                                <p>Train in a premium facility equipped with top-tier gear.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <div>
+                                <h4>Supportive Community</h4>
+                                <p>Join members who motivate each other to push boundaries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HOW IT WORKS -->
+        <section class="how-it-works section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">SIMPLE PROCESS</span>
+                    <h2>HOW IT WORKS</h2>
+                </div>
+                
+                <div class="how-it-works-grid slide-up">
+                    <div class="how-step">
+                        <span class="step-num">01</span>
+                        <h4>Choose Your Goal</h4>
+                        <p>Tell us what you want to achieve.</p>
+                    </div>
+                    <div class="how-step">
+                        <span class="step-num">02</span>
+                        <h4>Choose Your Training</h4>
+                        <p>Select the service that fits your goal.</p>
+                    </div>
+                    <div class="how-step">
+                        <span class="step-num">03</span>
+                        <h4>Start Training</h4>
+                        <p>Work with our coaches and follow your program.</p>
+                    </div>
+                    <div class="how-step">
+                        <span class="step-num">04</span>
+                        <h4>Track Your Progress</h4>
+                        <p>Build consistency and keep progressing.</p>
+                    </div>
+                </div>
+
+                <div class="how-it-works-img-container slide-up delay-1" style="margin-top: 4rem; text-align: center;">
+                    <img src="assets/images/services_how.jpg" alt="Tracking progress" style="max-width: 800px; width: 100%; border-radius: 8px; border: 1px solid var(--color-border);">
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SERVICE DETAILS PREVIEW -->
+        <section class="service-preview section fade-in">
+            <div class="container text-center">
+                <span class="eyebrow">YOUR PATH</span>
+                <h2>FIND THE RIGHT TRAINING FOR YOU</h2>
+                
+                <div class="preview-grid slide-up" style="margin-top: 3rem;">
+                    <a href="service-details.html?id=strength" class="preview-card" style="display: block; text-decoration: none;">
+                        <img src="assets/images/strength training.png" alt="Strength Training" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1rem auto; display: block;">
+                        <h3 style="color: var(--color-text);">Build Strength</h3>
+                        <i data-lucide="arrow-right" style="color: var(--color-accent); margin: 1rem 0;"></i>
+                        <h4 style="color: var(--color-accent);">Strength Training</h4>
+                    </a>
+                    <a href="service-details.html?id=personal" class="preview-card" style="display: block; text-decoration: none;">
+                        <img src="assets/images/personal training.png" alt="Personal Training" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1rem auto; display: block;">
+                        <h3 style="color: var(--color-text);">Train One-to-One</h3>
+                        <i data-lucide="arrow-right" style="color: var(--color-accent); margin: 1rem 0;"></i>
+                        <h4 style="color: var(--color-accent);">Personal Training</h4>
+                    </a>
+                    <a href="service-details.html?id=hiit" class="preview-card" style="display: block; text-decoration: none;">
+                        <img src="assets/images/hiit.png" alt="HIIT" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1rem auto; display: block;">
+                        <h3 style="color: var(--color-text);">Improve Conditioning</h3>
+                        <i data-lucide="arrow-right" style="color: var(--color-accent); margin: 1rem 0;"></i>
+                        <h4 style="color: var(--color-accent);">HIIT</h4>
+                    </a>
+                    <a href="service-details.html?id=mobility" class="preview-card" style="display: block; text-decoration: none;">
+                        <img src="assets/images/mobility and recovery.png" alt="Mobility & Recovery" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; margin: 0 auto 1rem auto; display: block;">
+                        <h3 style="color: var(--color-text);">Move Better</h3>
+                        <i data-lucide="arrow-right" style="color: var(--color-accent); margin: 1rem 0;"></i>
+                        <h4 style="color: var(--color-accent);">Mobility & Recovery</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FINAL CTA -->
+        <section class="final-cta section fade-in" style="background: var(--navbar-bg); color: #fff;">
+            <div class="container text-center" style="max-width: 600px;">
+                <h2 style="color: #fff; margin-bottom: 2rem;">READY TO START TRAINING?</h2>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="sessions.html" class="btn btn-primary">EXPLORE SESSIONS</a>
+                    <a href="pricing.html" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.5);">GET STARTED</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+        <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

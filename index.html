@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IN+ FITNESS | Train. Move. Progress.</title>
+    <meta name="description"
+        content="A modern fitness experience built around strength, performance, movement, and long-term results.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-dark-variant section fade-in">
+            <div class="container hero-split">
+                <!-- Left: Content -->
+                <div class="hero-left">
+                    <span class="eyebrow slide-up">IN+ FITNESS</span>
+                    <h1 class="slide-up delay-1">Train. Move.<br>Progress.</h1>
+                    <p class="slide-up delay-2">A modern fitness experience built around strength, performance,
+                        movement, and long-term results.</p>
+                    <div class="hero-actions slide-up delay-3">
+                        <a href="login.html" class="btn btn-primary">START TRAINING</a>
+                        <a href="services.html" class="btn btn-outline">EXPLORE SERVICES</a>
+                    </div>
+
+                    <!-- Stats moved below content -->
+                    <div class="hero-stats slide-up delay-4">
+                        <div class="stat-item">
+                            <div><span class="stat-number" data-target="500">0</span><span>+</span></div>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <div><span class="stat-number" data-target="25">0</span><span>+</span></div>
+                            <span class="stat-label">Expert Trainers</span>
+                        </div>
+                        <div class="stat-item">
+                            <div><span class="stat-number" data-target="40">0</span><span>+</span></div>
+                            <span class="stat-label">Weekly Classes</span>
+                        </div>
+                        <div class="stat-item">
+                            <div><span class="stat-number" data-target="95">0</span><span>%</span></div>
+                            <span class="stat-label">Member Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Image -->
+                <div class="hero-right slide-up delay-2">
+                    <img src="assets/images/hero_image.jpg" alt="Fitness Training" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section fade-in">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2>Built for People Who Want More From Fitness</h2>
+                    <p>At IN+ FITNESS, we combine expert coaching, structured training, modern facilities, and a
+                        supportive community. Whether you're an elite athlete or just starting out, our approach is
+                        tailored to help you build strength, improve mobility, and achieve sustainable results.</p>
+                    <a href="about.html" class="btn btn-outline">LEARN MORE</a>
+
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <span>State-of-the-art equipment</span>
+                        </div>
+                        <div class="highlight">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <span>Science-backed training methods</span>
+                        </div>
+                        <div class="highlight">
+                            <i data-lucide="check-circle" class="accent-icon"></i>
+                            <span>Dedicated recovery zones</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop"
+                        alt="Workout Space">
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs (Services) Section -->
+        <section id="services" class="programs section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Find Your Strength</h2>
+                    <p>Discover training programs designed to push your limits and deliver results.</p>
+                </div>
+                <div class="programs-grid">
+                    <!-- Program Cards -->
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="dumbbell"></i></div>
+                        <h3>Strength Training</h3>
+                        <p>Build muscle and raw power with structured compound lifting and progressive overload.</p>
+                        <a href="service-details.html?id=strength-training" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="users"></i></div>
+                        <h3>Personal Training</h3>
+                        <p>Work 1-on-1 with expert coaches to reach your specific fitness goals faster.</p>
+                        <a href="service-details.html?id=personal-training" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="flame"></i></div>
+                        <h3>HIIT</h3>
+                        <p>High-intensity intervals designed to maximize calorie burn and improve cardiovascular health.
+                        </p>
+                        <a href="service-details.html?id=hiit" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="users-round"></i></div>
+                        <h3>Group Fitness</h3>
+                        <p>Motivating, high-energy classes led by expert instructors for all fitness levels.</p>
+                        <a href="service-details.html?id=group-fitness" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="activity"></i></div>
+                        <h3>Functional Training</h3>
+                        <p>Train your body for everyday activities with varied, high-intensity movements.</p>
+                        <a href="service-details.html?id=functional-training" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="card program-card">
+                        <div class="card-icon"><i data-lucide="heart-pulse"></i></div>
+                        <h3>Mobility & Recovery</h3>
+                        <p>Improve flexibility, prevent injuries, and speed up recovery times.</p>
+                        <a href="service-details.html?id=mobility" class="card-link">VIEW PROGRAM <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why IN+ Fitness Section -->
+        <section class="benefits section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>More Than a Gym</h2>
+                    <p>Experience the ultimate training environment.</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item slide-up delay-1">
+                        <i data-lucide="award" class="benefit-icon"></i>
+                        <h4>Expert Coaching</h4>
+                        <p>Train with experienced professionals who understand your goals.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-2">
+                        <i data-lucide="layout-dashboard" class="benefit-icon"></i>
+                        <h4>Modern Training Spaces</h4>
+                        <p>Purpose-built spaces designed for focused and effective workouts.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-3">
+                        <i data-lucide="target" class="benefit-icon"></i>
+                        <h4>Personalized Progress</h4>
+                        <p>Training plans designed around your ability, goals, and progress.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-4">
+                        <i data-lucide="handshake" class="benefit-icon"></i>
+                        <h4>Strong Community</h4>
+                        <p>A motivating environment where consistency becomes a lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trainer Section -->
+        <section id="trainers" class="trainers section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Train With the Best</h2>
+                    <p>Meet the experts dedicated to helping you achieve your full potential.</p>
+                </div>
+                <div class="trainers-grid">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop"
+                            alt="Alex Morgan">
+                        <div class="trainer-info">
+                            <h4>Alex Morgan</h4>
+                            <span class="specialty">Strength & Conditioning</span>
+                            <p>Specializes in raw strength and powerlifting techniques.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
+                            alt="Maya Wilson">
+                        <div class="trainer-info">
+                            <h4>Maya Wilson</h4>
+                            <span class="specialty">HIIT & Performance</span>
+                            <p>Expert in metabolic conditioning and high-intensity interval training.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop"
+                            alt="Daniel Carter">
+                        <div class="trainer-info">
+                            <h4>Daniel Carter</h4>
+                            <span class="specialty">Functional Training</span>
+                            <p>Focuses on improving everyday movement mechanics and core stability.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=1974&auto=format&fit=crop"
+                            alt="Sophia Reed">
+                        <div class="trainer-info">
+                            <h4>Sophia Reed</h4>
+                            <span class="specialty">Mobility & Wellness</span>
+                            <p>Dedicated to injury prevention, flexibility, and active recovery.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Added 2 more trainers -->
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop"
+                            alt="Marcus Johnson">
+                        <div class="trainer-info">
+                            <h4>Marcus Johnson</h4>
+                            <span class="specialty">Boxing & Agility</span>
+                            <p>Specializes in speed, agility, and high-intensity combat conditioning.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
+                            alt="Elena Rostova">
+                        <div class="trainer-info">
+                            <h4>Elena Rostova</h4>
+                            <span class="specialty">Olympic Weightlifting</span>
+                            <p>Expert in snatch, clean and jerk, and explosive power movements.</p>
+                            <div class="trainer-socials">
+                                <a href="#"><i data-lucide="instagram"></i></a>
+                                <a href="#"><i data-lucide="twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Class Schedule Section -->
+        <section id="classes" class="schedule section fade-in">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Today's Training Schedule</h2>
+                </div>
+                <div class="schedule-table-container">
+                    <table class="schedule-table">
+                        <thead>
+                            
+                            <tr>
+                                <th>Time</th>
+                                <th>Class</th>
+                                <th>Trainer</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Time">06:30 AM</td>
+                                <td data-label="Class"><strong>Strength Foundations</strong></td>
+                                <td data-label="Trainer">Alex Morgan</td>
+                                <td data-label="Level"><span class="badge beginner">Beginner</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Time">08:00 AM</td>
+                                <td data-label="Class"><strong>HIIT Performance</strong></td>
+                                <td data-label="Trainer">Maya Wilson</td>
+                                <td data-label="Level"><span class="badge intermediate">Intermediate</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Time">05:30 PM</td>
+                                <td data-label="Class"><strong>Functional Fitness</strong></td>
+                                <td data-label="Trainer">Daniel Carter</td>
+                                <td data-label="Level"><span class="badge all-levels">All Levels</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Time">07:00 PM</td>
+                                <td data-label="Class"><strong>Mobility & Recovery</strong></td>
+                                <td data-label="Trainer">Sophia Reed</td>
+                                <td data-label="Level"><span class="badge all-levels">All Levels</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="classes.html" class="btn btn-outline">VIEW FULL SCHEDULE</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Real People. Real Progress.</h2>
+                </div>
+
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-slider">
+                        <!-- Slide 1 -->
+                        <div class="testimonial-slide active">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p class="quote-text">"Joining IN+ FITNESS was the best decision I made for my health. The
+                                trainers are exceptional and the community keeps me accountable every single day."</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+                                    alt="Sarah J.">
+                                <div>
+                                    <h4>Sarah Jenkins</h4>
+                                    <span>Active Member</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testimonial-slide">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p class="quote-text">"The strength training programs here completely transformed my
+                                approach to fitness. The equipment is top-tier and the environment is unbeatable."</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop"
+                                    alt="Mark T.">
+                                <div>
+                                    <h4>Mark Thompson</h4>
+                                    <span>Elite Member</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testimonial-slide">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p class="quote-text">"I started as a beginner and was intimidated by gyms. The team at IN+
+                                FITNESS made me feel welcome and guided me step-by-step to reaching my goals."</p>
+                            <div class="testimonial-author">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Emily R.">
+                                <div>
+                                    <h4>Emily Rodriguez</h4>
+                                    <span>Starter Member</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" aria-label="Previous testimonial"><i
+                                data-lucide="chevron-left"></i></button>
+                        <div class="slider-dots"></div>
+                        <button class="slider-btn next-btn" aria-label="Next testimonial"><i
+                                data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="cta section fade-in">
+            <div class="container text-center">
+                <h2>Your Stronger Life Starts Here.</h2>
+                <p>Stop waiting for the perfect time. Start building strength, confidence, and consistency today.</p>
+                <div class="cta-actions">
+                    <a href="pricing.html" class="btn btn-primary">JOIN NOW</a>
+                    <a href="contact.html" class="btn btn-outline">CONTACT US</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

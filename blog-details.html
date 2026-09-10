@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details | IN+ FITNESS</title>
+    <meta name="description" content="Read full article on IN+ FITNESS.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        /* Blog Details Specific Styles */
+        .blog-header {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-header .category-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        .blog-header .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            color: var(--color-text-light);
+            font-size: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .blog-header .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-header .article-meta i {
+            width: 18px;
+            height: 18px;
+            color: var(--color-accent);
+        }
+
+        .blog-cover {
+            width: 100%;
+            height: 40vh;
+            max-height: 500px;
+            min-height: 300px;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .blog-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+        }
+
+        .blog-content p {
+            margin-bottom: 2rem;
+        }
+
+        .blog-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            color: var(--color-text);
+            margin: 3rem 0 1.5rem;
+        }
+
+        .blog-content h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin: 2rem 0 1rem;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--color-accent);
+            padding-left: 2rem;
+            margin: 3rem 0;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        .blog-content img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .blog-content ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-footer {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .share-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .share-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            transition: all 0.2s;
+        }
+
+        .share-links a:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: #fff;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 6rem;
+            padding-top: 6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+        }
+
+        .blog-card-img {
+            height: 220px;
+        }
+
+        .blog-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .blog-card .read-more {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- EDITORIAL ARTICLE HEADER -->
+        <section class="blog-article-hero fade-in"
+            style="position: relative; min-height: 70vh; display: flex; flex-direction: column; justify-content: flex-end; padding-top: 140px; padding-bottom: 4rem; overflow: hidden; background: #0b1220;">
+            <!-- Full Bleed Cover Image (preserves JS .src logic) -->
+            <div style="position: absolute; inset: 0; z-index: 0;">
+                <img id="blog-cover-img" src="assets/images/strength training.png" alt="Blog Cover"
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                <div
+                    style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,18,32,1) 0%, rgba(11,18,32,0.6) 40%, transparent 100%);">
+                </div>
+            </div>
+
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="slide-up" style="max-width: 900px;">
+                    <span class="category-badge" id="blog-category"
+                        style="background: var(--color-accent); color: #0B1220; padding: 0.4rem 1rem; border-radius: 100px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1.5rem; display: inline-block;">Strength</span>
+
+                    <h1 class="delay-1" id="blog-title"
+                        style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: #fff; font-family: 'Sora', sans-serif;">
+                        Why Strength Training Should Be Part of Every Fitness Routine
+                    </h1>
+
+                    <div class="article-meta delay-2"
+                        style="display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img id="blog-author-img"
+                                src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=150&auto=format&fit=crop"
+                                style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);">
+                            <div>
+                                <span style="display: block; font-weight: 700; color: #fff; font-size: 0.95rem;"
+                                    id="blog-author">Alex Mercer</span>
+                                <span style="color: rgba(255,255,255,0.6); font-size: 0.85rem;" id="blog-date">Oct 12,
+                                    2026</span>
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 500;">
+                            <i data-lucide="clock" style="width: 18px; color: var(--color-accent);"></i> <span
+                                id="blog-read-time">6 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLE CONTENT -->
+        <section class="section pt-0 fade-in">
+            <div class="container">
+                <div class="blog-content" id="blog-content">
+                    <p>When people think of getting in shape, their minds often jump directly to treadmills, stationary
+                        bikes, or endless burpees. While cardiovascular conditioning has its indisputable place, there
+                        is one foundational pillar of fitness that is repeatedly overlooked by the general population:
+                        <strong>strength training</strong>.
+                    </p>
+
+                    <p>Strength training isn't just about building massive muscles or lifting extremely heavy weights.
+                        It's about building a resilient, highly capable machine. It's about longevity, metabolic health,
+                        and injury prevention.</p>
+
+                    <blockquote>"Strength is the glass that holds all other physical qualities. The bigger the glass,
+                        the more endurance, mobility, and power you can pour into it."</blockquote>
+
+                    <h2>The Metabolic Advantage</h2>
+                    <p>One of the most profound benefits of strength training is its impact on your metabolism. Unlike
+                        steady-state cardio, which primarily burns calories while you are actively performing it,
+                        lifting weights alters your body composition.</p>
+                    <p>Muscle is metabolically active tissue. This means that for every pound of lean muscle mass you
+                        build, your body requires more calories to simply exist. A strength training program effectively
+                        increases your resting metabolic rate (RMR), turning your body into an engine that burns energy
+                        even when you're sitting on the couch.</p>
+
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
+                        alt="Gym weights">
+
+                    <h2>Bulletproofing Your Body</h2>
+                    <p>As we age, we naturally lose muscle mass and bone density—a condition known as sarcopenia.
+                        Resistance training is the ultimate antidote.</p>
+                    <ul>
+                        <li><strong>Bone Density:</strong> The stress placed on bones during weightlifting stimulates
+                            cells called osteoblasts, which rebuild bone. This helps stave off osteoporosis.</li>
+                        <li><strong>Joint Health:</strong> Stronger muscles mean better support for your joints.
+                            Training the muscles around the knees, hips, and shoulders significantly reduces the risk of
+                            everyday injuries.</li>
+                        <li><strong>Posture:</strong> Modern life has us hunched over screens. Proper strength training
+                            corrects these imbalances by strengthening the posterior chain (the muscles on the back of
+                            your body).</li>
+                    </ul>
+
+                    <h2>Mental Resilience</h2>
+                    <p>There is a psychological component to lifting weights that cannot be ignored. The process of
+                        approaching a heavy bar, doubting if you can lift it, and then successfully completing the rep
+                        builds profound mental toughness.</p>
+                    <p>This resilience translates directly into everyday life. When you know you are physically capable
+                        of handling heavy resistance, the mental obstacles of a typical workday suddenly seem much more
+                        manageable.</p>
+
+                    <h2>How to Get Started</h2>
+                    <p>If you've never strength trained before, stepping into the free weight section can be
+                        intimidating. Here is the simplest way to start:</p>
+                    <p>Focus on compound movements: the squat, the deadlift, the push-up (or bench press), and the row.
+                        These exercises recruit multiple muscle groups at once and give you the best return on your time
+                        investment.</p>
+                    <p>More importantly, seek guidance. Form is everything in strength training. At IN+ FITNESS, our
+                        coaches are dedicated to ensuring you learn the proper mechanics before we ever worry about how
+                        much weight is on the bar.</p>
+
+                </div>
+
+                <div class="article-footer">
+                    <div class="tags" id="blog-tags">
+                        <span style="color: var(--color-text-light); font-size: 0.9rem;">Tags: Strength, Resistance,
+                            Wellness</span>
+                    </div>
+                    <div class="share-links">
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATED ARTICLES -->
+        <section class="related-articles section fade-in bg-secondary">
+            <div class="container">
+                <span class="eyebrow">KEEP READING</span>
+                <h2>RELATED ARTICLES</h2>
+
+                <div class="blog-grid slide-up">
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="assets/images/funtional training.png" alt="Functional Strength">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>5 Benefits of Building Functional Strength</h3>
+                            <p>Learn how training movements instead of isolated muscles translates to better
+                                performance.</p>
+                            <a href="blog-details.html?id=functional-strength" class="read-more">Read More <i
+                                    data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="assets/images/mobility and recovery.png" alt="Recovery">
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Why Recovery Is Part of Progress</h3>
+                            <p>Overtraining leads to burnout. Discover why your rest days are just as crucial.</p>
+                            <a href="blog-details.html?id=recovery-progress" class="read-more">Read More <i
+                                    data-lucide="arrow-right" style="width:16px;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FINAL CTA -->
+        <section class="final-cta section fade-in"
+            style="background: var(--navbar-bg); border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container text-center" style="max-width: 600px;">
+                <h2 style="color: #fff; margin-bottom: 1rem;">READY TO PUT KNOWLEDGE INTO ACTION?</h2>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">Take what you've learned and apply it with
+                    expert coaching and structured programs.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="services.html" class="btn btn-primary">Explore Services</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Dynamic Blog Data Dictionary
+        const blogData = {
+            "strength-benefits": {
+                title: "Why Strength Training Should Be Part of Every Fitness Routine",
+                category: "Strength",
+                date: "Oct 12, 2026",
+                readTime: "6 min read",
+                img: "assets/images/strength training.png",
+                author: "Alex Mercer",
+                tags: "Strength, Resistance, Wellness",
+                content: `
+                    <p>When people think of getting in shape, their minds often jump directly to treadmills, stationary bikes, or endless burpees. While cardiovascular conditioning has its indisputable place, there is one foundational pillar of fitness that is repeatedly overlooked by the general population: <strong>strength training</strong>.</p>
+                    <p>Strength training isn't just about building massive muscles or lifting extremely heavy weights. It's about building a resilient, highly capable machine. It's about longevity, metabolic health, and injury prevention.</p>
+                    <blockquote>"Strength is the glass that holds all other physical qualities. The bigger the glass, the more endurance, mobility, and power you can pour into it."</blockquote>
+                    <h2>The Metabolic Advantage</h2>
+                    <p>One of the most profound benefits of strength training is its impact on your metabolism. Unlike steady-state cardio, which primarily burns calories while you are actively performing it, lifting weights alters your body composition.</p>
+                    <p>Muscle is metabolically active tissue. This means that for every pound of lean muscle mass you build, your body requires more calories to simply exist. A strength training program effectively increases your resting metabolic rate (RMR), turning your body into an engine that burns energy even when you're sitting on the couch.</p>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gym weights" style="width:100%; border-radius:12px; margin:2rem 0;">
+                    <h2>Bulletproofing Your Body</h2>
+                    <p>As we age, we naturally lose muscle mass and bone density—a condition known as sarcopenia. Resistance training is the ultimate antidote.</p>
+                    <ul style="padding-left:1.5rem; margin-bottom:2rem;">
+                        <li><strong>Bone Density:</strong> The stress placed on bones during weightlifting stimulates cells called osteoblasts, which rebuild bone. This helps stave off osteoporosis.</li>
+                        <li><strong>Joint Health:</strong> Stronger muscles mean better support for your joints. Training the muscles around the knees, hips, and shoulders significantly reduces the risk of everyday injuries.</li>
+                        <li><strong>Posture:</strong> Modern life has us hunched over screens. Proper strength training corrects these imbalances by strengthening the posterior chain.</li>
+                    </ul>
+                `
+            },
+            "functional-strength": {
+                title: "5 Benefits of Building Functional Strength",
+                category: "Training",
+                date: "Oct 08, 2026",
+                readTime: "4 min read",
+                img: "assets/images/funtional training.png",
+                author: "Sarah Jenkins",
+                tags: "Functional, Training, Performance",
+                content: `
+                    <p>Functional strength training focuses on exercises that mimic everyday movements. Unlike traditional bodybuilding which isolates specific muscles, functional fitness works multiple muscle groups simultaneously.</p>
+                    <h2>1. Improved Daily Life</h2>
+                    <p>Whether you're carrying groceries, picking up your kids, or moving furniture, functional strength directly translates to making daily tasks easier and safer.</p>
+                    <h2>2. Better Balance and Posture</h2>
+                    <p>Because functional exercises often require you to stabilize your own body weight, they inherently build core strength and improve your overall balance and posture.</p>
+                    <blockquote>"Train movements, not just muscles."</blockquote>
+                    <p>By focusing on movement patterns—push, pull, hinge, squat, lunge, and carry—you ensure that your body operates optimally as a complete system.</p>
+                `
+            },
+            "recovery-progress": {
+                title: "Why Recovery Is Part of Progress",
+                category: "Recovery",
+                date: "Oct 05, 2026",
+                readTime: "5 min read",
+                img: "assets/images/mobility and recovery.png",
+                author: "Marcus Thorne",
+                tags: "Recovery, Rest, Wellness",
+                content: `
+                    <p>There is a common misconception in fitness that more is always better. More miles, more weights, more hours in the gym. But the truth is, muscles aren't built while you're lifting weights—they are built while you are recovering.</p>
+                    <h2>The Science of Rest</h2>
+                    <p>When you exercise, you are creating micro-tears in your muscle fibers. It is the process of repairing these tears that causes muscles to grow larger and stronger. If you don't allow time for this repair process, you enter a state of overtraining.</p>
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" style="width:100%; border-radius:12px; margin:2rem 0;">
+                    <h2>Active vs Passive Recovery</h2>
+                    <p>Recovery doesn't just mean lying on the couch. Active recovery—like light walking, swimming, or yoga—can actually accelerate the healing process by promoting blood flow without placing further stress on the body.</p>
+                `
+            },
+            "improve-mobility": {
+                title: "Simple Ways to Improve Your Mobility",
+                category: "Movement",
+                date: "Sep 29, 2026",
+                readTime: "3 min read",
+                img: "assets/images/group fitness.png",
+                author: "Elena Rostova",
+                tags: "Mobility, Flexibility, Joints",
+                content: `
+                    <p>Mobility is the ability of a joint to move actively through a range of motion. It is not the same as flexibility, which is passive. True mobility requires strength and control.</p>
+                    <p>Here are three simple drills you can incorporate into your daily routine:</p>
+                    <ul style="padding-left:1.5rem; margin-bottom:2rem;">
+                        <li><strong>The World's Greatest Stretch:</strong> A lunge variation that opens up the hips, thoracic spine, and ankles simultaneously.</li>
+                        <li><strong>Cat-Cow:</strong> A classic yoga transition that promotes spinal flexion and extension.</li>
+                        <li><strong>Deep Squat Holds:</strong> Spending time at the bottom of a squat improves hip and ankle mobility drastically.</li>
+                    </ul>
+                `
+            },
+            "athletic-performance": {
+                title: "How to Train for Better Athletic Performance",
+                category: "Performance",
+                date: "Sep 24, 2026",
+                readTime: "7 min read",
+                img: "assets/images/hiit.png",
+                author: "Alex Mercer",
+                tags: "Athletics, Speed, Power",
+                content: `
+                    <p>Training for aesthetics and training for performance are two very different beasts. If you want to jump higher, run faster, and change direction quicker, you need to train like an athlete.</p>
+                    <h2>Periodization is Key</h2>
+                    <p>Athletes don't do random workouts. They follow periodized programs that cycle through phases of hypertrophy, strength, and power.</p>
+                    <blockquote>"Power is strength expressed quickly."</blockquote>
+                    <p>To build power, you must incorporate plyometrics and explosive lifts like power cleans or medicine ball throws into your routine.</p>
+                `
+            },
+            "fitness-habits": {
+                title: "Building Fitness Habits That Actually Last",
+                category: "Wellness",
+                date: "Sep 18, 2026",
+                readTime: "5 min read",
+                img: "assets/images/personal training.png",
+                author: "Sarah Jenkins",
+                tags: "Habits, Mindset, Consistency",
+                content: `
+                    <p>Motivation is a feeling, and feelings are fleeting. If you rely on motivation to get you to the gym, you will eventually fail. What you need is discipline and habit.</p>
+                    <h2>Start Small</h2>
+                    <p>The biggest mistake people make is trying to overhaul their entire life overnight. Instead of committing to 6 days a week, commit to 2. Make it so easy that you can't fail.</p>
+                    <h2>Habit Stacking</h2>
+                    <p>Attach your new fitness habit to an existing one. For example, "After I drink my morning coffee, I will immediately put on my gym shoes."</p>
+                `
+            },
+            "nutrition-training": {
+                title: "The Role of Nutrition in Your Training Progress",
+                category: "Nutrition",
+                date: "Sep 12, 2026",
+                readTime: "6 min read",
+                img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop",
+                author: "Marcus Thorne",
+                tags: "Diet, Macros, Fuel",
+                content: `
+                    <p>You can't out-train a bad diet. Whether your goal is to lose fat, build muscle, or run a marathon, your nutrition is the foundation that supports your training.</p>
+                    <h2>Protein: The Building Block</h2>
+                    <p>Protein is essential for muscle repair and growth. Aim for a consistent intake of high-quality protein sources throughout the day.</p>
+                    <h2>Carbohydrates: The Fuel</h2>
+                    <p>Carbs are not the enemy. They are the primary energy source for high-intensity training. Timing your carb intake around your workouts can drastically improve performance.</p>
+                `
+            },
+            "big-3-lifts": {
+                title: "The Big 3 Lifts Explained",
+                category: "Strength",
+                date: "Sep 02, 2026",
+                readTime: "8 min read",
+                img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+                author: "Alex Mercer",
+                tags: "Powerlifting, Squat, Deadlift",
+                content: `
+                    <p>The squat, bench press, and deadlift form the holy trinity of strength training. Mastering these three compound movements will yield the greatest return on your time investment in the gym.</p>
+                    <h2>The Squat</h2>
+                    <p>Often called the king of all exercises, the squat builds total body strength, core stability, and incredible leg power.</p>
+                    <h2>The Deadlift</h2>
+                    <p>Nothing builds a strong posterior chain (hamstrings, glutes, back) quite like pulling heavy weight off the floor.</p>
+                    <h2>The Bench Press</h2>
+                    <p>The standard for upper body pressing strength, targeting the chest, shoulders, and triceps.</p>
+                `
+            },
+            "workout-meals": {
+                title: "Pre-Workout vs Post-Workout Meals",
+                category: "Nutrition",
+                date: "Aug 28, 2026",
+                readTime: "5 min read",
+                img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop",
+                author: "Sarah Jenkins",
+                tags: "Nutrition, Timing, Fuel",
+                content: `
+                    <p>Nutrient timing isn't everything, but it can provide that extra 5-10% boost in performance and recovery.</p>
+                    <h2>Pre-Workout</h2>
+                    <p>Your goal before training is to top off glycogen stores without causing digestive distress. Focus on easy-to-digest carbohydrates and a moderate amount of protein about 1-2 hours before training.</p>
+                    <h2>Post-Workout</h2>
+                    <p>After training, your body is primed to absorb nutrients. A combination of fast-digesting protein (like whey) and simple carbohydrates will kickstart the recovery process.</p>
+                `
+            },
+            "sleep-performance": {
+                title: "Sleep: The Ultimate Performance Enhancer",
+                category: "Wellness",
+                date: "Aug 15, 2026",
+                readTime: "6 min read",
+                img: "https://images.unsplash.com/photo-1511295742362-92c96b124e87?q=80&w=2076&auto=format&fit=crop",
+                author: "Marcus Thorne",
+                tags: "Sleep, Recovery, Hormones",
+                content: `
+                    <p>If sleep were a supplement, it would be banned in professional sports. It is the single most effective performance enhancer available, and it's completely free.</p>
+                    <h2>Hormonal Optimization</h2>
+                    <p>During deep sleep, your body releases human growth hormone (HGH) and testosterone, both crucial for muscle repair and fat metabolism. Chronic sleep deprivation crushes these hormone levels.</p>
+                    <p>Aim for 7-9 hours of quality sleep per night in a cool, completely dark room to maximize recovery.</p>
+                `
+            },
+            "yoga-weightlifters": {
+                title: "Yoga for Weightlifters",
+                category: "Movement",
+                date: "Aug 04, 2026",
+                readTime: "4 min read",
+                img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop",
+                author: "Elena Rostova",
+                tags: "Yoga, Mobility, Balance",
+                content: `
+                    <p>Lifting weights makes your muscles shorter and tighter. Yoga lengthens them. The two disciplines are a match made in heaven.</p>
+                    <p>Incorporating just 15 minutes of vinyasa flow or static stretching after a heavy lifting session can dramatically improve your recovery and increase the range of motion for your next workout.</p>
+                    <p>Poses like Downward Dog and Pigeon Pose are particularly beneficial for athletes suffering from tight hamstrings and hips.</p>
+                `
+            },
+            "overcoming-plateaus": {
+                title: "Overcoming Plateaus in Strength Training",
+                category: "Strength",
+                date: "Jul 22, 2026",
+                readTime: "7 min read",
+                img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop",
+                author: "Alex Mercer",
+                tags: "Programming, Strength, Progression",
+                content: `
+                    <p>Hitting a plateau is incredibly frustrating, but it is a normal part of the training cycle. When linear progression stops working, you need to change the stimulus.</p>
+                    <h2>Change the Volume and Intensity</h2>
+                    <p>If you've been doing 3 sets of 10 for months, drop to 5 sets of 5 with a heavier weight. Changing the rep ranges forces the body to adapt in new ways.</p>
+                    <h2>Focus on Weak Points</h2>
+                    <p>Often, a lift stalls because of a specific weak point. For example, if you struggle at the lockout of a deadlift, adding rack pulls or glute bridges can help blast through the sticking point.</p>
+                `
+            },
+            "active-recovery": {
+                title: "Active Recovery Strategies",
+                category: "Recovery",
+                date: "Jul 10, 2026",
+                readTime: "3 min read",
+                img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop",
+                author: "Marcus Thorne",
+                tags: "Recovery, Blood Flow, Health",
+                content: `
+                    <p>Active recovery involves low-intensity exercise that promotes blood flow without putting significant strain on the joints or central nervous system.</p>
+                    <p>Activities like a 30-minute light cycle, swimming, or an easy hike can speed up the clearance of metabolic waste products from the muscles.</p>
+                    <p>Next time you have a rest day, try substituting complete rest with 20 minutes of active recovery and note the difference in how you feel the next day.</p>
+                `
+            }
+        };
+
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+
+        if (articleId && blogData[articleId]) {
+            const data = blogData[articleId];
+
+            // Populate DOM
+            document.getElementById('blog-title').textContent = data.title;
+            document.getElementById('blog-category').textContent = data.category;
+            document.getElementById('blog-date').textContent = data.date;
+            document.getElementById('blog-read-time').textContent = data.readTime;
+            document.getElementById('blog-author').textContent = data.author;
+            document.getElementById('blog-cover-img').src = data.img;
+            document.getElementById('blog-tags').innerHTML = '<span style="color: var(--color-text-light); font-size: 0.9rem;">Tags: ' + data.tags + '</span>';
+
+            // Populate content
+            document.getElementById('blog-content').innerHTML = data.content;
+
+            // Set document title
+            document.title = data.title + " | IN+ FITNESS";
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

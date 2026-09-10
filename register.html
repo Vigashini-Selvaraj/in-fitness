@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | IN+ FITNESS</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section " style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background-color: var(--color-background); padding-top: 100px;">
+            <div class="container" style="max-width: 500px; position: relative; z-index: 2;">
+                
+                <div style="background: var(--color-surface); border-radius: 24px; padding: 3rem; border: 1px solid var(--color-border); box-shadow: 0 20px 40px rgba(0,0,0,0.3); text-align: center;">
+                    <h1 style="font-family: 'Space Grotesk', 'Sora', sans-serif; font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem;">Join IN+ FITNESS</h1>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Create your account to get started</p>
+                    
+                    <form action="dashboard.html" method="POST" style="text-align: left;">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="name" style="display: block; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Full Name</label>
+                            <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="email" style="display: block; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Email Address</label>
+                            <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="password" style="display: block; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Password</label>
+                            <input type="password" id="password" name="password" required style="width: 100%; padding: 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label for="confirm_password" style="display: block; margin-bottom: 0.5rem; color: #fff; font-weight: 500;">Confirm Password</label>
+                            <input type="password" id="confirm_password" name="confirm_password" required style="width: 100%; padding: 1rem; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); color: #fff;">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1rem;">CREATE ACCOUNT</button>
+                    </form>
+                    
+                    <p style="margin-top: 2rem; color: var(--color-text-secondary); font-size: 0.95rem;">
+                        Already have an account? <a href="login.html" style="color: var(--color-accent); font-weight: 600; text-decoration: none;">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/components.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

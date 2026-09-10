@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | IN+ FITNESS</title>
+    <meta name="description"
+        content="Get in touch with IN+ FITNESS. We are here to help you take the next step in your training journey.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- CONTACT HERO (EDITORIAL REDESIGN) -->
+        <section class="contact-hero fade-in" style="position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 100px; padding-bottom: 80px; overflow: hidden; background-color: #111111;">
+            
+            <!-- Full Bleed Background Image -->
+            <div style="position: absolute; inset: 0; z-index: 0;">
+                <img src="assets/images/contact_hero_bg.jpg" alt="Contact IN+ FITNESS" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- Subtle Dark Overlay -->
+                <div style="position: absolute; inset: 0; background: rgba(17, 17, 17, 0.75);"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="slide-up" style="max-width: 650px; text-align: left;">
+                    
+                    <span class="eyebrow" style="display: block; color: #A3A3A3; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem;">
+                        CONTACT IN+ FITNESS
+                    </span>
+                    
+                    <h1 class="delay-1" style="font-family: 'Space Grotesk', 'Sora', sans-serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; color: #FFFFFF; line-height: 1.1; margin-bottom: 1.5rem;">
+                        LET'S TRAIN WITH PURPOSE.
+                    </h1>
+                    
+                    <p class="delay-2" style="font-family: 'Inter', 'Manrope', sans-serif; font-size: 1.125rem; color: #E5E5E5; line-height: 1.6; margin-bottom: 3rem;">
+                        Have a question, need help choosing the right session, or ready to start training? We're here to help.
+                    </p>
+                    
+                    <div class="hero-actions delay-3" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#contact-info" class="btn" style="background-color: #FFFFFF; color: #111111; font-family: 'Inter', sans-serif; font-weight: 600; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; transition: background-color 0.2s; display: inline-block;" onmouseover="this.style.backgroundColor='var(--color-accent)'; this.style.color='#111111';" onmouseout="this.style.backgroundColor='#FFFFFF'; this.style.color='#111111';">
+                            GET IN TOUCH
+                        </a>
+                        <a href="sessions.html" class="btn" style="background-color: transparent; border: 1px solid #FFFFFF; color: #FFFFFF; font-family: 'Inter', sans-serif; font-weight: 600; padding: 1rem 2.5rem; border-radius: 4px; text-decoration: none; transition: all 0.2s; display: inline-block;" onmouseover="this.style.borderColor='var(--color-accent)'; this.style.color='var(--color-accent)';" onmouseout="this.style.borderColor='#FFFFFF'; this.style.color='#FFFFFF';">
+                            VIEW SESSIONS
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. CONTACT INFORMATION -->
+        <section class="contact-info section fade-in">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="card info-card slide-up">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <h3>Visit Us</h3>
+                        <p>Your Fitness Studio<br>123 Performance Way<br>Mumbai, 400001</p>
+                    </div>
+                    <div class="card info-card slide-up delay-1">
+                        <i data-lucide="phone" class="info-icon"></i>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                    </div>
+                    <div class="card info-card slide-up delay-2">
+                        <i data-lucide="mail" class="info-icon"></i>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:hello@inplusfitness.com">hello@inplusfitness.com</a></p>
+                    </div>
+                    <div class="card info-card slide-up delay-3">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <h3>Opening Hours</h3>
+                        <p>Monday – Saturday<br>6:00 AM – 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CONTACT FORM -->
+        <section class="contact-form-section section bg-secondary fade-in">
+            <div class="container">
+                <div class="form-split">
+                    <div class="form-left slide-up">
+                        <span class="eyebrow">REACH OUT</span>
+                        <h2>START THE CONVERSATION.</h2>
+                        <p>Ready to push your limits? Drop us a message, and let's structure a training plan that works
+                            for you.</p>
+                        <div class="form-visual">
+                            <div class="accent-box"></div>
+                        </div>
+                    </div>
+                    <div class="form-right slide-up delay-1">
+                        <form class="contact-form" action="#" method="POST">
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="service">Select Service</label>
+                                    <div class="select-wrapper">
+                                        <select id="service" name="service" required>
+                                            <option value="" disabled selected>Choose a training type</option>
+                                            <option value="strength">Strength Training</option>
+                                            <option value="personal">Personal Training</option>
+                                            <option value="agility">Agility Training</option>
+                                            <option value="group">Group Fitness</option>
+                                            <option value="functional">Functional Training</option>
+                                            <option value="mobility">Mobility & Recovery</option>
+                                        </select>
+                                        <i data-lucide="chevron-down" class="select-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Preferred Date</label>
+                                    <input type="date" id="date" name="date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    placeholder="Tell us about your goals..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary full-width">SEND MESSAGE <i
+                                    data-lucide="arrow-right" style="width: 18px;"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. WHY CONTACT IN+ FITNESS -->
+        <section class="why-contact section fade-in">
+            <div class="container">
+                <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div class="benefit-item slide-up">
+                        <i data-lucide="user-check" class="benefit-icon"></i>
+                        <h3>PERSONALIZED</h3>
+                        <p>Training designed around your goals.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-1">
+                        <i data-lucide="compass" class="benefit-icon"></i>
+                        <h3>EXPERT GUIDANCE</h3>
+                        <p>Professional trainers who keep you accountable.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-2">
+                        <i data-lucide="bar-chart-2" class="benefit-icon"></i>
+                        <h3>REAL RESULTS</h3>
+                        <p>A structured approach focused on measurable progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. LOCATION / MAP -->
+        <section class="location-map section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">LOCATION</span>
+                    <h2>FIND YOUR TRAINING SPACE</h2>
+                    <p style="margin-top: 1rem;">Come experience IN+ FITNESS and start training with purpose.</p>
+                </div>
+                <div class="map-wrapper"
+                    style="border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border); height: 400px; position: relative;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.15549098952!2d72.77583626294723!3d19.082522325324508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1709664531123!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary">GET DIRECTIONS <i data-lucide="arrow-right"
+                            style="width: 18px;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ -->
+        <section class="faq-section section bg-secondary fade-in">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header text-center">
+                    <span class="eyebrow">QUESTIONS?</span>
+                    <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item slide-up">
+                        <button class="faq-question">
+                            <span>How do I book my first session?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can book your first session by filling out the contact form above, calling us
+                                directly, or dropping by the studio. We recommend scheduling a brief consultation first
+                                to assess your goals.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item slide-up delay-1">
+                        <button class="faq-question">
+                            <span>Do you offer personal training?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer one-on-one personal training tailored specifically to your needs, whether
+                                you're focusing on strength, agility, or functional movement.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item slide-up delay-2">
+                        <button class="faq-question">
+                            <span>Is IN+ FITNESS suitable for beginners?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Our expert coaches will guide you through the fundamentals, ensuring you
+                                learn proper form and build a strong foundation safely.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item slide-up delay-3">
+                        <button class="faq-question">
+                            <span>What should I bring to my first session?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Bring comfortable athletic wear, clean training shoes, a water bottle, and a towel. We
+                                provide all the necessary training equipment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item slide-up delay-4">
+                        <button class="faq-question">
+                            <span>Can I schedule a consultation before joining?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we encourage it! A consultation allows us to understand your goals, discuss our
+                                methodology, and determine the best training approach for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FINAL CTA -->
+        <section class="final-cta section fade-in">
+            <div class="container text-center" style="max-width: 800px;">
+                <h2 style="margin-bottom: 1.5rem; font-size: clamp(2rem, 4vw, 3.5rem);">YOUR STRONGER SELF STARTS HERE.
+                </h2>
+                <p style="margin-bottom: 2.5rem; font-size: 1.25rem;">Take the first step. Connect with IN+ FITNESS
+                    today.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="#name" class="btn btn-primary" onclick="document.getElementById('name').focus();">BOOK A
+                        SESSION <i data-lucide="arrow-right" style="width: 18px;"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Contact Page Specific Script for FAQ Accordion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-question');
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    const isActive = parent.classList.contains('active');
+
+                    // Close all others
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = null;
+                        const icon = faq.querySelector('.faq-icon');
+                        if (icon.getAttribute('data-lucide') === 'minus') {
+                            icon.setAttribute('data-lucide', 'plus');
+                        }
+                    });
+
+                    // Toggle current
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        const answer = parent.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        item.querySelector('.faq-icon').setAttribute('data-lucide', 'minus');
+                    }
+
+                    // Re-initialize lucide icons for the changed ones
+                    lucide.createIcons();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

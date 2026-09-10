@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions | IN+ FITNESS</title>
+    <meta name="description" content="Explore and book our training sessions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="sessions-hero-dynamic section fade-in" style="position: relative; min-height: 80vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, var(--color-bg) 0%, #0b1220 100%); padding-top: 120px;">
+            <div class="container hero-split" style="align-items: center;">
+                <!-- Left: Typography -->
+                <div class="hero-left slide-up" style="position: relative; z-index: 2;">
+                    <span class="eyebrow" style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">YOUR TRAINING SCHEDULE</span>
+                    <h1 class="delay-1" style="font-size: clamp(3rem, 5vw, 4.5rem); margin-block: 1rem 1.5rem; line-height: 1.1; font-family: 'Sora', sans-serif;">
+                        Find Your Next<br><span style="color: transparent; -webkit-text-stroke: 1px var(--color-text);">Challenge.</span>
+                    </h1>
+                    <p class="delay-2" style="font-size: 1.125rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 2.5rem; max-width: 500px;">
+                        Choose your training style, explore available sessions, and take the next step toward becoming stronger, fitter, and more capable.
+                    </p>
+                    <div class="hero-actions delay-3">
+                        <a href="#sessions-list" class="btn btn-primary" style="background: var(--color-accent); color: #0B1220;">EXPLORE SESSIONS</a>
+                    </div>
+                </div>
+
+                <!-- Right: Dynamic Floating UI -->
+                <div class="hero-right slide-up delay-2 desktop-only" style="position: relative; height: 500px; display: flex; align-items: center; justify-content: center;">
+                    <!-- Main Hero Image -->
+                    <div style="position: absolute; width: 85%; height: 95%; right: 0; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
+                        <img src="assets/images/about_hero.jpg" alt="Group Session" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11,18,32,0.8) 0%, transparent 50%);"></div>
+                    </div>
+
+                    <!-- Floating UI Card 1 (Top Left) -->
+                    <div class="floating-glass-card delay-3" style="position: absolute; left: 0; top: 15%; background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1.25rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 1rem; z-index: 10;">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(220, 255, 7, 0.2); display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="clock" style="color: var(--color-accent); width: 24px; height: 24px;"></i>
+                        </div>
+                        <div>
+                            <span style="display: block; font-size: 0.875rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px;">Next Session</span>
+                            <span style="display: block; font-weight: 700; color: #fff; font-size: 1.125rem;">HIIT • 18:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Floating UI Card 2 (Bottom Right) -->
+                    <div class="floating-glass-card delay-4" style="position: absolute; right: -5%; bottom: 10%; background: rgba(255,255,255,0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); padding: 1.25rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 1rem; z-index: 10;">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                            <i data-lucide="users" style="color: #fff; width: 24px; height: 24px;"></i>
+                        </div>
+                        <div>
+                            <span style="display: block; font-size: 0.875rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px;">Availability</span>
+                            <span style="display: block; font-weight: 700; color: #fff; font-size: 1.125rem;">3 Spots Left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Decorative Background Element -->
+            <div style="position: absolute; left: -10%; top: -10%; width: 50%; height: 50%; background: radial-gradient(circle, rgba(220,255,7,0.05) 0%, transparent 70%); z-index: 0; pointer-events: none;"></div>
+        </section>
+
+        <!-- SESSIONS DIRECTORY -->
+        <section id="sessions-list" class="section fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>AVAILABLE SESSIONS</h2>
+                </div>
+                
+                <!-- Filters -->
+                <div class="session-filters slide-up">
+                    <button class="filter-btn active" data-filter="All">All Sessions</button>
+                    <button class="filter-btn" data-filter="Strength">Strength</button>
+                    <button class="filter-btn" data-filter="Personal Training">Personal Training</button>
+                    <button class="filter-btn" data-filter="Agility">Agility</button>
+                    <button class="filter-btn" data-filter="Group">Group Fitness</button>
+                    <button class="filter-btn" data-filter="Functional">Functional Training</button>
+                    <button class="filter-btn" data-filter="Mobility">Mobility & Recovery</button>
+                </div>
+                
+                <!-- Grid -->
+                <div id="sessions-grid-container" class="sessions-grid">
+                    <!-- Cards will be populated by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- UPCOMING SESSIONS -->
+        <section class="section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header">
+                    <h2>UPCOMING SESSIONS</h2>
+                </div>
+                <div class="upcoming-table-container slide-up">
+                    <table class="upcoming-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Session</th>
+                                <th>Trainer</th>
+                                <th>Spots</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>MON 14 SEP</strong></td>
+                                <td>06:00 AM</td>
+                                <td>Strength Foundations</td>
+                                <td><a href="#" style="color:var(--color-accent);">Coach Alex</a></td>
+                                <td>8 spots</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;" onclick="window.location.href='pricing.html'">BOOK NOW</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TUE 15 SEP</strong></td>
+                                <td>07:00 AM</td>
+                                <td>Functional Training</td>
+                                <td><a href="#" style="color:var(--color-accent);">Coach Arjun</a></td>
+                                <td>3 spots</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;" onclick="window.location.href='pricing.html'">BOOK NOW</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>WED 16 SEP</strong></td>
+                                <td>06:30 PM</td>
+                                <td>Group Fitness</td>
+                                <td><a href="#" style="color:var(--color-accent);">Coach Ananya</a></td>
+                                <td>10 spots</td>
+                                <td><button class="btn btn-primary" style="padding: 0.5rem 1rem;" onclick="window.location.href='pricing.html'">BOOK NOW</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- BASIC PRICING INFO -->
+        <section class="section fade-in" style="padding-block: 4rem;">
+            <div class="container text-center" style="background: var(--color-surface); padding: 3rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                <h3 style="margin-bottom: 1rem;">SESSION PRICING</h3>
+                <p style="margin-bottom: 2rem; color: var(--color-text-secondary); max-width: 600px; margin-inline: auto;">
+                    We offer drop-in rates, monthly memberships, and personal training packages to fit your needs. Explore our full pricing options to find the best plan for your fitness journey.
+                </p>
+                <a href="pricing.html" class="btn btn-primary">VIEW FULL PRICING</a>
+            </div>
+        </section>
+
+        <!-- WHY TRAIN -->
+        <section class="section bg-secondary fade-in">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>MORE THAN A WORKOUT.</h2>
+                </div>
+                <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+                    <div class="benefit-item slide-up" style="padding:2rem;">
+                        <i data-lucide="award" class="benefit-icon" style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>EXPERT COACHING</h4>
+                        <p>Train with guidance from experienced professionals.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-1" style="padding:2rem;">
+                        <i data-lucide="layout" class="benefit-icon" style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>STRUCTURED TRAINING</h4>
+                        <p>Every session has a clear purpose.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-2" style="padding:2rem;">
+                        <i data-lucide="trending-up" class="benefit-icon" style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>REAL PROGRESS</h4>
+                        <p>Track your consistency and performance.</p>
+                    </div>
+                    <div class="benefit-item slide-up delay-3" style="padding:2rem;">
+                        <i data-lucide="users" class="benefit-icon" style="margin-bottom:1rem; width:48px; height:48px;"></i>
+                        <h4>COMMUNITY</h4>
+                        <p>Train alongside people who share your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section section fade-in">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header text-center">
+                    <h2>SESSIONS FAQ</h2>
+                </div>
+                
+                <div class="faq-accordion">
+                    <div class="faq-item slide-up">
+                        <button class="faq-question"><span>Can beginners join these sessions?</span><i data-lucide="plus" class="faq-icon"></i></button>
+                        <div class="faq-answer"><p>Yes, all sessions clearly display their difficulty level. We have options for beginners to advanced athletes.</p></div>
+                    </div>
+                    <div class="faq-item slide-up">
+                        <button class="faq-question"><span>How long is each session?</span><i data-lucide="plus" class="faq-icon"></i></button>
+                        <div class="faq-answer"><p>Sessions range from 45 to 60 minutes depending on the specific program.</p></div>
+                    </div>
+                    <div class="faq-item slide-up">
+                        <button class="faq-question"><span>Can I cancel or reschedule my session?</span><i data-lucide="plus" class="faq-icon"></i></button>
+                        <div class="faq-answer"><p>Yes, you can manage your bookings through your user dashboard up to 12 hours before the session.</p></div>
+                    </div>
+                    <div class="faq-item slide-up">
+                        <button class="faq-question"><span>Do I need to book in advance?</span><i data-lucide="plus" class="faq-icon"></i></button>
+                        <div class="faq-answer"><p>We highly recommend booking in advance as our sessions have limited capacity and often fill up quickly.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="final-cta section bg-secondary fade-in">
+            <div class="container text-center" style="max-width: 800px;">
+                <h2 style="margin-bottom: 1.5rem;">READY TO GET STARTED?</h2>
+                <p style="margin-bottom: 2.5rem; font-size: 1.25rem;">Choose your session. Show up. Put in the work.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <button class="btn btn-primary" onclick="window.location.href='pricing.html'">BOOK YOUR SESSION <i data-lucide="arrow-right" style="width: 18px;"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Footer Container -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sessions.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Inline script for FAQ accordion in sessions.html
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-question');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    const isActive = parent.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = null;
+                        const icon = faq.querySelector('.faq-icon');
+                        if(icon) icon.setAttribute('data-lucide', 'plus');
+                    });
+                    
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        const answer = parent.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        const icon = item.querySelector('.faq-icon');
+                        if(icon) icon.setAttribute('data-lucide', 'minus');
+                    }
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

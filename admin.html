@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | IN+ FITNESS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="assets/images/in_plus_logo.png" alt="IN+ Fitness Logo" class="white-logo" style="height: 80px; border-radius: 4px;">
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-tab="tab-overview">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-bookings">
+                <i data-lucide="calendar"></i> Bookings
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-sessions">
+                <i data-lucide="activity"></i> Sessions
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-members">
+                <i data-lucide="users"></i> Members
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-trainers">
+                <i data-lucide="user-check"></i> Trainers
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-plans">
+                <i data-lucide="credit-card"></i> Plans & Pricing
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-payments">
+                <i data-lucide="dollar-sign"></i> Payments
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-messages">
+                <i data-lucide="message-square"></i> Messages
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-reports">
+                <i data-lucide="bar-chart-2"></i> Reports
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-attendance">
+                <i data-lucide="check-square"></i> Attendance
+            </a>
+            <a href="#" class="sidebar-link" data-tab="tab-workout-plans">
+                <i data-lucide="clipboard-list"></i> Workout Plans
+            </a>
+        </nav>
+
+        <div class="sidebar-footer" style="display:flex; gap:0.5rem; padding: 1.5rem 1.5rem 0.5rem;">
+            <button class="btn btn-outline direction-toggle" style="flex:1; padding: 0.5rem; display:flex; justify-content:center;">
+                <span style="font-weight:700;">LTR</span>
+            </button>
+            <button class="btn btn-outline theme-toggle" style="flex:1; padding: 0.5rem; display:flex; justify-content:center;">
+                <i data-lucide="moon" class="theme-icon"></i>
+            </button>
+        </div>
+        <div class="sidebar-footer" style="padding-top:0.5rem; border-top:none;">
+            <a href="index.html" class="btn btn-outline" style="width:100%; justify-content:center;">
+                <i data-lucide="log-out" style="width:16px; margin-right:8px;"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+        <!-- Mobile Header -->
+        <header class="dashboard-mobile-header">
+            <a href="index.html" class="sidebar-logo">
+                <img src="assets/images/in_plus_logo.png" alt="IN+ Fitness Logo" class="white-logo" style="height: 56px; border-radius: 4px;">
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </header>
+
+        <div class="dashboard-content">
+
+            <!-- 1. OVERVIEW TAB -->
+            <div id="tab-overview" class="tab-pane active">
+                
+                <!-- Welcome Header -->
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
+                    <div>
+                        <span class="eyebrow" style="color:var(--color-accent); font-size:0.875rem;">BUSINESS OPERATIONS</span>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0.5rem; margin-bottom:0.5rem;">ADMIN OVERVIEW</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Monitor your fitness center, manage bookings, and keep track of your members and trainers.</p>
+                    </div>
+                </div>
+
+                <!-- Business Statistics -->
+                <div class="grid-4" style="margin-bottom:2rem;">
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Total Members</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">1,248</span>
+                            <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent); border:none;"><i data-lucide="trending-up" style="width:14px; margin-right:4px;"></i> +12%</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Today's Bookings</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">84</span>
+                            <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent); border:none;"><i data-lucide="trending-up" style="width:14px; margin-right:4px;"></i> +5%</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Active Trainers</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">12</span>
+                            <span class="status-badge" style="background:rgba(255,255,255,0.05); color:var(--color-text-secondary); border:none;">Stable</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Monthly Revenue</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">₹4.2L</span>
+                            <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent); border:none;"><i data-lucide="trending-up" style="width:14px; margin-right:4px;"></i> +8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule & Bookings -->
+                <div class="grid-2" style="margin-bottom:2rem;">
+                    
+                    <!-- Today's Schedule -->
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h3 class="dash-card-title">Today's Schedule</h3>
+                            <a href="#" style="color:var(--color-accent); font-size:0.875rem;">View All</a>
+                        </div>
+                        <div class="dash-table-container">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Session</th>
+                                        <th>Time</th>
+                                        <th>Trainer</th>
+                                        <th>Spots</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>HIIT Burn</strong></td>
+                                        <td>06:00 AM</td>
+                                        <td>Ananya</td>
+                                        <td>20/20</td>
+                                        <td><span class="status-badge" style="background:rgba(255,50,50,0.1); color:#ff3232;">Full</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Strength Foundations</strong></td>
+                                        <td>08:30 AM</td>
+                                        <td>Alex</td>
+                                        <td>15/20</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Upcoming</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Olympic Lifting</strong></td>
+                                        <td>10:00 AM</td>
+                                        <td>Arjun</td>
+                                        <td>8/10</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Upcoming</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mobility & Recovery</strong></td>
+                                        <td>05:00 PM</td>
+                                        <td>Priya</td>
+                                        <td>12/15</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Upcoming</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Bookings -->
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h3 class="dash-card-title">Recent Bookings</h3>
+                            <a href="#" style="color:var(--color-accent); font-size:0.875rem;">View All</a>
+                        </div>
+                        <div class="dash-table-container">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Member</th>
+                                        <th>Session</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong style="display:block;">Rahul Sharma</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Today, 09:45 AM</span>
+                                        </td>
+                                        <td>
+                                            <strong style="display:block;">HIIT Burn</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Coach Ananya</span>
+                                        </td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Confirmed</span></td>
+                                        <td>
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="eye" style="width:14px;"></i></button>
+                                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="x" style="width:14px;"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong style="display:block;">Sneha Patel</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Today, 09:30 AM</span>
+                                        </td>
+                                        <td>
+                                            <strong style="display:block;">Personal Training</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Coach Priya</span>
+                                        </td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Confirmed</span></td>
+                                        <td>
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="eye" style="width:14px;"></i></button>
+                                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="x" style="width:14px;"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong style="display:block;">Vikram Singh</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Today, 08:15 AM</span>
+                                        </td>
+                                        <td>
+                                            <strong style="display:block;">Strength Foundations</strong>
+                                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Coach Alex</span>
+                                        </td>
+                                        <td><span class="status-badge" style="background:rgba(255,50,50,0.1); color:#ff3232;">Cancelled</span></td>
+                                        <td>
+                                            <div style="display:flex; gap:0.5rem;">
+                                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="eye" style="width:14px;"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance & Revenue -->
+                <div class="grid-2" style="margin-bottom:2rem;">
+                    
+                    <!-- Session Performance -->
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Session Popularity</h3>
+                        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Strength Training</span>
+                                    <span style="font-weight:600;">85%</span>
+                                </div>
+                                <div class="progress-bar-container"><div class="progress-bar-fill" style="width:85%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Group Fitness (HIIT)</span>
+                                    <span style="font-weight:600;">72%</span>
+                                </div>
+                                <div class="progress-bar-container"><div class="progress-bar-fill" style="width:72%; background:#0096ff;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Personal Training</span>
+                                    <span style="font-weight:600;">65%</span>
+                                </div>
+                                <div class="progress-bar-container"><div class="progress-bar-fill" style="width:65%; background:#ff9900;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Mobility & Recovery</span>
+                                    <span style="font-weight:600;">40%</span>
+                                </div>
+                                <div class="progress-bar-container"><div class="progress-bar-fill" style="width:40%; background:#9c27b0;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Overview -->
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Revenue Overview</h3>
+                        <div style="display:flex; gap:1.5rem; margin-bottom:2rem;">
+                            <div style="flex:1; padding:1.5rem; background:rgba(255,255,255,0.02); border:1px solid var(--color-border); border-radius:8px;">
+                                <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">This Week</span>
+                                <strong style="font-size:1.5rem; font-family:'Sora', sans-serif;">₹1.2L</strong>
+                            </div>
+                            <div style="flex:1; padding:1.5rem; background:rgba(255,255,255,0.02); border:1px solid var(--color-border); border-radius:8px;">
+                                <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Pending</span>
+                                <strong style="font-size:1.5rem; font-family:'Sora', sans-serif; color:#ff9900;">₹45K</strong>
+                            </div>
+                        </div>
+                        
+                        <!-- Simple visual chart representation -->
+                        <div style="height:120px; display:flex; align-items:flex-end; gap:10px; justify-content:space-between; padding-top:1rem; border-bottom:1px solid var(--color-border);">
+                            <div style="width:100%; background:rgba(204,255,0,0.2); height:40%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--color-text-secondary);">W1</span></div>
+                            <div style="width:100%; background:rgba(204,255,0,0.4); height:60%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--color-text-secondary);">W2</span></div>
+                            <div style="width:100%; background:rgba(204,255,0,0.6); height:85%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--color-text-secondary);">W3</span></div>
+                            <div style="width:100%; background:var(--color-accent); height:100%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; bottom:-25px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:var(--color-text-secondary);">W4</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainers & Members -->
+                <div class="grid-2" style="margin-bottom:2rem;">
+                    
+                    <!-- Trainer Overview -->
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h3 class="dash-card-title">Trainer Availability</h3>
+                            <a href="#" style="color:var(--color-accent); font-size:0.875rem;">Manage</a>
+                        </div>
+                        <div class="dash-table-container">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Trainer</th>
+                                        <th>Specialty</th>
+                                        <th>Sessions</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:0.5rem;">
+                                                <img src="assets/images/team_arjun.jpg" style="width:30px; height:30px; border-radius:50%; object-fit:cover;">
+                                                <strong>Arjun</strong>
+                                            </div>
+                                        </td>
+                                        <td>Strength</td>
+                                        <td>3 Today</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:0.5rem;">
+                                                <img src="assets/images/team_ananya.jpg" style="width:30px; height:30px; border-radius:50%; object-fit:cover;">
+                                                <strong>Ananya</strong>
+                                            </div>
+                                        </td>
+                                        <td>HIIT</td>
+                                        <td>4 Today</td>
+                                        <td><span class="status-badge" style="background:rgba(255,150,0,0.1); color:#ff9900;">Busy</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div style="display:flex; align-items:center; gap:0.5rem;">
+                                                <img src="assets/images/team_priya.jpg" style="width:30px; height:30px; border-radius:50%; object-fit:cover;">
+                                                <strong>Priya</strong>
+                                            </div>
+                                        </td>
+                                        <td>Mobility</td>
+                                        <td>2 Today</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Members -->
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h3 class="dash-card-title">Recent Registrations</h3>
+                            <a href="#" style="color:var(--color-accent); font-size:0.875rem;">View All</a>
+                        </div>
+                        <div class="dash-table-container">
+                            <table class="dash-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Joined</th>
+                                        <th>Plan</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Neha Gupta</strong></td>
+                                        <td>Oct 28</td>
+                                        <td>Performance</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Aditya Verma</strong></td>
+                                        <td>Oct 27</td>
+                                        <td>Starter</td>
+                                        <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pooja Singh</strong></td>
+                                        <td>Oct 25</td>
+                                        <td>Elite</td>
+                                        <td><span class="status-badge" style="background:rgba(255,150,0,0.1); color:#ff9900;">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions & Alerts -->
+                <div class="grid-2">
+                    
+                    <!-- Quick Actions -->
+                    <div class="dash-card" style="display:flex; flex-direction:column;">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Quick Actions</h3>
+                        <div style="display:flex; flex-direction:column; gap:1rem; flex-grow:1; justify-content:center;">
+                            <button class="btn btn-primary full-width" style="justify-content:flex-start;"><i data-lucide="plus" style="width:18px;"></i> Add New Session</button>
+                            <button class="btn btn-outline full-width" style="justify-content:flex-start;"><i data-lucide="user-plus" style="width:18px;"></i> Register Member</button>
+                            <button class="btn btn-outline full-width" style="justify-content:flex-start;"><i data-lucide="calendar" style="width:18px;"></i> View Master Schedule</button>
+                            <div style="display:flex; gap:1rem;">
+                                <button class="btn btn-outline" style="flex:1; justify-content:center;"><i data-lucide="credit-card" style="width:18px;"></i> Billing</button>
+                                <button class="btn btn-outline" style="flex:1; justify-content:center;"><i data-lucide="bar-chart" style="width:18px;"></i> Reports</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alerts / Notifications -->
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                            <h3 class="dash-card-title">System Alerts</h3>
+                            <span class="status-badge" style="background:var(--color-accent); color:#000;">3 New</span>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                            <div style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,50,50,0.05); border-left:4px solid #ff3232; border-radius:4px;">
+                                <i data-lucide="alert-circle" style="color:#ff3232; width:20px; height:20px;"></i>
+                                <div>
+                                    <strong style="display:block; font-size:0.875rem;">Failed Payment</strong>
+                                    <span style="font-size:0.75rem; color:var(--color-text-secondary);">Pooja Singh (Elite Plan) - ₹12,500</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,150,0,0.05); border-left:4px solid #ff9900; border-radius:4px;">
+                                <i data-lucide="users" style="color:#ff9900; width:20px; height:20px;"></i>
+                                <div>
+                                    <strong style="display:block; font-size:0.875rem;">Session Fully Booked</strong>
+                                    <span style="font-size:0.75rem; color:var(--color-text-secondary);">HIIT Burn (06:00 AM) has reached capacity.</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(0,255,100,0.05); border-left:4px solid var(--color-accent); border-radius:4px;">
+                                <i data-lucide="check-circle" style="color:var(--color-accent); width:20px; height:20px;"></i>
+                                <div>
+                                    <strong style="display:block; font-size:0.875rem;">New Member Registration</strong>
+                                    <span style="font-size:0.75rem; color:var(--color-text-secondary);">Neha Gupta signed up for Performance Plan.</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:center; padding:1rem; background:rgba(255,150,0,0.05); border-left:4px solid #ff9900; border-radius:4px;">
+                                <i data-lucide="clock" style="color:#ff9900; width:20px; height:20px;"></i>
+                                <div>
+                                    <strong style="display:block; font-size:0.875rem;">Upcoming Renewals</strong>
+                                    <span style="font-size:0.75rem; color:var(--color-text-secondary);">15 Memberships expiring in the next 7 days. <a href="#" style="color:#ff9900;">View all</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 2. BOOKINGS TAB -->
+            <div id="tab-bookings" class="tab-pane">
+                
+                <!-- Page Header -->
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">BOOKINGS</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Manage, review, and track all training session bookings.</p>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                <!-- Booking Statistics -->
+                <div class="grid-4" style="margin-bottom:2rem;">
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Total Bookings</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">3,428</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Today's Bookings</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">84</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Upcoming Bookings</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">156</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.5rem;">Cancelled Bookings</span>
+                        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                            <span style="font-size:2rem; font-family:'Sora', sans-serif; font-weight:700;">12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Bookings Card -->
+                <div class="dash-card" style="margin-bottom:2rem;">
+                    
+                    <!-- Filters & View Toggle -->
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+                        <div style="display:flex; gap:1rem; flex-wrap:wrap; flex-grow:1;">
+                            <input type="text" class="dash-form-control" placeholder="Search member or session..." style="max-width:250px;">
+                            <input type="date" class="dash-form-control" style="max-width:180px;">
+                            <select class="dash-form-control" style="max-width:180px;">
+                                <option value="">All Sessions</option>
+                                <option value="strength">Strength Training</option>
+                                <option value="group">Group Fitness</option>
+                                <option value="personal">Personal Training</option>
+                            </select>
+                            <select class="dash-form-control" style="max-width:180px;">
+                                <option value="">All Trainers</option>
+                                <option value="alex">John Smith</option>
+                                <option value="emma">Emma Davis</option>
+                            </select>
+                            <select class="dash-form-control" style="max-width:180px;">
+                                <option value="">All Statuses</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div style="display:flex; gap:0.5rem;">
+                            <button class="btn btn-primary" id="btn-list-view" style="padding:0.5rem 1rem;"><i data-lucide="list"></i></button>
+                            <button class="btn btn-outline" id="btn-calendar-view" style="padding:0.5rem 1rem;"><i data-lucide="calendar"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Table (List View) -->
+                    <div id="bookings-list-view" class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Session</th>
+                                    <th>Trainer</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                    <th>Payment</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Alex Johnson</strong></td>
+                                    <td>Strength Training</td>
+                                    <td>John Smith</td>
+                                    <td>Sep 12</td>
+                                    <td>6:30 PM</td>
+                                    <td>60m</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Confirmed</span></td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Paid</span></td>
+                                    <td>
+                                        <button class="btn btn-outline view-booking-btn" style="padding:0.25rem 0.5rem; font-size:0.75rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sarah Williams</strong></td>
+                                    <td>Group Fitness</td>
+                                    <td>Emma Davis</td>
+                                    <td>Sep 12</td>
+                                    <td>7:00 PM</td>
+                                    <td>45m</td>
+                                    <td><span class="status-badge" style="background:rgba(255,150,0,0.1); color:#ff9900;">Pending</span></td>
+                                    <td><span class="status-badge" style="background:rgba(255,150,0,0.1); color:#ff9900;">Pending</span></td>
+                                    <td>
+                                        <button class="btn btn-outline view-booking-btn" style="padding:0.25rem 0.5rem; font-size:0.75rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Michael Brown</strong></td>
+                                    <td>Mobility</td>
+                                    <td>Priya</td>
+                                    <td>Sep 12</td>
+                                    <td>8:00 PM</td>
+                                    <td>60m</td>
+                                    <td><span class="status-badge" style="background:rgba(0,150,255,0.1); color:#0096ff;">Completed</span></td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Paid</span></td>
+                                    <td>
+                                        <button class="btn btn-outline view-booking-btn" style="padding:0.25rem 0.5rem; font-size:0.75rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>David Lee</strong></td>
+                                    <td>Personal Training</td>
+                                    <td>Alex</td>
+                                    <td>Sep 13</td>
+                                    <td>6:00 AM</td>
+                                    <td>60m</td>
+                                    <td><span class="status-badge" style="background:rgba(255,50,50,0.1); color:#ff3232;">Cancelled</span></td>
+                                    <td><span class="status-badge" style="background:rgba(255,255,255,0.05); color:var(--color-text-secondary);">Refunded</span></td>
+                                    <td>
+                                        <button class="btn btn-outline view-booking-btn" style="padding:0.25rem 0.5rem; font-size:0.75rem;">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Calendar View (Hidden by default) -->
+                    <div id="bookings-calendar-view" style="display:none;">
+                        <div style="display:grid; grid-template-columns:repeat(7, 1fr); gap:1px; background:var(--color-border); border:1px solid var(--color-border); border-radius:8px; overflow:hidden;">
+                            <!-- Days Header -->
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Mon</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Tue</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Wed</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Thu</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Fri</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Sat</div>
+                            <div style="background:var(--color-surface); padding:1rem; text-align:center; font-weight:600;">Sun</div>
+                            
+                            <!-- Mock Grid Cells (Just a few for demonstration) -->
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;">
+                                <span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary); margin-bottom:0.5rem;">11</span>
+                            </div>
+                            <div style="background:rgba(143,185,255,0.05); min-height:120px; padding:0.5rem;">
+                                <span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary); margin-bottom:0.5rem;">12</span>
+                                <!-- Mock Event -->
+                                <div style="background:rgba(0,255,100,0.1); border-left:3px solid var(--color-accent); padding:0.25rem 0.5rem; border-radius:4px; font-size:0.75rem; margin-bottom:0.5rem; cursor:pointer;" class="view-booking-btn">
+                                    <strong>6:30 PM</strong> Strength<br>Alex J.
+                                </div>
+                                <div style="background:rgba(255,150,0,0.1); border-left:3px solid #ff9900; padding:0.25rem 0.5rem; border-radius:4px; font-size:0.75rem; margin-bottom:0.5rem; cursor:pointer;" class="view-booking-btn">
+                                    <strong>7:00 PM</strong> Group<br>Sarah W.
+                                </div>
+                            </div>
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;">
+                                <span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary); margin-bottom:0.5rem;">13</span>
+                                <div style="background:rgba(255,50,50,0.1); border-left:3px solid #ff3232; padding:0.25rem 0.5rem; border-radius:4px; font-size:0.75rem; margin-bottom:0.5rem; cursor:pointer;" class="view-booking-btn">
+                                    <strong>6:00 AM</strong> PT<br>David L.
+                                </div>
+                            </div>
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;"><span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary);">14</span></div>
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;"><span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary);">15</span></div>
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;"><span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary);">16</span></div>
+                            <div style="background:var(--color-surface); min-height:120px; padding:0.5rem;"><span style="display:block; text-align:right; font-size:0.875rem; color:var(--color-text-secondary);">17</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Empty State (Hidden by default) -->
+                    <div id="bookings-empty-state" style="display:none; text-align:center; padding:4rem 2rem;">
+                        <i data-lucide="calendar-x" style="width:48px; height:48px; color:var(--color-text-secondary); margin-bottom:1rem;"></i>
+                        <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">NO BOOKINGS FOUND</h3>
+                        <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">No bookings match your current filters.</p>
+                        <button class="btn btn-outline" onclick="document.getElementById('bookings-empty-state').style.display='none'; document.getElementById('bookings-list-view').style.display='block';">Clear Filters</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. SESSIONS TAB -->
+            <div id="tab-sessions" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">SESSIONS MANAGER</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Create and manage training sessions and schedules.</p>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Session Name</th>
+                                    <th>Category</th>
+                                    <th>Trainer</th>
+                                    <th>Schedule</th>
+                                    <th>Capacity</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>HIIT Burn</strong></td>
+                                    <td>Cardio</td>
+                                    <td>Ananya</td>
+                                    <td>Mon, Wed, Fri 6:00 AM</td>
+                                    <td>20</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Strength Foundations</strong></td>
+                                    <td>Strength</td>
+                                    <td>Alex</td>
+                                    <td>Tue, Thu 8:30 AM</td>
+                                    <td>15</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Yoga Flow</strong></td>
+                                    <td>Mobility</td>
+                                    <td>Priya</td>
+                                    <td>Mon, Wed 7:00 PM</td>
+                                    <td>25</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Powerlifting</strong></td>
+                                    <td>Strength</td>
+                                    <td>David</td>
+                                    <td>Sat 10:00 AM</td>
+                                    <td>10</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spin Class</strong></td>
+                                    <td>Cardio</td>
+                                    <td>Emma</td>
+                                    <td>Tue, Thu 6:00 AM</td>
+                                    <td>30</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. MEMBERS TAB -->
+            <div id="tab-members" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">MEMBER MANAGEMENT</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Manage active members, subscriptions, and profiles.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary"><i data-lucide="user-plus" style="width:18px;"></i> Add Member</button>
+                    </div>
+                </div>
+                <div class="grid-3" style="margin-bottom:2rem;">
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Total Members</span><span style="font-size:2rem; font-weight:700;">1,248</span></div>
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Active</span><span style="font-size:2rem; font-weight:700; color:var(--color-accent);">1,102</span></div>
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Pending</span><span style="font-size:2rem; font-weight:700; color:#ff9900;">24</span></div>
+                </div>
+                <div class="dash-card">
+                    <div style="margin-bottom:1.5rem; display:flex; gap:1rem;">
+                        <input type="text" class="dash-form-control" placeholder="Search members..." style="max-width:300px;">
+                        <select class="dash-form-control" style="max-width:200px;">
+                            <option value="">All Plans</option>
+                            <option value="starter">Starter</option>
+                            <option value="performance">Performance</option>
+                        </select>
+                    </div>
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Email</th>
+                                    <th>Joined</th>
+                                    <th>Plan</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Neha Gupta</strong></td>
+                                    <td>neha.g@example.com</td>
+                                    <td>Oct 28, 2026</td>
+                                    <td>Performance</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td><button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Aditya Verma</strong></td>
+                                    <td>adi.v@example.com</td>
+                                    <td>Oct 27, 2026</td>
+                                    <td>Starter</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td><button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pooja Singh</strong></td>
+                                    <td>pooja.s@example.com</td>
+                                    <td>Oct 25, 2026</td>
+                                    <td>Elite</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td><button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Rahul Kumar</strong></td>
+                                    <td>rahul.k@example.com</td>
+                                    <td>Oct 22, 2026</td>
+                                    <td>Starter</td>
+                                    <td><span class="status-badge" style="background:rgba(255,150,0,0.1); color:#ff9900;">Pending</span></td>
+                                    <td><button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sneha Patel</strong></td>
+                                    <td>sneha.p@example.com</td>
+                                    <td>Oct 15, 2026</td>
+                                    <td>Performance</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Active</span></td>
+                                    <td><button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Profile</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. TRAINERS TAB -->
+            <div id="tab-trainers" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">TRAINER ROSTER</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Manage your coaching staff and their specialties.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary"><i data-lucide="plus" style="width:18px;"></i> Add Trainer</button>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="dash-card" style="text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=150&h=150&fit=crop" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem; object-fit:cover;">
+                        <h3 style="margin-bottom:0.25rem;">Alex Johnson</h3>
+                        <p style="color:var(--color-accent); font-size:0.875rem; margin-bottom:1rem;">Strength & Conditioning</p>
+                        <div style="display:flex; justify-content:space-between; font-size:0.875rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-bottom:1rem;">
+                            <span><strong style="color:var(--color-text);">24</strong> Sessions</span>
+                            <span><strong style="color:var(--color-text);">4.9</strong> Rating</span>
+                        </div>
+                        <button class="btn btn-outline full-width">View Schedule</button>
+                    </div>
+                    <div class="dash-card" style="text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=150&h=150&fit=crop" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem; object-fit:cover;">
+                        <h3 style="margin-bottom:0.25rem;">Emma Davis</h3>
+                        <p style="color:var(--color-accent); font-size:0.875rem; margin-bottom:1rem;">HIIT & Agility</p>
+                        <div style="display:flex; justify-content:space-between; font-size:0.875rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-bottom:1rem;">
+                            <span><strong style="color:var(--color-text);">18</strong> Sessions</span>
+                            <span><strong style="color:var(--color-text);">5.0</strong> Rating</span>
+                        </div>
+                        <button class="btn btn-outline full-width">View Schedule</button>
+                    </div>
+                    <div class="dash-card" style="text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=150&h=150&fit=crop" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem; object-fit:cover;">
+                        <h3 style="margin-bottom:0.25rem;">Priya Sharma</h3>
+                        <p style="color:var(--color-accent); font-size:0.875rem; margin-bottom:1rem;">Yoga & Mobility</p>
+                        <div style="display:flex; justify-content:space-between; font-size:0.875rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-bottom:1rem;">
+                            <span><strong style="color:var(--color-text);">15</strong> Sessions</span>
+                            <span><strong style="color:var(--color-text);">4.8</strong> Rating</span>
+                        </div>
+                        <button class="btn btn-outline full-width">View Schedule</button>
+                    </div>
+                    <div class="dash-card" style="text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem; object-fit:cover;">
+                        <h3 style="margin-bottom:0.25rem;">David Lee</h3>
+                        <p style="color:var(--color-accent); font-size:0.875rem; margin-bottom:1rem;">Powerlifting</p>
+                        <div style="display:flex; justify-content:space-between; font-size:0.875rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-bottom:1rem;">
+                            <span><strong style="color:var(--color-text);">12</strong> Sessions</span>
+                            <span><strong style="color:var(--color-text);">4.9</strong> Rating</span>
+                        </div>
+                        <button class="btn btn-outline full-width">View Schedule</button>
+                    </div>
+                    <div class="dash-card" style="text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=150&h=150&fit=crop" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem; object-fit:cover;">
+                        <h3 style="margin-bottom:0.25rem;">Ananya Roy</h3>
+                        <p style="color:var(--color-accent); font-size:0.875rem; margin-bottom:1rem;">Cardio & Core</p>
+                        <div style="display:flex; justify-content:space-between; font-size:0.875rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-bottom:1rem;">
+                            <span><strong style="color:var(--color-text);">20</strong> Sessions</span>
+                            <span><strong style="color:var(--color-text);">4.7</strong> Rating</span>
+                        </div>
+                        <button class="btn btn-outline full-width">View Schedule</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. PLANS & PRICING TAB -->
+            <div id="tab-plans" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">MEMBERSHIP PLANS</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Manage pricing tiers and subscription options.</p>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+                    <!-- Drop-in -->
+                    <div class="dash-card">
+                        <h3 style="margin-bottom:0.5rem;">DROP-IN</h3>
+                        <div style="font-size:2rem; font-weight:700; font-family:'Sora', sans-serif; margin-bottom:1.5rem;">₹500<span style="font-size:1rem; color:var(--color-text-secondary);">/ session</span></div>
+                        <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; color:var(--color-text-secondary); font-size:0.875rem;">
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Single session access</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> No commitment</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Flexible scheduling</li>
+                        </ul>
+                        <div style="padding-top:1.5rem; border-top:1px solid var(--color-border);">
+                            <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Monthly Drop-ins</span>
+                            <span style="font-size:1.5rem; font-weight:600;">120</span>
+                        </div>
+                    </div>
+                    <!-- Essential -->
+                    <div class="dash-card">
+                        <h3 style="margin-bottom:0.5rem;">ESSENTIAL</h3>
+                        <div style="font-size:2rem; font-weight:700; font-family:'Sora', sans-serif; margin-bottom:1.5rem;">₹4000<span style="font-size:1rem; color:var(--color-text-secondary);">/ mo</span></div>
+                        <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; color:var(--color-text-secondary); font-size:0.875rem;">
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Monthly sessions</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Group training</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Progress tracking</li>
+                        </ul>
+                        <div style="padding-top:1.5rem; border-top:1px solid var(--color-border);">
+                            <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Active Subscribers</span>
+                            <span style="font-size:1.5rem; font-weight:600;">450</span>
+                        </div>
+                    </div>
+                    <!-- Performance -->
+                    <div class="dash-card" style="border:1px solid var(--color-accent);">
+                        <div style="background:var(--color-accent); color:#000; padding:0.25rem 0.5rem; border-radius:4px; font-size:0.75rem; font-weight:700; display:inline-block; margin-bottom:1rem;">MOST POPULAR</div>
+                        <h3 style="margin-bottom:0.5rem;">PERFORMANCE</h3>
+                        <div style="font-size:2rem; font-weight:700; font-family:'Sora', sans-serif; margin-bottom:1.5rem;">₹6500<span style="font-size:1rem; color:var(--color-text-secondary);">/ mo</span></div>
+                        <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; color:var(--color-text-secondary); font-size:0.875rem;">
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> More sessions</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Priority scheduling</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Free merchandise</li>
+                        </ul>
+                        <div style="padding-top:1.5rem; border-top:1px solid var(--color-border);">
+                            <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Active Subscribers</span>
+                            <span style="font-size:1.5rem; font-weight:600;">680</span>
+                        </div>
+                    </div>
+                    <!-- Personal Training -->
+                    <div class="dash-card">
+                        <h3 style="margin-bottom:0.5rem;">PERSONAL TRAINING</h3>
+                        <div style="font-size:2rem; font-weight:700; font-family:'Sora', sans-serif; margin-bottom:1.5rem;">₹1500<span style="font-size:1rem; color:var(--color-text-secondary);">/ session</span></div>
+                        <ul style="list-style:none; padding:0; margin:0 0 1.5rem 0; color:var(--color-text-secondary); font-size:0.875rem;">
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> 1-to-1 coaching</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Custom program</li>
+                            <li style="margin-bottom:0.5rem;"><i data-lucide="check" style="width:14px; margin-right:4px;"></i> Recovery tools</li>
+                        </ul>
+                        <div style="padding-top:1.5rem; border-top:1px solid var(--color-border);">
+                            <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Monthly PT Sessions</span>
+                            <span style="font-size:1.5rem; font-weight:600;">230</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. PAYMENTS TAB -->
+            <div id="tab-payments" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">PAYMENTS & BILLING</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Track revenue, view transaction history, and manage refunds.</p>
+                    </div>
+                </div>
+                <div class="grid-3" style="margin-bottom:2rem;">
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Monthly Revenue</span><span style="font-size:2rem; font-weight:700;">$94,500</span></div>
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Pending Payouts</span><span style="font-size:2rem; font-weight:700; color:#ff9900;">$2,450</span></div>
+                    <div class="dash-card"><span style="display:block; color:var(--color-text-secondary); margin-bottom:0.5rem;">Failed Transactions</span><span style="font-size:2rem; font-weight:700; color:#ff3232;">3</span></div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Member</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TX-94821</td>
+                                    <td><strong>Aditya Verma</strong></td>
+                                    <td>$49.00</td>
+                                    <td>Today, 10:30 AM</td>
+                                    <td>Starter Plan Renewal</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#TX-94820</td>
+                                    <td><strong>Pooja Singh</strong></td>
+                                    <td>$149.00</td>
+                                    <td>Yesterday, 4:15 PM</td>
+                                    <td>Elite Plan Renewal</td>
+                                    <td><span class="status-badge" style="background:rgba(255,50,50,0.1); color:#ff3232;">Failed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#TX-94819</td>
+                                    <td><strong>Neha Gupta</strong></td>
+                                    <td>$89.00</td>
+                                    <td>Yesterday, 2:00 PM</td>
+                                    <td>Performance Plan Setup</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Paid</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="grid-2" style="margin-top:2rem;">
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Payment Methods</h3>
+                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="credit-card" style="width:18px; color:var(--color-text-secondary);"></i> Credit Card</div>
+                                <strong>65%</strong>
+                            </div>
+                            <div style="height:4px; background:var(--color-border); border-radius:2px;"><div style="height:100%; width:65%; background:var(--color-accent);"></div></div>
+                            
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                                <div style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="smartphone" style="width:18px; color:var(--color-text-secondary);"></i> UPI / Net Banking</div>
+                                <strong>25%</strong>
+                            </div>
+                            <div style="height:4px; background:var(--color-border); border-radius:2px;"><div style="height:100%; width:25%; background:#8fb9ff;"></div></div>
+                            
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.5rem;">
+                                <div style="display:flex; align-items:center; gap:0.5rem;"><i data-lucide="banknote" style="width:18px; color:var(--color-text-secondary);"></i> Cash (In-studio)</div>
+                                <strong>10%</strong>
+                            </div>
+                            <div style="height:4px; background:var(--color-border); border-radius:2px;"><div style="height:100%; width:10%; background:#a0ff8f;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Refund Requests</h3>
+                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+                                <div>
+                                    <strong>#TX-94801</strong>
+                                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">Sanjay Verma • ₹4000</span>
+                                </div>
+                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Review</button>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+                                <div>
+                                    <strong>#TX-94755</strong>
+                                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">Neha Gupta • ₹1500</span>
+                                </div>
+                                <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;">Review</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. MESSAGES TAB -->
+            <div id="tab-messages" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">MESSAGES & INQUIRIES</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Respond to member inquiries and contact form submissions.</p>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="dash-card" style="padding:0;">
+                        <div style="padding:1.5rem; border-bottom:1px solid var(--color-border); background:rgba(255,255,255,0.02);">
+                            <strong style="display:block; margin-bottom:0.25rem;">Rahul Kumar</strong>
+                            <span style="font-size:0.875rem; color:var(--color-text-secondary); display:block; margin-bottom:0.5rem;">Question about Personal Training</span>
+                            <span style="font-size:0.75rem; color:var(--color-accent);">2 hours ago • Unread</span>
+                        </div>
+                        <div style="padding:1.5rem; border-bottom:1px solid var(--color-border);">
+                            <strong style="display:block; margin-bottom:0.25rem;">Sneha Patel</strong>
+                            <span style="font-size:0.875rem; color:var(--color-text-secondary); display:block; margin-bottom:0.5rem;">Billing Issue Inquiry</span>
+                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Yesterday</span>
+                        </div>
+                        <div style="padding:1.5rem;">
+                            <strong style="display:block; margin-bottom:0.25rem;">Vikram Singh</strong>
+                            <span style="font-size:0.875rem; color:var(--color-text-secondary); display:block; margin-bottom:0.5rem;">Membership Cancellation Request</span>
+                            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Oct 25</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem; margin-bottom:1.5rem;">
+                            <div>
+                                <h3>Rahul Kumar</h3>
+                                <span style="color:var(--color-text-secondary); font-size:0.875rem;">rahul.k@example.com</span>
+                            </div>
+                            <span style="color:var(--color-text-secondary); font-size:0.875rem;">2 hours ago</span>
+                        </div>
+                        <div style="color:var(--color-text-secondary); line-height:1.6; margin-bottom:2rem;">
+                            <p>Hi Team,</p>
+                            <p>I am currently on the Starter plan but I am interested in upgrading to get access to personal training sessions. Could you please let me know if Alex has any availability next week?</p>
+                            <p>Thanks,<br>Rahul</p>
+                        </div>
+                        <textarea class="dash-form-control" rows="4" placeholder="Type your reply here..." style="margin-bottom:1rem;"></textarea>
+                        <button class="btn btn-primary"><i data-lucide="send" style="width:16px;"></i> Send Reply</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. REPORTS TAB -->
+            <div id="tab-reports" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-top:0; margin-bottom:0.5rem;">ANALYTICS & REPORTS</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">View key performance indicators and growth metrics.</p>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:2rem;">Membership Growth</h3>
+                        <div style="display:flex; align-items:flex-end; gap:1rem; height:200px; padding-top:2rem;">
+                            <div style="flex:1; background:var(--color-border); height:40%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.75rem;">Jan</span></div>
+                            <div style="flex:1; background:var(--color-border); height:45%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.75rem;">Feb</span></div>
+                            <div style="flex:1; background:var(--color-border); height:60%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.75rem;">Mar</span></div>
+                            <div style="flex:1; background:var(--color-border); height:75%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.75rem;">Apr</span></div>
+                            <div style="flex:1; background:var(--color-accent); height:90%; border-radius:4px 4px 0 0; position:relative;"><span style="position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.75rem;">May</span></div>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:2rem;">Revenue by Plan</h3>
+                        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Starter Plan</span>
+                                    <span>30%</span>
+                                </div>
+                                <div style="height:8px; background:var(--color-border); border-radius:4px; overflow:hidden;">
+                                    <div style="height:100%; width:30%; background:#8fb9ff;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Performance Plan</span>
+                                    <span>55%</span>
+                                </div>
+                                <div style="height:8px; background:var(--color-border); border-radius:4px; overflow:hidden;">
+                                    <div style="height:100%; width:55%; background:var(--color-accent);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.875rem;">
+                                    <span>Elite Plan</span>
+                                    <span>15%</span>
+                                </div>
+                                <div style="height:8px; background:var(--color-border); border-radius:4px; overflow:hidden;">
+                                    <div style="height:100%; width:15%; background:#a0ff8f;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-2" style="margin-top:2rem;">
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Attendance Rates</h3>
+                        <div style="position:relative; height:200px; display:flex; justify-content:center; align-items:center;">
+                            <!-- CSS Circle Chart visualization -->
+                            <div style="width:150px; height:150px; border-radius:50%; background:conic-gradient(var(--color-accent) 0% 82%, var(--color-border) 82% 100%); display:flex; justify-content:center; align-items:center;">
+                                <div style="width:120px; height:120px; border-radius:50%; background:var(--color-surface); display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                                    <strong style="font-size:2rem;">82%</strong>
+                                    <span style="font-size:0.75rem; color:var(--color-text-secondary);">Avg. Attendance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dash-card">
+                        <h3 class="dash-card-title" style="margin-bottom:1.5rem;">Recent Activity Log</h3>
+                        <div style="display:flex; flex-direction:column; gap:1rem;">
+                            <div style="display:flex; gap:1rem;">
+                                <div style="width:8px; height:8px; border-radius:50%; background:var(--color-accent); margin-top:6px;"></div>
+                                <div>
+                                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">10 minutes ago</span>
+                                    <strong>Aditya Verma</strong> booked a Personal Training session.
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem;">
+                                <div style="width:8px; height:8px; border-radius:50%; background:#8fb9ff; margin-top:6px;"></div>
+                                <div>
+                                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">1 hour ago</span>
+                                    <strong>Pooja Singh</strong> upgraded to Elite Plan.
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem;">
+                                <div style="width:8px; height:8px; border-radius:50%; background:#ff9900; margin-top:6px;"></div>
+                                <div>
+                                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">3 hours ago</span>
+                                    System generated monthly revenue report.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 10. ATTENDANCE TAB -->
+            <div id="tab-attendance" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-bottom:0.5rem;">ATTENDANCE LOGS</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Monitor member attendance and gym check-ins.</p>
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem; gap:1rem;">
+                        <input type="date" class="dash-form-control" style="max-width:200px;">
+                        <input type="text" class="dash-form-control" placeholder="Search member..." style="max-width:300px;">
+                    </div>
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Member Name</th>
+                                    <th>Date</th>
+                                    <th>Check-in Time</th>
+                                    <th>Session/Area</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Rahul Sharma</strong></td>
+                                    <td>Today</td>
+                                    <td>06:30 AM</td>
+                                    <td>Strength Foundations</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Checked In</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Neha Gupta</strong></td>
+                                    <td>Today</td>
+                                    <td>07:00 AM</td>
+                                    <td>Open Gym</td>
+                                    <td><span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Checked In</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. WORKOUT PLANS TAB -->
+            <div id="tab-workout-plans" class="tab-pane">
+                <div class="dash-card-header" style="align-items:flex-start; margin-bottom: 2rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+                    <div>
+                        <h2 class="dash-card-title" style="font-size:2.5rem; margin-bottom:0.5rem;">WORKOUT PLANS</h2>
+                        <p style="color:var(--color-text-secondary); margin:0; font-size:1.1rem;">Manage and assign workout plans to members.</p>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Plan Name</th>
+                                    <th>Trainer</th>
+                                    <th>Assigned To</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Strength Phase 1</strong></td>
+                                    <td>Coach Alex</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>4 Weeks</td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hypertrophy Block</strong></td>
+                                    <td>Coach Priya</td>
+                                    <td>Sneha Patel</td>
+                                    <td>6 Weeks</td>
+                                    <td>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem;"><i data-lucide="edit-2" style="width:14px;"></i></button>
+                                        <button class="btn btn-outline" style="padding:0.25rem 0.5rem; font-size:0.75rem; color:#ff3232; border-color:rgba(255,50,50,0.3);"><i data-lucide="trash-2" style="width:14px;"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Booking Details Modal -->
+    <div id="booking-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center; padding:1rem; backdrop-filter:blur(4px);">
+        <div style="background:var(--color-background); border:1px solid var(--color-border); border-radius:12px; width:100%; max-width:600px; padding:2rem; position:relative; max-height:90vh; overflow-y:auto; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+            <button id="close-modal" style="position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:var(--color-text); cursor:pointer;"><i data-lucide="x"></i></button>
+            
+            <h3 style="font-family:'Sora', sans-serif; font-size:1.5rem; margin-bottom:1.5rem;">Booking Details</h3>
+            
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; margin-bottom:2rem;">
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Booking ID</span>
+                    <strong>#BK-94827</strong>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Booking Date</span>
+                    <strong>Sep 10, 2026</strong>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Member</span>
+                    <strong>Alex Johnson</strong>
+                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">alex.j@example.com</span>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Trainer</span>
+                    <strong>John Smith</strong>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Session</span>
+                    <strong>Strength Training</strong>
+                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">Main Studio</span>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem;">Schedule</span>
+                    <strong>Sep 12, 6:30 PM</strong>
+                    <span style="display:block; font-size:0.875rem; color:var(--color-text-secondary);">60 minutes</span>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Booking Status</span>
+                    <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Confirmed</span>
+                </div>
+                <div>
+                    <span style="display:block; color:var(--color-text-secondary); font-size:0.875rem; margin-bottom:0.25rem;">Payment Status</span>
+                    <span class="status-badge" style="background:rgba(0,255,100,0.1); color:var(--color-accent);">Paid</span>
+                </div>
+            </div>
+
+            <div style="display:flex; gap:1rem; border-top:1px solid var(--color-border); padding-top:1.5rem;">
+                <button class="btn btn-primary" style="flex:1;">Confirm</button>
+                <button class="btn btn-outline" style="flex:1;">Reschedule</button>
+                <button class="btn btn-outline" style="flex:1; color:#ff3232; border-color:rgba(255,50,50,0.3);">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/theme.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Admin Bookings UI Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnList = document.getElementById('btn-list-view');
+            const btnCalendar = document.getElementById('btn-calendar-view');
+            const viewList = document.getElementById('bookings-list-view');
+            const viewCalendar = document.getElementById('bookings-calendar-view');
+
+            // View Toggle
+            if (btnList && btnCalendar) {
+                btnList.addEventListener('click', () => {
+                    viewList.style.display = 'block';
+                    viewCalendar.style.display = 'none';
+                    btnList.classList.add('btn-primary');
+                    btnList.classList.remove('btn-outline');
+                    btnCalendar.classList.add('btn-outline');
+                    btnCalendar.classList.remove('btn-primary');
+                });
+
+                btnCalendar.addEventListener('click', () => {
+                    viewCalendar.style.display = 'block';
+                    viewList.style.display = 'none';
+                    btnCalendar.classList.add('btn-primary');
+                    btnCalendar.classList.remove('btn-outline');
+                    btnList.classList.add('btn-outline');
+                    btnList.classList.remove('btn-primary');
+                });
+            }
+
+            // Modal Logic
+            const modal = document.getElementById('booking-modal');
+            const btnClose = document.getElementById('close-modal');
+            const viewBtns = document.querySelectorAll('.view-booking-btn');
+
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                });
+            });
+
+            if (btnClose) {
+                btnClose.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                });
+            }
+
+            // Close on outside click
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
